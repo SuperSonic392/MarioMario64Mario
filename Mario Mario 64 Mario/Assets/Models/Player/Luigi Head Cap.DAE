@@ -1,0 +1,685 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--SM64DS Editor v2.3.5 2017-07-05-->
+<COLLADA version="1.4.1" xmlns="http://www.collada.org/2005/11/COLLADASchema">
+	<asset>
+		<contributor>
+			<author>Fiachra</author>
+			<authoring_tool>SM64DS Editor v2.3.5 2017-07-05</authoring_tool>
+		</contributor>
+		<created>2023-07-16T15:17:12</created>
+		<modified>2023-07-16T15:17:12</modified>
+		<unit name="meter" meter="1" />
+		<up_axis>Y_UP</up_axis>
+	</asset>
+	<library_images>
+		<image id="luigi_eye_1-img" name="luigi_eye_1-img">
+			<init_from>luigi_eye_1.png</init_from>
+		</image>
+		<image id="luigi_head_2-img" name="luigi_head_2-img">
+			<init_from>luigi_head_2.png</init_from>
+		</image>
+	</library_images>
+	<library_effects>
+		<effect id="mat_eye-effect">
+			<profile_COMMON>
+				<newparam sid="luigi_eye_1-img-surface">
+					<surface type="2D">
+						<init_from>luigi_eye_1-img</init_from>
+					</surface>
+				</newparam>
+				<newparam sid="luigi_eye_1-img-sampler">
+					<sampler2D>
+						<source>luigi_eye_1-img-surface</source>
+					</sampler2D>
+				</newparam>
+				<technique sid="common">
+					<phong>
+						<emission>
+							<color sid="emission">0 0 0 1.0</color>
+						</emission>
+						<ambient>
+							<color sid="ambient">0.5176471 0.5176471 0.5176471 1.0</color>
+						</ambient>
+						<diffuse>
+							<texture texture="luigi_eye_1-img-sampler" texcoord="UVMap" />
+						</diffuse>
+						<specular>
+							<color sid="specular">0 0 0 1.0</color>
+						</specular>
+						<transparency>
+							<float sid="transparency">1</float>
+						</transparency>
+					</phong>
+				</technique>
+				<extra>
+					<technique profile="SM64DSe">
+						<lights>1 0 0 0</lights>
+						<environment_mapping>0</environment_mapping>
+						<double_sided>0</double_sided>
+						<tex_tiling>flip flip</tex_tiling>
+						<tex_scale>2 1</tex_scale>
+						<tex_rotate>0</tex_rotate>
+						<tex_translate>0 0</tex_translate>
+						<fog_enable>0</fog_enable>
+					</technique>
+				</extra>
+			</profile_COMMON>
+		</effect>
+		<effect id="mat_head-effect">
+			<profile_COMMON>
+				<newparam sid="luigi_head_2-img-surface">
+					<surface type="2D">
+						<init_from>luigi_head_2-img</init_from>
+					</surface>
+				</newparam>
+				<newparam sid="luigi_head_2-img-sampler">
+					<sampler2D>
+						<source>luigi_head_2-img-surface</source>
+					</sampler2D>
+				</newparam>
+				<technique sid="common">
+					<phong>
+						<emission>
+							<color sid="emission">0 0 0 1.0</color>
+						</emission>
+						<ambient>
+							<color sid="ambient">0.5176471 0.5176471 0.5176471 1.0</color>
+						</ambient>
+						<diffuse>
+							<texture texture="luigi_head_2-img-sampler" texcoord="UVMap" />
+						</diffuse>
+						<specular>
+							<color sid="specular">0 0 0 1.0</color>
+						</specular>
+						<transparency>
+							<float sid="transparency">1</float>
+						</transparency>
+					</phong>
+				</technique>
+				<extra>
+					<technique profile="SM64DSe">
+						<lights>1 0 0 0</lights>
+						<environment_mapping>0</environment_mapping>
+						<double_sided>0</double_sided>
+						<tex_tiling>flip flip</tex_tiling>
+						<tex_scale>1 1</tex_scale>
+						<tex_rotate>0</tex_rotate>
+						<tex_translate>0 0</tex_translate>
+						<fog_enable>0</fog_enable>
+					</technique>
+				</extra>
+			</profile_COMMON>
+		</effect>
+	</library_effects>
+	<library_materials>
+		<material id="mat_eye-material" name="mat_eye">
+			<instance_effect url="#mat_eye-effect" />
+		</material>
+		<material id="mat_head-material" name="mat_head">
+			<instance_effect url="#mat_head-effect" />
+		</material>
+	</library_materials>
+	<library_geometries>
+		<geometry id="luigi_head_model-mesh" name="luigi_head_model-mesh">
+			<mesh>
+				<source id="luigi_head_model-mesh-positions">
+					<float_array id="luigi_head_model-mesh-positions-array" count="651">1.922363 -1.870117 -1.648926 1.324219 -0.8935547 -1.445313 2.016602 -1.024414 -0.796875 1.517578 0.01708984 -0.4003906 2.342773 -0.9995117 0 1.517578 0.01708984 0.4003906 2.009277 -1.024414 0.796875 1.324219 -0.8935547 1.445313 1.922363 -1.870117 1.648926 0.7192383 -4.620605 2.314941 1.591309 -5.131836 1.496094 1.592285 -4.251465 1.670898 1.999023 -5.398438 0 2.156738 -3.397461 0 1.592285 -4.251465 -1.670898 2.444336 -2.192871 0.6928711 2.604492 -1.61377 0 0.7192383 -4.620605 -2.314941 1.591309 -5.131836 -1.496094 2.218262 -2.741699 -0.7167969 1.65625 -2.867676 -1.535156 2.218262 -2.741699 0.7167969 1.65625 -2.867676 1.535156 2.444336 -2.192871 -0.6928711 -0.9570313 -3.175293 -2.249512 -2.366699 -2.438477 0 -1.477539 -1.480469 -0.9135742 -1.803711 -1.274902 0 -1.706543 -0.08007813 -0.2578125 -1.039551 -0.3515625 0 -1.471191 -0.03466797 -0.809082 -0.8989258 -0.6494141 -0.8398438 -1.44873 -0.2246094 -1.225586 -1.123535 -0.5556641 -1.789551 -0.7055664 -1.224121 -1.549805 -1.706543 -0.08007813 0.2578125 -1.471191 -0.03466797 0.809082 -0.8989258 -0.6494141 0.8398438 -1.477539 -1.480469 0.9135742 -1.44873 -0.2246094 1.219727 -1.123535 -0.5556641 1.694824 -0.7055664 -1.224121 1.549805 2.444336 -2.192871 0.6928711 2.218262 -2.741699 0.7167969 4.015625 -2.66748 1.105957 4.04834 -3.583008 0.7260742 4.537598 -2.651367 0 4.04834 -3.583008 -0.7260742 4.015625 -2.66748 -1.105957 2.218262 -2.741699 -0.7167969 2.444336 -2.192871 -0.6928711 0.6005859 -8.376953 0 0.2993164 -7.847656 1.490234 -0.9423828 -7.459961 1.101563 -0.4331055 -6.497559 2.583008 -2.739258 -4.754395 1.421387 -2.105469 -4.233887 2.519531 -3.489258 -4.535156 0 -3.562988 -3.591797 0 -2.105469 -4.233887 -2.519531 0.2993164 -7.847656 1.490234 1.388672 -7.24707 1.720215 -0.4331055 -6.497559 2.583008 0.08251953 -4.812988 3.115234 -2.105469 -4.233887 2.519531 -0.5874023 -3.689941 2.920898 -2.587891 -3.254883 1.932617 -0.9570313 -3.175293 2.249512 -2.366699 -2.438477 0 -0.7055664 -1.224121 1.549805 0.1391602 -0.2148438 1.104004 -0.8989258 -0.6494141 0.8398438 -0.5131836 1.177734 0.6225586 -1.039551 -0.3515625 0 -0.5131836 1.177734 -0.6225586 -0.8989258 -0.6494141 -0.8398438 0.1391602 -0.2148438 -1.104004 1.668457 -5.59082 1.519531 2.27832 -6.002441 0 3.353516 -5.016602 1.996094 4.592773 -5.535156 0 1.999023 -5.398438 0 3.353516 -5.016602 -1.996094 1.591309 -5.131836 -1.496094 0.7192383 -4.620605 -2.314941 -3.562988 -3.591797 0 -3.135254 -2.848633 0 -2.587891 -3.254883 -1.932617 -0.9570313 -3.175293 -2.249512 0.2993164 -7.847656 -1.490234 -0.9423828 -7.459961 -1.101563 -2.739258 -4.754395 -1.421387 -0.2216797 -1.691406 -1.806641 -0.6391602 -1.771484 -2.675293 -0.8500977 -1.976074 -1.939453 -1.097656 -3.037598 -3.398438 -0.9570313 -3.175293 -2.249512 -0.5874023 -3.689941 -2.920898 1.668457 -5.59082 1.519531 1.388672 -7.24707 1.720215 2.27832 -6.002441 0 2.044434 -7.704102 0 1.388672 -7.24707 -1.720215 0.6005859 -8.376953 0 1.592285 -4.251465 1.670898 1.65625 -2.867676 1.535156 0.7192383 -4.620605 2.314941 0.8369141 -1.936523 1.860352 -0.06152344 -2.866211 2.061035 -0.2216797 -1.691406 1.806641 -1.097656 -3.037598 3.398438 -0.6391602 -1.771484 2.675293 -0.8500977 -1.976074 1.939453 -0.2216797 -1.691406 1.806641 -0.7055664 -1.224121 1.549805 0.1391602 -0.2148438 1.104004 1.837402 -2.742676 1.771973 2.782715 -2.008301 0 2.649414 -1.866699 1.416016 2.88623 -1.604004 0 2.288086 -1.17041 0.7543945 2.497559 -1.373047 0 2.288086 -1.17041 -0.7543945 2.654297 -1.866699 -1.416016 2.013184 -1.365723 -1.508789 1.724609 -1.984863 -1.825195 -0.4331055 -6.497559 -2.583008 0.2993164 -7.847656 -1.490234 -0.4331055 -6.497559 -2.583008 1.388672 -7.24707 -1.720215 0.08251953 -4.812988 -3.115234 1.668457 -5.59082 -1.519531 0.7192383 -4.620605 -2.314941 4.015625 -2.66748 -1.105957 4.003418 -1.836426 -0.6552734 4.537598 -2.651367 0 4.003418 -1.836426 0.6552734 4.015625 -2.66748 1.105957 2.444336 -2.192871 0.6928711 2.604492 -1.61377 0 2.444336 -2.192871 -0.6928711 0.8369141 -1.936523 -1.860352 1.324219 -0.8935547 -1.445313 0.1391602 -0.2148438 -1.104004 1.517578 0.01708984 -0.4003906 0.7495117 0.3842773 0 1.65625 -2.867676 1.535156 1.922363 -1.870117 1.648926 0.8369141 -1.936523 1.860352 1.324219 -0.8935547 1.445313 1.861328 -2.742676 -1.771973 2.013184 -1.365723 1.508789 1.719238 -2.027832 1.825195 1.591309 -5.131836 1.496094 0.7192383 -4.620605 2.314941 1.668457 -5.59082 -1.519531 -0.2216797 -1.691406 1.806641 -0.6391602 -1.771484 2.675293 -0.06152344 -2.866211 2.061035 -1.097656 -3.037598 3.398438 -0.5874023 -3.689941 2.920898 2.156738 -3.397461 0 3.20459 -3.750977 0 1.668457 -5.59082 1.519531 0.7192383 -4.620605 2.314941 -0.3349609 -3.612793 2.317871 -0.9570313 -3.175293 2.249512 -0.8500977 -1.976074 1.939453 -2.105469 -4.233887 -2.519531 -0.5874023 -3.689941 -2.920898 -0.3349609 -3.612793 -2.317871 -0.5131836 1.177734 -0.6225586 0.5708008 1.224121 0 -0.5131836 1.177734 0.6225586 1.517578 0.01708984 0.4003906 2.218262 -2.741699 0.7167969 2.444336 -2.192871 0.6928711 1.65625 -2.867676 1.535156 1.922363 -1.870117 1.648926 -0.7055664 -1.224121 -1.549805 -0.8989258 -0.6494141 -0.8398438 -0.3349609 -3.612793 2.317871 -0.5874023 -3.689941 2.920898 -0.2216797 -1.691406 -1.806641 -0.06152344 -2.866211 -2.061035 -0.6391602 -1.771484 -2.675293 -1.097656 -3.037598 -3.398438 0.8369141 -1.936523 -1.860352 1.65625 -2.867676 -1.535156 0.7192383 -4.620605 -2.314941 1.592285 -4.251465 -1.670898 -0.2216797 -1.691406 -1.806641 -0.06152344 -2.866211 -2.061035 -0.5874023 -3.689941 2.920898 -0.9570313 -3.175293 2.249512 1.65625 -2.867676 -1.535156 1.922363 -1.870117 -1.648926 -0.5874023 -3.689941 -2.920898 -0.3349609 -3.612793 -2.317871 2.218262 -2.741699 -0.7167969 1.65625 -2.867676 -1.535156 2.444336 -2.192871 -0.6928711 1.922363 -1.870117 -1.648926 -0.8500977 -1.976074 -1.939453 0.2993164 -7.847656 1.490234 0.6005859 -8.376953 0 1.388672 -7.24707 1.720215 0.7495117 0.3842773 0 1.517578 0.01708984 0.4003906 1.517578 0.01708984 -0.4003906 -0.8500977 -1.976074 -1.939453 -0.7055664 -1.224121 -1.549805 -0.2216797 -1.691406 -1.806641 1.668457 -5.59082 -1.519531 0.2993164 -7.847656 -1.490234 1.388672 -7.24707 -1.720215 -0.5874023 -3.689941 -2.920898</float_array>
+					<technique_common>
+						<accessor source="#luigi_head_model-mesh-positions-array" count="217" stride="3">
+							<param name="X" type="float" />
+							<param name="Y" type="float" />
+							<param name="Z" type="float" />
+						</accessor>
+					</technique_common>
+				</source>
+				<source id="luigi_head_model-mesh-normals">
+					<float_array id="luigi_head_model-mesh-normals-array" count="651">0.6132813 0.1503906 -0.7753906 0.296875 0.5019531 -0.8125 0.7890625 0.4179688 -0.4511719 0.5410156 0.7480469 -0.3828125 0.8632813 0.5039063 0.001953125 0.5429688 0.7480469 0.3828125 0.7871094 0.4179688 0.4511719 0.2988281 0.5019531 0.8125 0.6132813 0.1523438 0.7753906 0.3984375 0.1308594 0.9082031 0.6972656 0.6992188 0.1640625 0.8554688 -0.05078125 0.5136719 0.7304688 0.6835938 0 0.875 -0.4824219 0 0.8554688 -0.05078125 -0.5136719 0.5371094 0.2558594 0.8027344 0.6484375 0.7617188 0.001953125 0.3984375 0.1308594 -0.9082031 0.6972656 0.6992188 -0.1640625 0.1171875 -0.5292969 -0.8398438 0.7070313 -0.171875 -0.6855469 0.1171875 -0.5292969 0.8398438 0.7070313 -0.171875 0.6855469 0.5390625 0.2539063 -0.8046875 -0.9589844 -0.03710938 -0.2832031 -0.9375 0.3476563 0 -0.8398438 0.1230469 -0.5292969 -0.9550781 0.2949219 0 -0.8242188 0.5351563 0.1855469 -0.2851563 0.9589844 0 0.05859375 0.7949219 -0.6035156 0.05859375 0.7949219 -0.6035156 -0.578125 0.7636719 0.2871094 0.1210938 0.3984375 -0.9101563 -0.1640625 0.4375 -0.8847656 -0.8242188 0.5351563 -0.1855469 0.05859375 0.7949219 0.6035156 0.05859375 0.7949219 0.6035156 -0.8339844 0.1289063 0.5351563 -0.5703125 0.7832031 -0.2460938 0.1035156 0.4121094 0.90625 -0.171875 0.4492188 0.8769531 0.5371094 0.2558594 0.8027344 0.1171875 -0.5292969 0.8398438 0.3378906 0.08398438 0.9375 0.4003906 -0.75 0.5253906 0.9980469 0.05273438 0 0.4003906 -0.75 -0.5253906 0.3378906 0.08398438 -0.9375 0.1171875 -0.5292969 -0.8398438 0.5390625 0.2539063 -0.8046875 0.0546875 -0.9980469 0 -0.06445313 -0.828125 0.5566406 -0.6425781 -0.7246094 0.2480469 -0.2949219 -0.515625 0.8046875 -0.75 -0.5488281 0.3691406 -0.65625 -0.07226563 0.75 -0.96875 -0.2460938 0 -0.9960938 0.09765625 0 -0.65625 -0.07226563 -0.75 -0.06445313 -0.828125 0.5566406 0.6074219 -0.4707031 0.640625 -0.2949219 -0.515625 0.8046875 0.3984375 0.1308594 0.9082031 -0.65625 -0.07226563 0.75 -0.00390625 0.4902344 0.8710938 -0.5371094 0.6132813 0.5800781 -0.1425781 0.8398438 0.5234375 -0.2851563 0.9589844 0 -0.171875 0.4492188 0.8769531 0.06835938 0.5214844 0.8515625 0.05859375 0.7949219 0.6035156 -0.6132813 0.4140625 0.671875 -0.2851563 0.9589844 0 -0.6132813 0.4140625 -0.671875 0.05859375 0.7949219 -0.6035156 0.06835938 0.5214844 -0.8515625 0.1113281 -0.8085938 0.578125 0.2148438 -0.9765625 0 0.59375 0.4257813 0.6835938 0.9726563 0.234375 0 0.7304688 0.6835938 0 0.59375 0.4257813 -0.6835938 0.6972656 0.6992188 -0.1640625 0.3984375 0.1308594 -0.9082031 -0.9960938 0.09765625 0 -0.6953125 0.71875 0 -0.5371094 0.6132813 -0.5800781 -0.1425781 0.8398438 -0.5234375 -0.06445313 -0.828125 -0.5566406 -0.5898438 -0.75 -0.296875 -0.7734375 -0.5546875 -0.3046875 0.06835938 0.5214844 -0.8515625 0.1679688 0.8164063 -0.5546875 -0.765625 0.5039063 -0.4003906 -0.6777344 0.046875 -0.734375 -0.9589844 -0.03710938 -0.2832031 0.6074219 -0.4707031 -0.640625 0.8027344 0.02148438 0.5957031 0.6074219 -0.4707031 0.640625 0.9921875 -0.1269531 0 0.8046875 -0.59375 0 0.6074219 -0.4707031 -0.640625 0.0546875 -0.9980469 0 0.8554688 -0.05078125 0.5136719 0.7070313 -0.171875 0.6855469 0.3984375 0.1308594 0.9082031 0.1601563 0.1699219 0.9726563 0.6132813 0.1523438 0.7753906 0.06835938 0.5214844 0.8515625 -0.6777344 0.046875 0.734375 0.1679688 0.8164063 0.5546875 -0.765625 0.5039063 0.4003906 0.06835938 0.5214844 0.8515625 -0.171875 0.4492188 0.8769531 0.06835938 0.5214844 0.8515625 0.6835938 -0.3808594 0.6210938 0.875 -0.4824219 0 0.8085938 0.1464844 0.5722656 0.8632813 0.5039063 0.001953125 0.640625 0.7441406 0.1894531 0.5097656 0.859375 0 0.6386719 0.7460938 -0.1875 0.8085938 0.1542969 -0.5664063 0.5078125 0.5234375 -0.6855469 0.3984375 0.1308594 -0.9082031 -0.2949219 -0.515625 -0.8046875 -0.06445313 -0.828125 -0.5566406 -0.2949219 -0.515625 -0.8046875 0.6074219 -0.4707031 -0.640625 0.3984375 0.1308594 -0.9082031 0.8027344 0.02148438 -0.5957031 0.6660156 0.4023438 -0.6269531 0.3378906 0.08398438 -0.9375 0.4121094 0.7714844 -0.484375 0.9980469 0.05273438 0 0.4121094 0.7714844 0.484375 0.3378906 0.08398438 0.9375 0.5371094 0.2558594 0.8027344 0.6484375 0.7617188 0.001953125 0.5390625 0.2539063 -0.8046875 0.1601563 0.1699219 -0.9726563 0.296875 0.5019531 -0.8125 0.06835938 0.5214844 -0.8515625 0.5410156 0.7480469 -0.3828125 0.6484375 0.7617188 0.001953125 0.7070313 -0.171875 0.6855469 0.6132813 0.1523438 0.7753906 0.1601563 0.1699219 0.9726563 0.2988281 0.5019531 0.8125 0.6894531 -0.3710938 -0.6210938 0.5058594 0.515625 0.6914063 0.3984375 0.1308594 0.9082031 0.6972656 0.6992188 0.1640625 0.3984375 0.1308594 0.9082031 0.1113281 -0.8085938 -0.578125 0.06835938 0.5214844 0.8515625 0.1679688 0.8164063 0.5546875 0.6132813 0.1523438 0.7753906 -0.6777344 0.046875 0.734375 0.6074219 -0.4707031 0.640625 0.875 -0.4824219 0 -0.2421875 -0.9707031 0 0.8027344 0.02148438 0.5957031 0.6660156 0.4023438 0.6269531 0.6679688 0.5585938 0.4921875 -0.9589844 -0.03710938 0.2832031 -0.765625 0.5039063 0.4003906 -0.65625 -0.07226563 -0.75 -0.00390625 0.4902344 -0.8710938 0.6679688 0.5585938 -0.4921875 -0.6132813 0.4140625 -0.671875 0.8632813 0.5039063 0.001953125 -0.6132813 0.4140625 0.671875 0.5429688 0.7480469 0.3828125 0.1171875 -0.5292969 0.8398438 0.5371094 0.2558594 0.8027344 0.7070313 -0.171875 0.6855469 0.6132813 0.1523438 0.7753906 -0.1640625 0.4375 -0.8847656 0.05859375 0.7949219 -0.6035156 0.6601563 0.015625 0.75 0.6074219 -0.4707031 0.640625 0.06835938 0.5214844 -0.8515625 0.6132813 0.1503906 -0.7753906 0.1679688 0.8164063 -0.5546875 -0.6777344 0.046875 -0.734375 0.1601563 0.1699219 -0.9726563 0.7070313 -0.171875 -0.6855469 0.3984375 0.1308594 -0.9082031 0.8554688 -0.05078125 -0.5136719 0.06835938 0.5214844 -0.8515625 0.6132813 0.1503906 -0.7753906 0.6074219 -0.4707031 0.640625 -0.9589844 -0.03710938 0.2832031 0.7070313 -0.171875 -0.6855469 0.6132813 0.1503906 -0.7753906 0.6074219 -0.4707031 -0.640625 0.6601563 0.015625 -0.75 0.1171875 -0.5292969 -0.8398438 0.7070313 -0.171875 -0.6855469 0.5390625 0.2539063 -0.8046875 0.6132813 0.1503906 -0.7753906 -0.765625 0.5039063 -0.4003906 -0.06445313 -0.828125 0.5566406 0.0546875 -0.9980469 0 0.6074219 -0.4707031 0.640625 0.6484375 0.7617188 0.001953125 0.5429688 0.7480469 0.3828125 0.5410156 0.7480469 -0.3828125 -0.765625 0.5039063 -0.4003906 -0.1640625 0.4375 -0.8847656 0.06835938 0.5214844 -0.8515625 0.8027344 0.02148438 -0.5957031 -0.06445313 -0.828125 -0.5566406 0.6074219 -0.4707031 -0.640625 0.6074219 -0.4707031 -0.640625</float_array>
+					<technique_common>
+						<accessor source="#luigi_head_model-mesh-normals-array" count="217" stride="3">
+							<param name="X" type="float" />
+							<param name="Y" type="float" />
+							<param name="Z" type="float" />
+						</accessor>
+					</technique_common>
+				</source>
+				<source id="luigi_head_model-mesh-map-0">
+					<float_array id="luigi_head_model-mesh-map-0-array" count="434">0.015625 0.5996094 0.140625 0.8203125 0.5625 0.7597656 0.78125 0.9882813 1 0.7578125 1.21875 0.9882813 1.4375 0.7597656 1.859375 0.8203125 1.984375 0.5996094 2.09375 0.1621094 1.8125 0.06640625 1.914063 0.2246094 1 0.01757813 1 0.3789063 0.0859375 0.2246094 1.382813 0.5097656 1 0.6152344 -0.09375 0.1621094 0.1875 0.06640625 0.609375 0.4980469 0.1640625 0.4746094 1.390625 0.4941406 1.835938 0.4746094 0.6171875 0.5097656 0.01171875 0.9892578 0.01757813 0.8730469 0.2617188 0.9316406 0.296875 0.8730469 0.3574219 0.8847656 0.3183594 0.8730469 0.3515625 0.9267578 0.2890625 0.9267578 0.3515625 0.9453125 0.3339844 0.9863281 0.2558594 0.9726563 0.3574219 0.8603516 0.3515625 0.8193359 0.2871094 0.8193359 0.2597656 0.8144531 0.3554688 0.796875 0.3320313 0.7587891 0.2539063 0.7724609 0.6660156 0.4082031 0.6445313 0.3964844 0.7089844 0.4746094 0.640625 0.4746094 0.5605469 0.5029297 0.4804688 0.4746094 0.4101563 0.4746094 0.4746094 0.3964844 0.453125 0.4082031 0 0.2597656 -0.1933594 0.3066406 -0.1308594 0.3769531 -0.3222656 0.4042969 -0.1738281 0.5058594 -0.3242188 0.5283203 -0.001953125 0.5537109 -0.001953125 0.6191406 0.3222656 0.5283203 0.6523438 0.3701172 0.8164063 0.3701172 0.6757813 0.2753906 0.8320313 0.2353516 0.6875 0.1601563 0.9707031 0.2001953 0.8300781 0.1533203 1 0.1699219 1 0 0.4335938 0.9746094 0.4277344 0.8798828 0.4804688 0.9697266 0.4277344 0.8203125 0.5253906 0.9052734 0.4648438 0.7753906 0.5898438 0.8652344 0.5390625 0.7851563 0.1953125 0.5253906 0 0.5302734 0.2246094 0.7197266 0 0.75 0 0.5302734 0.2246094 0.7197266 0.1953125 0.5253906 0.3496094 0.4404297 0.6425781 0 0.8300781 0 0.8300781 0.1533203 1 0.1699219 0.1953125 0.3066406 0.1308594 0.3769531 0.1914063 0.5058594 0.6660156 0.6445313 0.6464844 0.6542969 0.5898438 0.6494141 0.6347656 0.6660156 0.5996094 0.6757813 0.6503906 0.6796875 0.7675781 0.3447266 0.8027344 0.1054688 0.4023438 0.3046875 0.4023438 0.04492188 0.001953125 0.1054688 0.4023438 -0.03710938 0.7148438 0.6552734 0.4902344 0.6699219 0.7402344 0.7148438 0.4277344 0.7402344 0.5644531 0.7695313 0.4277344 0.8095703 0.6347656 0.6660156 0.6464844 0.6542969 0.5898438 0.6494141 0.6660156 0.6445313 0.6386719 0.6279297 0.6757813 0.6064453 0.8164063 0.5634766 0.890625 0.7675781 0.9140625 0.6181641 0.9375 0.7695313 0.9921875 0.6845703 0.9628906 0.7705078 0.9824219 0.8564453 0.9003906 0.9189453 0.9550781 0.9414063 0.8828125 0.9755859 0.3242188 0.4042969 0.6523438 0.3701172 0.6757813 0.2753906 0.8164063 0.3701172 0.8320313 0.2353516 0.9804688 0.3701172 0.9746094 0.2597656 0.7070313 0.4892578 0.7773438 0.4892578 0.8535156 0.5087891 0.9296875 0.4892578 1 0.4892578 0.9550781 0.4091797 0.8535156 0.3964844 0.75 0.4091797 0.6992188 0.6650391 0.765625 0.5703125 0.6757813 0.6064453 0.7421875 0.5673828 0.7207031 0.5507813 0.7285156 0.6904297 0.765625 0.671875 0.6992188 0.6650391 0.765625 0.5703125 0.8183594 0.9667969 0.9726563 0.5986328 0.8984375 0.5595703 0.1953125 0.5253906 0.3496094 0.4404297 0.1953125 0.5253906 0.4101563 0.5097656 0.4199219 0.5654297 0.5644531 0.5048828 0.6054688 0.6152344 0.6894531 0.5595703 0.5605469 0.3916016 0.5605469 0.4306641 0.9804688 0.3701172 0.9746094 0.2597656 1 0.2402344 0.01171875 0.7568359 0.2070313 0.7548828 0.6875 0.1601563 0.9707031 0.2001953 1 0.2402344 0.6660156 0.5126953 0.7128906 0.5146484 0.6660156 0.5126953 0.7421875 0.5673828 0.703125 0.5058594 0.703125 0.5058594 0.703125 0.5058594 0.703125 0.5058594 0.6386719 0.6279297 0.6347656 0.5957031 0.6796875 0.7802734 0.6542969 0.8154297 0.4101563 0.5097656 0.5644531 0.5048828 0.4199219 0.5654297 0.6054688 0.6152344 0.4277344 0.7402344 0.4902344 0.6699219 0.7402344 0.7148438 0.7148438 0.6552734 0.4277344 0.8095703 0.5644531 0.7695313 0.6503906 0.6796875 0.5996094 0.6757813 0.7285156 0.6904297 0.765625 0.671875 0.6542969 0.8154297 0.6796875 0.7802734 0.703125 0.5058594 0.703125 0.5058594 0.703125 0.5058594 0.703125 0.5058594 0.2089844 0.9912109 0.7558594 0.2001953 0.9355469 0.2001953 0.7558594 0.01953125 0.6757813 0.6201172 0.7246094 0.6396484 0.7246094 0.5947266 0.703125 0.5058594 0.703125 0.5058594 0.703125 0.5058594 0.03710938 0.3603516 0.7558594 0.2001953 0.7558594 0.01953125 0.6894531 0.5595703</float_array>
+					<technique_common>
+						<accessor source="#luigi_head_model-mesh-map-0-array" count="217" stride="2">
+							<param name="S" type="float" />
+							<param name="T" type="float" />
+						</accessor>
+					</technique_common>
+				</source>
+				<source id="luigi_head_model-mesh-colors">
+					<float_array id="luigi_head_model-mesh-colors-array" count="651">1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1</float_array>
+					<technique_common>
+						<accessor source="#luigi_head_model-mesh-colors-array" count="217" stride="3">
+							<param name="R" type="float" />
+							<param name="G" type="float" />
+							<param name="B" type="float" />
+						</accessor>
+					</technique_common>
+				</source>
+				<vertices id="luigi_head_model-mesh-vertices">
+					<input semantic="POSITION" source="#luigi_head_model-mesh-positions" />
+				</vertices>
+				<polylist material="mat_eye-material" count="7">
+					<input semantic="VERTEX" source="#luigi_head_model-mesh-vertices" offset="0" />
+					<input semantic="NORMAL" source="#luigi_head_model-mesh-normals" offset="1" />
+					<input semantic="TEXCOORD" source="#luigi_head_model-mesh-map-0" offset="2" set="0" />
+					<input semantic="COLOR" source="#luigi_head_model-mesh-colors" offset="3" />
+					<vcount>3 3 3 3 3 3 3</vcount>
+					<p>0 0 0 0 1 1 1 0 2 2 2 0 3 3 3 0 2 2 2 0 1 1 1 0 2 2 2 0 3 3 3 0 4 4 4 0 5 5 5 0 4 4 4 0 3 3 3 0 4 4 4 0 5 5 5 0 6 6 6 0 7 7 7 0 6 6 6 0 5 5 5 0 6 6 6 0 7 7 7 0 8 8 8 0</p>
+				</polylist>
+				<polylist material="mat_eye-material" count="4">
+					<input semantic="VERTEX" source="#luigi_head_model-mesh-vertices" offset="0" />
+					<input semantic="NORMAL" source="#luigi_head_model-mesh-normals" offset="1" />
+					<input semantic="TEXCOORD" source="#luigi_head_model-mesh-map-0" offset="2" set="0" />
+					<input semantic="COLOR" source="#luigi_head_model-mesh-colors" offset="3" />
+					<vcount>3 3 3 3</vcount>
+					<p>9 9 9 0 10 10 10 0 11 11 11 0 12 12 12 0 11 11 11 0 10 10 10 0 11 11 11 0 12 12 12 0 13 13 13 0 14 14 14 0 13 13 13 0 12 12 12 0</p>
+				</polylist>
+				<polylist material="mat_eye-material" count="4">
+					<input semantic="VERTEX" source="#luigi_head_model-mesh-vertices" offset="0" />
+					<input semantic="NORMAL" source="#luigi_head_model-mesh-normals" offset="1" />
+					<input semantic="TEXCOORD" source="#luigi_head_model-mesh-map-0" offset="2" set="0" />
+					<input semantic="COLOR" source="#luigi_head_model-mesh-colors" offset="3" />
+					<vcount>3 3 3 3</vcount>
+					<p>8 8 8 0 15 15 15 0 6 6 6 0 16 16 16 0 6 6 6 0 15 15 15 0 6 6 6 0 16 16 16 0 4 4 4 0 2 2 2 0 4 4 4 0 16 16 16 0</p>
+				</polylist>
+				<polylist material="mat_eye-material" count="2">
+					<input semantic="VERTEX" source="#luigi_head_model-mesh-vertices" offset="0" />
+					<input semantic="NORMAL" source="#luigi_head_model-mesh-normals" offset="1" />
+					<input semantic="TEXCOORD" source="#luigi_head_model-mesh-map-0" offset="2" set="0" />
+					<input semantic="COLOR" source="#luigi_head_model-mesh-colors" offset="3" />
+					<vcount>3 3</vcount>
+					<p>17 17 17 0 14 14 14 0 18 18 18 0 12 12 12 0 18 18 18 0 14 14 14 0</p>
+				</polylist>
+				<polylist material="mat_eye-material" count="2">
+					<input semantic="VERTEX" source="#luigi_head_model-mesh-vertices" offset="0" />
+					<input semantic="NORMAL" source="#luigi_head_model-mesh-normals" offset="1" />
+					<input semantic="TEXCOORD" source="#luigi_head_model-mesh-map-0" offset="2" set="0" />
+					<input semantic="COLOR" source="#luigi_head_model-mesh-colors" offset="3" />
+					<vcount>3 3</vcount>
+					<p>19 19 19 0 13 13 13 0 20 20 20 0 14 14 14 0 20 20 20 0 13 13 13 0</p>
+				</polylist>
+				<polylist material="mat_eye-material" count="2">
+					<input semantic="VERTEX" source="#luigi_head_model-mesh-vertices" offset="0" />
+					<input semantic="NORMAL" source="#luigi_head_model-mesh-normals" offset="1" />
+					<input semantic="TEXCOORD" source="#luigi_head_model-mesh-map-0" offset="2" set="0" />
+					<input semantic="COLOR" source="#luigi_head_model-mesh-colors" offset="3" />
+					<vcount>3 3</vcount>
+					<p>21 21 21 0 22 22 22 0 13 13 13 0 11 11 11 0 13 13 13 0 22 22 22 0</p>
+				</polylist>
+				<polylist material="mat_eye-material" count="2">
+					<input semantic="VERTEX" source="#luigi_head_model-mesh-vertices" offset="0" />
+					<input semantic="NORMAL" source="#luigi_head_model-mesh-normals" offset="1" />
+					<input semantic="TEXCOORD" source="#luigi_head_model-mesh-map-0" offset="2" set="0" />
+					<input semantic="COLOR" source="#luigi_head_model-mesh-colors" offset="3" />
+					<vcount>3 3</vcount>
+					<p>0 0 0 0 2 2 2 0 23 23 23 0 16 16 16 0 23 23 23 0 2 2 2 0</p>
+				</polylist>
+				<polylist material="mat_head-material" count="11">
+					<input semantic="VERTEX" source="#luigi_head_model-mesh-vertices" offset="0" />
+					<input semantic="NORMAL" source="#luigi_head_model-mesh-normals" offset="1" />
+					<input semantic="TEXCOORD" source="#luigi_head_model-mesh-map-0" offset="2" set="0" />
+					<input semantic="COLOR" source="#luigi_head_model-mesh-colors" offset="3" />
+					<vcount>3 3 3 3 3 3 3 3 3 3 3</vcount>
+					<p>24 24 24 0 25 25 25 0 26 26 26 0 27 27 27 0 26 26 26 0 25 25 25 0 26 26 26 0 27 27 27 0 28 28 28 0 29 29 29 0 28 28 28 0 27 27 27 0 28 28 28 0 29 29 29 0 30 30 30 0 31 30 31 0 30 30 30 0 29 29 29 0 30 30 30 0 31 30 31 0 26 26 26 0 32 32 32 0 26 26 26 0 31 30 31 0 26 26 26 0 32 32 32 0 33 33 33 0 31 30 31 0 33 33 33 0 32 32 32 0 33 33 33 0 31 30 31 0 34 34 34 0</p>
+				</polylist>
+				<polylist material="mat_head-material" count="8">
+					<input semantic="VERTEX" source="#luigi_head_model-mesh-vertices" offset="0" />
+					<input semantic="NORMAL" source="#luigi_head_model-mesh-normals" offset="1" />
+					<input semantic="TEXCOORD" source="#luigi_head_model-mesh-map-0" offset="2" set="0" />
+					<input semantic="COLOR" source="#luigi_head_model-mesh-colors" offset="3" />
+					<vcount>3 3 3 3 3 3 3 3</vcount>
+					<p>27 27 27 0 35 35 35 0 29 29 29 0 36 36 36 0 29 29 29 0 35 35 35 0 29 29 29 0 36 36 36 0 37 36 37 0 38 38 38 0 37 36 37 0 36 36 36 0 37 36 37 0 38 38 38 0 39 39 39 0 40 40 40 0 39 39 39 0 38 38 38 0 39 39 39 0 40 40 40 0 37 36 37 0 41 41 41 0 37 36 37 0 40 40 40 0</p>
+				</polylist>
+				<polylist material="mat_head-material" count="7">
+					<input semantic="VERTEX" source="#luigi_head_model-mesh-vertices" offset="0" />
+					<input semantic="NORMAL" source="#luigi_head_model-mesh-normals" offset="1" />
+					<input semantic="TEXCOORD" source="#luigi_head_model-mesh-map-0" offset="2" set="0" />
+					<input semantic="COLOR" source="#luigi_head_model-mesh-colors" offset="3" />
+					<vcount>3 3 3 3 3 3 3</vcount>
+					<p>15 15 42 0 21 21 43 0 44 44 44 0 45 45 45 0 44 44 44 0 21 21 43 0 44 44 44 0 45 45 45 0 46 46 46 0 47 47 47 0 46 46 46 0 45 45 45 0 46 46 46 0 47 47 47 0 48 48 48 0 19 19 49 0 48 48 48 0 47 47 47 0 48 48 48 0 19 19 49 0 23 23 50 0</p>
+				</polylist>
+				<polylist material="mat_head-material" count="7">
+					<input semantic="VERTEX" source="#luigi_head_model-mesh-vertices" offset="0" />
+					<input semantic="NORMAL" source="#luigi_head_model-mesh-normals" offset="1" />
+					<input semantic="TEXCOORD" source="#luigi_head_model-mesh-map-0" offset="2" set="0" />
+					<input semantic="COLOR" source="#luigi_head_model-mesh-colors" offset="3" />
+					<vcount>3 3 3 3 3 3 3</vcount>
+					<p>51 51 51 0 52 52 52 0 53 53 53 0 54 54 54 0 53 53 53 0 52 52 52 0 53 53 53 0 54 54 54 0 55 55 55 0 56 56 56 0 55 55 55 0 54 54 54 0 55 55 55 0 56 56 56 0 57 57 57 0 58 58 58 0 57 57 57 0 56 56 56 0 57 57 57 0 58 58 58 0 59 59 59 0</p>
+				</polylist>
+				<polylist material="mat_head-material" count="7">
+					<input semantic="VERTEX" source="#luigi_head_model-mesh-vertices" offset="0" />
+					<input semantic="NORMAL" source="#luigi_head_model-mesh-normals" offset="1" />
+					<input semantic="TEXCOORD" source="#luigi_head_model-mesh-map-0" offset="2" set="0" />
+					<input semantic="COLOR" source="#luigi_head_model-mesh-colors" offset="3" />
+					<vcount>3 3 3 3 3 3 3</vcount>
+					<p>52 52 60 0 61 61 61 0 54 54 62 0 63 9 63 0 54 54 62 0 61 61 61 0 54 54 62 0 63 9 63 0 56 56 64 0 65 65 65 0 56 56 64 0 63 9 63 0 56 56 64 0 65 65 65 0 66 66 66 0 67 67 67 0 66 66 66 0 65 65 65 0 66 66 66 0 67 67 67 0 25 29 68 0</p>
+				</polylist>
+				<polylist material="mat_head-material" count="6">
+					<input semantic="VERTEX" source="#luigi_head_model-mesh-vertices" offset="0" />
+					<input semantic="NORMAL" source="#luigi_head_model-mesh-normals" offset="1" />
+					<input semantic="TEXCOORD" source="#luigi_head_model-mesh-map-0" offset="2" set="0" />
+					<input semantic="COLOR" source="#luigi_head_model-mesh-colors" offset="3" />
+					<vcount>3 3 3 3 3 3</vcount>
+					<p>41 41 69 0 70 70 70 0 37 36 71 0 72 72 72 0 37 36 71 0 70 70 70 0 37 36 71 0 72 72 72 0 29 29 73 0 74 74 74 0 29 29 73 0 72 72 72 0 29 29 73 0 74 74 74 0 31 30 75 0 76 76 76 0 31 30 75 0 74 74 74 0</p>
+				</polylist>
+				<polylist material="mat_head-material" count="6">
+					<input semantic="VERTEX" source="#luigi_head_model-mesh-vertices" offset="0" />
+					<input semantic="NORMAL" source="#luigi_head_model-mesh-normals" offset="1" />
+					<input semantic="TEXCOORD" source="#luigi_head_model-mesh-map-0" offset="2" set="0" />
+					<input semantic="COLOR" source="#luigi_head_model-mesh-colors" offset="3" />
+					<vcount>3 3 3 3 3 3</vcount>
+					<p>77 77 77 0 78 78 78 0 79 79 79 0 80 80 80 0 79 79 79 0 78 78 78 0 79 79 79 0 80 80 80 0 12 12 78 0 82 82 79 0 12 12 78 0 80 80 80 0 12 12 78 0 82 82 79 0 18 18 77 0 17 17 84 0 18 18 77 0 82 82 79 0</p>
+				</polylist>
+				<polylist material="mat_head-material" count="5">
+					<input semantic="VERTEX" source="#luigi_head_model-mesh-vertices" offset="0" />
+					<input semantic="NORMAL" source="#luigi_head_model-mesh-normals" offset="1" />
+					<input semantic="TEXCOORD" source="#luigi_head_model-mesh-map-0" offset="2" set="0" />
+					<input semantic="COLOR" source="#luigi_head_model-mesh-colors" offset="3" />
+					<vcount>3 3 3 3 3</vcount>
+					<p>56 56 64 0 66 66 66 0 58 58 85 0 86 86 86 0 58 58 85 0 66 66 66 0 58 58 85 0 86 86 86 0 87 87 66 0 25 29 68 0 87 87 66 0 86 86 86 0 87 87 66 0 25 29 68 0 24 88 67 0</p>
+				</polylist>
+				<polylist material="mat_head-material" count="5">
+					<input semantic="VERTEX" source="#luigi_head_model-mesh-vertices" offset="0" />
+					<input semantic="NORMAL" source="#luigi_head_model-mesh-normals" offset="1" />
+					<input semantic="TEXCOORD" source="#luigi_head_model-mesh-map-0" offset="2" set="0" />
+					<input semantic="COLOR" source="#luigi_head_model-mesh-colors" offset="3" />
+					<vcount>3 3 3 3 3</vcount>
+					<p>89 89 89 0 51 51 51 0 90 90 90 0 53 53 53 0 90 90 90 0 51 51 51 0 90 90 90 0 53 53 53 0 91 91 91 0 55 55 55 0 91 91 91 0 53 53 53 0 91 91 91 0 55 55 55 0 57 57 57 0</p>
+				</polylist>
+				<polylist material="mat_head-material" count="4">
+					<input semantic="VERTEX" source="#luigi_head_model-mesh-vertices" offset="0" />
+					<input semantic="NORMAL" source="#luigi_head_model-mesh-normals" offset="1" />
+					<input semantic="TEXCOORD" source="#luigi_head_model-mesh-map-0" offset="2" set="0" />
+					<input semantic="COLOR" source="#luigi_head_model-mesh-colors" offset="3" />
+					<vcount>3 3 3 3</vcount>
+					<p>92 76 92 0 93 93 93 0 94 94 94 0 95 95 95 0 94 94 94 0 93 93 93 0 94 94 94 0 95 95 95 0 24 24 96 0 97 97 97 0 24 24 96 0 95 95 95 0</p>
+				</polylist>
+				<polylist material="mat_head-material" count="4">
+					<input semantic="VERTEX" source="#luigi_head_model-mesh-vertices" offset="0" />
+					<input semantic="NORMAL" source="#luigi_head_model-mesh-normals" offset="1" />
+					<input semantic="TEXCOORD" source="#luigi_head_model-mesh-map-0" offset="2" set="0" />
+					<input semantic="COLOR" source="#luigi_head_model-mesh-colors" offset="3" />
+					<vcount>3 3 3 3</vcount>
+					<p>77 98 98 0 61 61 99 0 78 100 100 0 101 101 101 0 78 100 100 0 61 61 99 0 78 100 100 0 101 101 101 0 102 97 102 0 51 51 103 0 102 97 102 0 101 101 101 0</p>
+				</polylist>
+				<polylist material="mat_head-material" count="4">
+					<input semantic="VERTEX" source="#luigi_head_model-mesh-vertices" offset="0" />
+					<input semantic="NORMAL" source="#luigi_head_model-mesh-normals" offset="1" />
+					<input semantic="TEXCOORD" source="#luigi_head_model-mesh-map-0" offset="2" set="0" />
+					<input semantic="COLOR" source="#luigi_head_model-mesh-colors" offset="3" />
+					<vcount>3 3 3 3</vcount>
+					<p>11 11 104 0 22 22 105 0 9 9 106 0 107 107 107 0 9 9 106 0 22 22 105 0 9 9 106 0 107 107 107 0 108 8 108 0 109 70 109 0 108 8 108 0 107 107 107 0</p>
+				</polylist>
+				<polylist material="mat_head-material" count="4">
+					<input semantic="VERTEX" source="#luigi_head_model-mesh-vertices" offset="0" />
+					<input semantic="NORMAL" source="#luigi_head_model-mesh-normals" offset="1" />
+					<input semantic="TEXCOORD" source="#luigi_head_model-mesh-map-0" offset="2" set="0" />
+					<input semantic="COLOR" source="#luigi_head_model-mesh-colors" offset="3" />
+					<vcount>3 3 3 3</vcount>
+					<p>110 110 95 0 111 111 93 0 112 112 94 0 109 70 92 0 112 112 94 0 111 111 93 0 112 112 94 0 109 70 92 0 41 41 114 0 70 70 115 0 41 41 114 0 109 70 92 0</p>
+				</polylist>
+				<polylist material="mat_head-material" count="4">
+					<input semantic="VERTEX" source="#luigi_head_model-mesh-vertices" offset="0" />
+					<input semantic="NORMAL" source="#luigi_head_model-mesh-normals" offset="1" />
+					<input semantic="TEXCOORD" source="#luigi_head_model-mesh-map-0" offset="2" set="0" />
+					<input semantic="COLOR" source="#luigi_head_model-mesh-colors" offset="3" />
+					<vcount>3 3 3 3</vcount>
+					<p>116 116 116 0 117 13 117 0 118 118 118 0 119 4 119 0 118 118 118 0 117 13 117 0 118 118 118 0 119 4 119 0 120 120 120 0 121 121 121 0 120 120 120 0 119 4 119 0</p>
+				</polylist>
+				<polylist material="mat_head-material" count="4">
+					<input semantic="VERTEX" source="#luigi_head_model-mesh-vertices" offset="0" />
+					<input semantic="NORMAL" source="#luigi_head_model-mesh-normals" offset="1" />
+					<input semantic="TEXCOORD" source="#luigi_head_model-mesh-map-0" offset="2" set="0" />
+					<input semantic="COLOR" source="#luigi_head_model-mesh-colors" offset="3" />
+					<vcount>3 3 3 3</vcount>
+					<p>121 121 121 0 119 4 119 0 122 122 122 0 123 123 123 0 122 122 122 0 119 4 119 0 122 122 122 0 123 123 123 0 124 124 124 0 125 17 125 0 124 124 124 0 123 123 123 0</p>
+				</polylist>
+				<polylist material="mat_head-material" count="4">
+					<input semantic="VERTEX" source="#luigi_head_model-mesh-vertices" offset="0" />
+					<input semantic="NORMAL" source="#luigi_head_model-mesh-normals" offset="1" />
+					<input semantic="TEXCOORD" source="#luigi_head_model-mesh-map-0" offset="2" set="0" />
+					<input semantic="COLOR" source="#luigi_head_model-mesh-colors" offset="3" />
+					<vcount>3 3 3 3</vcount>
+					<p>57 57 57 0 59 59 59 0 91 91 91 0 126 126 126 0 91 91 91 0 59 59 59 0 91 91 91 0 126 126 126 0 90 90 90 0 89 89 89 0 90 90 90 0 126 126 126 0</p>
+				</polylist>
+				<polylist material="mat_head-material" count="4">
+					<input semantic="VERTEX" source="#luigi_head_model-mesh-vertices" offset="0" />
+					<input semantic="NORMAL" source="#luigi_head_model-mesh-normals" offset="1" />
+					<input semantic="TEXCOORD" source="#luigi_head_model-mesh-map-0" offset="2" set="0" />
+					<input semantic="COLOR" source="#luigi_head_model-mesh-colors" offset="3" />
+					<vcount>3 3 3 3</vcount>
+					<p>89 89 60 0 126 126 62 0 102 97 61 0 130 17 63 0 102 97 61 0 126 126 62 0 102 97 61 0 130 17 63 0 131 131 131 0 17 132 132 0 131 131 131 0 130 17 63 0</p>
+				</polylist>
+				<polylist material="mat_head-material" count="4">
+					<input semantic="VERTEX" source="#luigi_head_model-mesh-vertices" offset="0" />
+					<input semantic="NORMAL" source="#luigi_head_model-mesh-normals" offset="1" />
+					<input semantic="TEXCOORD" source="#luigi_head_model-mesh-map-0" offset="2" set="0" />
+					<input semantic="COLOR" source="#luigi_head_model-mesh-colors" offset="3" />
+					<vcount>3 3 3 3</vcount>
+					<p>48 48 133 0 134 134 134 0 46 46 135 0 136 136 136 0 46 46 135 0 134 134 134 0 46 46 135 0 136 136 136 0 44 44 137 0 15 15 138 0 44 44 137 0 136 136 136 0</p>
+				</polylist>
+				<polylist material="mat_head-material" count="4">
+					<input semantic="VERTEX" source="#luigi_head_model-mesh-vertices" offset="0" />
+					<input semantic="NORMAL" source="#luigi_head_model-mesh-normals" offset="1" />
+					<input semantic="TEXCOORD" source="#luigi_head_model-mesh-map-0" offset="2" set="0" />
+					<input semantic="COLOR" source="#luigi_head_model-mesh-colors" offset="3" />
+					<vcount>3 3 3 3</vcount>
+					<p>15 15 138 0 136 136 136 0 16 16 139 0 134 134 134 0 16 16 139 0 136 136 136 0 16 16 139 0 134 134 134 0 23 23 140 0 48 48 133 0 23 23 140 0 134 134 134 0</p>
+				</polylist>
+				<polylist material="mat_head-material" count="4">
+					<input semantic="VERTEX" source="#luigi_head_model-mesh-vertices" offset="0" />
+					<input semantic="NORMAL" source="#luigi_head_model-mesh-normals" offset="1" />
+					<input semantic="TEXCOORD" source="#luigi_head_model-mesh-map-0" offset="2" set="0" />
+					<input semantic="COLOR" source="#luigi_head_model-mesh-colors" offset="3" />
+					<vcount>3 3 3 3</vcount>
+					<p>141 141 141 0 92 76 92 0 1 1 142 0 76 76 115 0 1 1 142 0 92 76 92 0 1 1 142 0 76 76 115 0 3 3 144 0 145 16 145 0 3 3 144 0 76 76 115 0</p>
+				</polylist>
+				<polylist material="mat_head-material" count="4">
+					<input semantic="VERTEX" source="#luigi_head_model-mesh-vertices" offset="0" />
+					<input semantic="NORMAL" source="#luigi_head_model-mesh-normals" offset="1" />
+					<input semantic="TEXCOORD" source="#luigi_head_model-mesh-map-0" offset="2" set="0" />
+					<input semantic="COLOR" source="#luigi_head_model-mesh-colors" offset="3" />
+					<vcount>3 3 3 3</vcount>
+					<p>22 22 146 0 8 8 147 0 107 107 141 0 7 7 142 0 107 107 141 0 8 8 147 0 107 107 141 0 7 7 142 0 109 70 92 0 70 70 115 0 109 70 92 0 7 7 142 0</p>
+				</polylist>
+				<polylist material="mat_head-material" count="3">
+					<input semantic="VERTEX" source="#luigi_head_model-mesh-vertices" offset="0" />
+					<input semantic="NORMAL" source="#luigi_head_model-mesh-normals" offset="1" />
+					<input semantic="TEXCOORD" source="#luigi_head_model-mesh-map-0" offset="2" set="0" />
+					<input semantic="COLOR" source="#luigi_head_model-mesh-colors" offset="3" />
+					<vcount>3 3 3</vcount>
+					<p>119 4 119 0 117 13 117 0 123 123 123 0 150 150 150 0 123 123 123 0 117 13 117 0 123 123 123 0 150 150 150 0 125 17 125 0</p>
+				</polylist>
+				<polylist material="mat_head-material" count="3">
+					<input semantic="VERTEX" source="#luigi_head_model-mesh-vertices" offset="0" />
+					<input semantic="NORMAL" source="#luigi_head_model-mesh-normals" offset="1" />
+					<input semantic="TEXCOORD" source="#luigi_head_model-mesh-map-0" offset="2" set="0" />
+					<input semantic="COLOR" source="#luigi_head_model-mesh-colors" offset="3" />
+					<vcount>3 3 3</vcount>
+					<p>120 120 120 0 151 151 151 0 118 118 118 0 152 9 152 0 118 118 118 0 151 151 151 0 118 118 118 0 152 9 152 0 116 116 116 0</p>
+				</polylist>
+				<polylist material="mat_head-material" count="3">
+					<input semantic="VERTEX" source="#luigi_head_model-mesh-vertices" offset="0" />
+					<input semantic="NORMAL" source="#luigi_head_model-mesh-normals" offset="1" />
+					<input semantic="TEXCOORD" source="#luigi_head_model-mesh-map-0" offset="2" set="0" />
+					<input semantic="COLOR" source="#luigi_head_model-mesh-colors" offset="3" />
+					<vcount>3 3 3</vcount>
+					<p>12 12 78 0 10 10 77 0 79 79 79 0 9 9 84 0 79 79 79 0 10 10 77 0 79 79 79 0 9 9 84 0 77 77 77 0</p>
+				</polylist>
+				<polylist material="mat_head-material" count="3">
+					<input semantic="VERTEX" source="#luigi_head_model-mesh-vertices" offset="0" />
+					<input semantic="NORMAL" source="#luigi_head_model-mesh-normals" offset="1" />
+					<input semantic="TEXCOORD" source="#luigi_head_model-mesh-map-0" offset="2" set="0" />
+					<input semantic="COLOR" source="#luigi_head_model-mesh-colors" offset="3" />
+					<vcount>3 3 3</vcount>
+					<p>80 80 80 0 78 78 78 0 82 82 79 0 131 155 77 0 82 82 79 0 78 78 78 0 82 82 79 0 131 155 77 0 17 17 84 0</p>
+				</polylist>
+				<polylist material="mat_head-material" count="3">
+					<input semantic="VERTEX" source="#luigi_head_model-mesh-vertices" offset="0" />
+					<input semantic="NORMAL" source="#luigi_head_model-mesh-normals" offset="1" />
+					<input semantic="TEXCOORD" source="#luigi_head_model-mesh-map-0" offset="2" set="0" />
+					<input semantic="COLOR" source="#luigi_head_model-mesh-colors" offset="3" />
+					<vcount>3 3 3</vcount>
+					<p>109 70 156 0 111 111 157 0 108 8 158 0 110 110 159 0 108 8 158 0 111 111 157 0 108 8 158 0 110 110 159 0 65 61 160 0</p>
+				</polylist>
+				<polylist material="mat_head-material" count="3">
+					<input semantic="VERTEX" source="#luigi_head_model-mesh-vertices" offset="0" />
+					<input semantic="NORMAL" source="#luigi_head_model-mesh-normals" offset="1" />
+					<input semantic="TEXCOORD" source="#luigi_head_model-mesh-map-0" offset="2" set="0" />
+					<input semantic="COLOR" source="#luigi_head_model-mesh-colors" offset="3" />
+					<vcount>3 3 3</vcount>
+					<p>13 13 161 0 19 19 49 0 162 162 162 0 47 47 47 0 162 162 162 0 19 19 49 0 162 162 162 0 47 47 47 0 45 45 45 0</p>
+				</polylist>
+				<polylist material="mat_head-material" count="3">
+					<input semantic="VERTEX" source="#luigi_head_model-mesh-vertices" offset="0" />
+					<input semantic="NORMAL" source="#luigi_head_model-mesh-normals" offset="1" />
+					<input semantic="TEXCOORD" source="#luigi_head_model-mesh-map-0" offset="2" set="0" />
+					<input semantic="COLOR" source="#luigi_head_model-mesh-colors" offset="3" />
+					<vcount>3 3 3</vcount>
+					<p>36 36 36 0 35 35 35 0 38 38 38 0 27 27 27 0 38 38 38 0 35 35 35 0 38 38 38 0 27 27 27 0 25 25 25 0</p>
+				</polylist>
+				<polylist material="mat_head-material" count="3">
+					<input semantic="VERTEX" source="#luigi_head_model-mesh-vertices" offset="0" />
+					<input semantic="NORMAL" source="#luigi_head_model-mesh-normals" offset="1" />
+					<input semantic="TEXCOORD" source="#luigi_head_model-mesh-map-0" offset="2" set="0" />
+					<input semantic="COLOR" source="#luigi_head_model-mesh-colors" offset="3" />
+					<vcount>3 3 3</vcount>
+					<p>61 61 61 0 77 98 131 0 63 9 63 0 9 164 132 0 63 9 63 0 77 98 131 0 63 9 63 0 9 164 132 0 165 165 165 0</p>
+				</polylist>
+				<polylist material="mat_head-material" count="3">
+					<input semantic="VERTEX" source="#luigi_head_model-mesh-vertices" offset="0" />
+					<input semantic="NORMAL" source="#luigi_head_model-mesh-normals" offset="1" />
+					<input semantic="TEXCOORD" source="#luigi_head_model-mesh-map-0" offset="2" set="0" />
+					<input semantic="COLOR" source="#luigi_head_model-mesh-colors" offset="3" />
+					<vcount>3 3 3</vcount>
+					<p>25 25 25 0 67 166 166 0 38 38 38 0 112 112 167 0 38 38 38 0 67 166 166 0 38 38 38 0 112 112 167 0 41 41 41 0</p>
+				</polylist>
+				<polylist material="mat_head-material" count="3">
+					<input semantic="VERTEX" source="#luigi_head_model-mesh-vertices" offset="0" />
+					<input semantic="NORMAL" source="#luigi_head_model-mesh-normals" offset="1" />
+					<input semantic="TEXCOORD" source="#luigi_head_model-mesh-map-0" offset="2" set="0" />
+					<input semantic="COLOR" source="#luigi_head_model-mesh-colors" offset="3" />
+					<vcount>3 3 3</vcount>
+					<p>126 126 62 0 59 59 64 0 130 17 63 0 97 169 65 0 130 17 63 0 59 59 64 0 130 17 63 0 97 169 65 0 170 170 165 0</p>
+				</polylist>
+				<polylist material="mat_head-material" count="2">
+					<input semantic="VERTEX" source="#luigi_head_model-mesh-vertices" offset="0" />
+					<input semantic="NORMAL" source="#luigi_head_model-mesh-normals" offset="1" />
+					<input semantic="TEXCOORD" source="#luigi_head_model-mesh-map-0" offset="2" set="0" />
+					<input semantic="COLOR" source="#luigi_head_model-mesh-colors" offset="3" />
+					<vcount>3 3</vcount>
+					<p>74 74 171 0 172 4 172 0 76 76 115 0 145 16 145 0 76 76 115 0 172 4 172 0</p>
+				</polylist>
+				<polylist material="mat_head-material" count="2">
+					<input semantic="VERTEX" source="#luigi_head_model-mesh-vertices" offset="0" />
+					<input semantic="NORMAL" source="#luigi_head_model-mesh-normals" offset="1" />
+					<input semantic="TEXCOORD" source="#luigi_head_model-mesh-map-0" offset="2" set="0" />
+					<input semantic="COLOR" source="#luigi_head_model-mesh-colors" offset="3" />
+					<vcount>3 3</vcount>
+					<p>72 72 171 0 70 70 115 0 172 4 172 0 145 16 145 0 172 4 172 0 70 70 115 0</p>
+				</polylist>
+				<polylist material="mat_head-material" count="2">
+					<input semantic="VERTEX" source="#luigi_head_model-mesh-vertices" offset="0" />
+					<input semantic="NORMAL" source="#luigi_head_model-mesh-normals" offset="1" />
+					<input semantic="TEXCOORD" source="#luigi_head_model-mesh-map-0" offset="2" set="0" />
+					<input semantic="COLOR" source="#luigi_head_model-mesh-colors" offset="3" />
+					<vcount>3 3</vcount>
+					<p>145 16 145 0 70 70 115 0 5 5 144 0 7 7 142 0 5 5 144 0 70 70 115 0</p>
+				</polylist>
+				<polylist material="mat_head-material" count="2">
+					<input semantic="VERTEX" source="#luigi_head_model-mesh-vertices" offset="0" />
+					<input semantic="NORMAL" source="#luigi_head_model-mesh-normals" offset="1" />
+					<input semantic="TEXCOORD" source="#luigi_head_model-mesh-map-0" offset="2" set="0" />
+					<input semantic="COLOR" source="#luigi_head_model-mesh-colors" offset="3" />
+					<vcount>3 3</vcount>
+					<p>21 21 175 0 15 15 175 0 22 22 175 0 8 8 175 0 22 22 175 0 15 15 175 0</p>
+				</polylist>
+				<polylist material="mat_head-material" count="2">
+					<input semantic="VERTEX" source="#luigi_head_model-mesh-vertices" offset="0" />
+					<input semantic="NORMAL" source="#luigi_head_model-mesh-normals" offset="1" />
+					<input semantic="TEXCOORD" source="#luigi_head_model-mesh-map-0" offset="2" set="0" />
+					<input semantic="COLOR" source="#luigi_head_model-mesh-colors" offset="3" />
+					<vcount>3 3</vcount>
+					<p>92 76 92 0 34 34 114 0 76 76 115 0 31 30 180 0 76 76 115 0 34 34 114 0</p>
+				</polylist>
+				<polylist material="mat_head-material" count="2">
+					<input semantic="VERTEX" source="#luigi_head_model-mesh-vertices" offset="0" />
+					<input semantic="NORMAL" source="#luigi_head_model-mesh-normals" offset="1" />
+					<input semantic="TEXCOORD" source="#luigi_head_model-mesh-map-0" offset="2" set="0" />
+					<input semantic="COLOR" source="#luigi_head_model-mesh-colors" offset="3" />
+					<vcount>3 3</vcount>
+					<p>9 9 106 0 108 8 108 0 165 181 181 0 65 61 182 0 165 181 181 0 108 8 108 0</p>
+				</polylist>
+				<polylist material="mat_head-material" count="2">
+					<input semantic="VERTEX" source="#luigi_head_model-mesh-vertices" offset="0" />
+					<input semantic="NORMAL" source="#luigi_head_model-mesh-normals" offset="1" />
+					<input semantic="TEXCOORD" source="#luigi_head_model-mesh-map-0" offset="2" set="0" />
+					<input semantic="COLOR" source="#luigi_head_model-mesh-colors" offset="3" />
+					<vcount>3 3</vcount>
+					<p>92 76 156 0 184 0 158 0 93 93 157 0 95 95 159 0 93 93 157 0 184 0 158 0</p>
+				</polylist>
+				<polylist material="mat_head-material" count="2">
+					<input semantic="VERTEX" source="#luigi_head_model-mesh-vertices" offset="0" />
+					<input semantic="NORMAL" source="#luigi_head_model-mesh-normals" offset="1" />
+					<input semantic="TEXCOORD" source="#luigi_head_model-mesh-map-0" offset="2" set="0" />
+					<input semantic="COLOR" source="#luigi_head_model-mesh-colors" offset="3" />
+					<vcount>3 3</vcount>
+					<p>141 141 107 0 20 20 105 0 17 17 106 0 14 14 104 0 17 17 106 0 20 20 105 0</p>
+				</polylist>
+				<polylist material="mat_head-material" count="2">
+					<input semantic="VERTEX" source="#luigi_head_model-mesh-vertices" offset="0" />
+					<input semantic="NORMAL" source="#luigi_head_model-mesh-normals" offset="1" />
+					<input semantic="TEXCOORD" source="#luigi_head_model-mesh-map-0" offset="2" set="0" />
+					<input semantic="COLOR" source="#luigi_head_model-mesh-colors" offset="3" />
+					<vcount>3 3</vcount>
+					<p>92 76 109 0 141 141 107 0 184 0 108 0 17 17 106 0 184 0 108 0 141 141 107 0</p>
+				</polylist>
+				<polylist material="mat_head-material" count="2">
+					<input semantic="VERTEX" source="#luigi_head_model-mesh-vertices" offset="0" />
+					<input semantic="NORMAL" source="#luigi_head_model-mesh-normals" offset="1" />
+					<input semantic="TEXCOORD" source="#luigi_head_model-mesh-map-0" offset="2" set="0" />
+					<input semantic="COLOR" source="#luigi_head_model-mesh-colors" offset="3" />
+					<vcount>3 3</vcount>
+					<p>65 61 97 0 110 110 95 0 67 166 96 0 112 112 94 0 67 166 96 0 110 110 95 0</p>
+				</polylist>
+				<polylist material="mat_head-material" count="2">
+					<input semantic="VERTEX" source="#luigi_head_model-mesh-vertices" offset="0" />
+					<input semantic="NORMAL" source="#luigi_head_model-mesh-normals" offset="1" />
+					<input semantic="TEXCOORD" source="#luigi_head_model-mesh-map-0" offset="2" set="0" />
+					<input semantic="COLOR" source="#luigi_head_model-mesh-colors" offset="3" />
+					<vcount>3 3</vcount>
+					<p>20 20 146 0 141 141 141 0 0 0 147 0 1 1 142 0 0 0 147 0 141 141 141 0</p>
+				</polylist>
+				<polylist material="mat_head-material" count="2">
+					<input semantic="VERTEX" source="#luigi_head_model-mesh-vertices" offset="0" />
+					<input semantic="NORMAL" source="#luigi_head_model-mesh-normals" offset="1" />
+					<input semantic="TEXCOORD" source="#luigi_head_model-mesh-map-0" offset="2" set="0" />
+					<input semantic="COLOR" source="#luigi_head_model-mesh-colors" offset="3" />
+					<vcount>3 3</vcount>
+					<p>97 97 182 0 184 0 108 0 170 198 181 0 17 17 106 0 170 198 181 0 184 0 108 0</p>
+				</polylist>
+				<polylist material="mat_head-material" count="2">
+					<input semantic="VERTEX" source="#luigi_head_model-mesh-vertices" offset="0" />
+					<input semantic="NORMAL" source="#luigi_head_model-mesh-normals" offset="1" />
+					<input semantic="TEXCOORD" source="#luigi_head_model-mesh-map-0" offset="2" set="0" />
+					<input semantic="COLOR" source="#luigi_head_model-mesh-colors" offset="3" />
+					<vcount>3 3</vcount>
+					<p>19 19 175 0 20 20 175 0 23 23 175 0 0 0 175 0 23 23 175 0 20 20 175 0</p>
+				</polylist>
+				<polylist material="mat_head-material" count="2">
+					<input semantic="VERTEX" source="#luigi_head_model-mesh-vertices" offset="0" />
+					<input semantic="NORMAL" source="#luigi_head_model-mesh-normals" offset="1" />
+					<input semantic="TEXCOORD" source="#luigi_head_model-mesh-map-0" offset="2" set="0" />
+					<input semantic="COLOR" source="#luigi_head_model-mesh-colors" offset="3" />
+					<vcount>3 3</vcount>
+					<p>58 58 85 0 87 87 66 0 59 59 64 0 97 169 65 0 59 59 64 0 87 87 66 0</p>
+				</polylist>
+				<polylist material="mat_head-material" count="2">
+					<input semantic="VERTEX" source="#luigi_head_model-mesh-vertices" offset="0" />
+					<input semantic="NORMAL" source="#luigi_head_model-mesh-normals" offset="1" />
+					<input semantic="TEXCOORD" source="#luigi_head_model-mesh-map-0" offset="2" set="0" />
+					<input semantic="COLOR" source="#luigi_head_model-mesh-colors" offset="3" />
+					<vcount>3 3</vcount>
+					<p>13 13 161 0 162 162 162 0 21 21 43 0 45 45 45 0 21 21 43 0 162 162 162 0</p>
+				</polylist>
+				<polylist material="mat_head-material" count="2">
+					<input semantic="VERTEX" source="#luigi_head_model-mesh-vertices" offset="0" />
+					<input semantic="NORMAL" source="#luigi_head_model-mesh-normals" offset="1" />
+					<input semantic="TEXCOORD" source="#luigi_head_model-mesh-map-0" offset="2" set="0" />
+					<input semantic="COLOR" source="#luigi_head_model-mesh-colors" offset="3" />
+					<vcount>3 3</vcount>
+					<p>24 24 24 0 26 26 26 0 94 94 203 0 34 34 34 0 94 94 203 0 26 26 26 0</p>
+				</polylist>
+				<polylist material="mat_head-material" count="14">
+					<input semantic="VERTEX" source="#luigi_head_model-mesh-vertices" offset="0" />
+					<input semantic="NORMAL" source="#luigi_head_model-mesh-normals" offset="1" />
+					<input semantic="TEXCOORD" source="#luigi_head_model-mesh-map-0" offset="2" set="0" />
+					<input semantic="COLOR" source="#luigi_head_model-mesh-colors" offset="3" />
+					<vcount>3 3 3 3 3 3 3 3 3 3 3 3 3 3</vcount>
+					<p>87 87 66 0 24 88 67 0 97 169 65 0 38 38 38 0 41 41 41 0 40 40 40 0 52 52 204 0 51 51 205 0 61 61 206 0 25 29 68 0 86 86 86 0 66 66 66 0 145 16 207 0 5 5 208 0 3 3 209 0 34 34 34 0 26 26 26 0 33 33 33 0 28 28 28 0 30 30 30 0 26 26 26 0 94 94 175 0 34 34 175 0 92 76 175 0 102 97 102 0 131 131 213 0 78 100 100 0 89 89 204 0 102 97 206 0 51 51 205 0 97 97 160 0 95 95 159 0 184 0 158 0 170 170 165 0 17 132 132 0 130 17 63 0 61 61 99 0 51 51 103 0 101 101 101 0 165 165 165 0 65 65 65 0 63 9 63 0</p>
+				</polylist>
+			</mesh>
+		</geometry>
+	</library_geometries>
+	<library_controllers>
+		<controller id="luigi_head_model-skin" name="skinCluster_luigi_head_model">
+			<skin source="#luigi_head_model-mesh">
+				<bind_shape_matrix>1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1</bind_shape_matrix>
+				<source id="luigi_head_model-skin-joints">
+					<IDREF_array id="luigi_head_model-skin-joints-array" count="1">luigi_head_model</IDREF_array>
+					<technique_common>
+						<accessor source="#luigi_head_model-skin-joints-array" count="1" stride="1">
+							<param name="JOINT" type="Name" />
+						</accessor>
+					</technique_common>
+				</source>
+				<!--The inverse bind pose for a joint is given by the inverse bind pose of the parent joint (where present) multiplied by the inverse of the current joint's transformation matrix.-->
+				<source id="luigi_head_model-skin-bind_poses">
+					<float_array id="luigi_head_model-skin-bind_poses-array" count="16">1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1</float_array>
+					<technique_common>
+						<accessor source="#luigi_head_model-skin-bind_poses-array" count="1" stride="16">
+							<param name="TRANSFORM" type="float4x4" />
+						</accessor>
+					</technique_common>
+				</source>
+				<source id="luigi_head_model-skin-weights">
+					<!--The BMD format does not have any concept of 'weights', instead each vertex is assigned to one bone-->
+					<float_array id="luigi_head_model-skin-weights-array" count="1">1</float_array>
+					<technique_common>
+						<accessor source="#luigi_head_model-skin-weights-array" count="1" stride="1">
+							<param name="WEIGHT" type="float" />
+						</accessor>
+					</technique_common>
+				</source>
+				<joints>
+					<input semantic="JOINT" source="#luigi_head_model-skin-joints" />
+					<input semantic="INV_BIND_MATRIX" source="#luigi_head_model-skin-bind_poses" />
+				</joints>
+				<!--Each vertex will be assigned to only one bone with a weight of 1-->
+				<vertex_weights count="217">
+					<input semantic="JOINT" source="#luigi_head_model-skin-joints" offset="0" />
+					<input semantic="WEIGHT" source="#luigi_head_model-skin-weights" offset="1" />
+					<vcount>1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1</vcount>
+					<!--This list contains two values for each vertex, the first is the bone ID and the second is the index of the vertex weight '1' (0)-->
+					<v>0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0</v>
+				</vertex_weights>
+			</skin>
+		</controller>
+	</library_controllers>
+	<library_visual_scenes>
+		<visual_scene id="Scene" name="Scene">
+			<!--This lists each of the 'bones' in the BMD model, listing each bone's individual Scale, Rotation, Translation transformation in the reverse of the order in which they should be multiplied to form an SRT  matrix. This will then be multiplied recursively by the parents' transformations to get the final transformation for this joint.-->
+			<node id="luigi_head_model" name="luigi_head_model" sid="luigi_head_model" type="JOINT">
+				<translate sid="translate">0 0 0</translate>
+				<rotate sid="rotationZ">0 0 1 0</rotate>
+				<rotate sid="rotationY">0 1 0 0</rotate>
+				<rotate sid="rotationX">1 0 0 0</rotate>
+				<scale sid="scale">1 1 1</scale>
+			</node>
+			<node id="luigi_head_model-node" name="luigi_head_model-node" type="NODE">
+				<instance_controller url="#luigi_head_model-skin">
+					<skeleton>#luigi_head_model</skeleton>
+					<bind_material>
+						<technique_common>
+							<instance_material symbol="mat_eye-material" target="#mat_eye-material">
+								<bind_vertex_input semantic="UVMap" input_semantic="TEXCOORD" input_set="0" />
+							</instance_material>
+							<instance_material symbol="mat_head-material" target="#mat_head-material">
+								<bind_vertex_input semantic="UVMap" input_semantic="TEXCOORD" input_set="0" />
+							</instance_material>
+						</technique_common>
+					</bind_material>
+				</instance_controller>
+			</node>
+		</visual_scene>
+	</library_visual_scenes>
+	<scene>
+		<instance_visual_scene url="#Scene" />
+	</scene>
+</COLLADA>

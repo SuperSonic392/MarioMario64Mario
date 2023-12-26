@@ -1,0 +1,701 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--SM64DS Editor v2.3.5 2017-07-05-->
+<COLLADA version="1.4.1" xmlns="http://www.collada.org/2005/11/COLLADASchema">
+	<asset>
+		<contributor>
+			<author>Fiachra</author>
+			<authoring_tool>SM64DS Editor v2.3.5 2017-07-05</authoring_tool>
+		</contributor>
+		<created>2023-07-16T15:18:08</created>
+		<modified>2023-07-16T15:18:08</modified>
+		<unit name="meter" meter="1" />
+		<up_axis>Y_UP</up_axis>
+	</asset>
+	<library_images>
+		<image id="mario_eye_1-img" name="mario_eye_1-img">
+			<init_from>mario_eye_1.png</init_from>
+		</image>
+		<image id="mario_head-img" name="mario_head-img">
+			<init_from>mario_head.png</init_from>
+		</image>
+	</library_images>
+	<library_effects>
+		<effect id="mat_eye-effect">
+			<profile_COMMON>
+				<newparam sid="mario_eye_1-img-surface">
+					<surface type="2D">
+						<init_from>mario_eye_1-img</init_from>
+					</surface>
+				</newparam>
+				<newparam sid="mario_eye_1-img-sampler">
+					<sampler2D>
+						<source>mario_eye_1-img-surface</source>
+					</sampler2D>
+				</newparam>
+				<technique sid="common">
+					<phong>
+						<emission>
+							<color sid="emission">0 0 0 1.0</color>
+						</emission>
+						<ambient>
+							<color sid="ambient">0.5176471 0.5176471 0.5176471 1.0</color>
+						</ambient>
+						<diffuse>
+							<texture texture="mario_eye_1-img-sampler" texcoord="UVMap" />
+						</diffuse>
+						<specular>
+							<color sid="specular">0 0 0 1.0</color>
+						</specular>
+						<transparency>
+							<float sid="transparency">1</float>
+						</transparency>
+					</phong>
+				</technique>
+				<extra>
+					<technique profile="SM64DSe">
+						<lights>1 0 0 0</lights>
+						<environment_mapping>0</environment_mapping>
+						<double_sided>0</double_sided>
+						<tex_tiling>flip flip</tex_tiling>
+						<tex_scale>2 1</tex_scale>
+						<tex_rotate>0</tex_rotate>
+						<tex_translate>0 0</tex_translate>
+						<fog_enable>0</fog_enable>
+					</technique>
+				</extra>
+			</profile_COMMON>
+		</effect>
+		<effect id="mat_head-effect">
+			<profile_COMMON>
+				<newparam sid="mario_head-img-surface">
+					<surface type="2D">
+						<init_from>mario_head-img</init_from>
+					</surface>
+				</newparam>
+				<newparam sid="mario_head-img-sampler">
+					<sampler2D>
+						<source>mario_head-img-surface</source>
+					</sampler2D>
+				</newparam>
+				<technique sid="common">
+					<phong>
+						<emission>
+							<color sid="emission">0 0 0 1.0</color>
+						</emission>
+						<ambient>
+							<color sid="ambient">0.5176471 0.5176471 0.5176471 1.0</color>
+						</ambient>
+						<diffuse>
+							<texture texture="mario_head-img-sampler" texcoord="UVMap" />
+						</diffuse>
+						<specular>
+							<color sid="specular">0 0 0 1.0</color>
+						</specular>
+						<transparency>
+							<float sid="transparency">1</float>
+						</transparency>
+					</phong>
+				</technique>
+				<extra>
+					<technique profile="SM64DSe">
+						<lights>1 0 0 0</lights>
+						<environment_mapping>0</environment_mapping>
+						<double_sided>0</double_sided>
+						<tex_tiling>repeat repeat</tex_tiling>
+						<tex_scale>1 1</tex_scale>
+						<tex_rotate>0</tex_rotate>
+						<tex_translate>0 0</tex_translate>
+						<fog_enable>0</fog_enable>
+					</technique>
+				</extra>
+			</profile_COMMON>
+		</effect>
+	</library_effects>
+	<library_materials>
+		<material id="mat_eye-material" name="mat_eye">
+			<instance_effect url="#mat_eye-effect" />
+		</material>
+		<material id="mat_head-material" name="mat_head">
+			<instance_effect url="#mat_head-effect" />
+		</material>
+	</library_materials>
+	<library_geometries>
+		<geometry id="mario_head-mesh" name="mario_head-mesh">
+			<mesh>
+				<source id="mario_head-mesh-positions">
+					<float_array id="mario_head-mesh-positions-array" count="651">3.305176 -1.667236 0.612793 2.677979 -1.955811 1.995605 3.250732 -2.208496 0 2.60791 -3.325439 1.946777 2.989258 -4.209229 0 2.530762 -3.956299 1.689209 3.263184 -0.2373047 -1.172607 3.04541 0.6733398 -0.5893555 3.630615 -0.8540039 -0.6782227 3.630615 -0.8540039 0.6782227 3.263184 -0.2373047 1.172607 3.04541 0.6733398 0.5893555 3.305176 -1.667236 -0.612793 2.677979 -1.955811 -1.995605 2.60791 -3.325439 -1.946777 2.530762 -3.956299 -1.689209 3.262939 -6.790283 0 2.642822 -6.038086 1.942139 1.703857 -6.884277 1.682129 1.134277 -4.8479 3.22998 0.6911621 -5.73877 2.760986 -1.778076 -3.598145 3.018311 -2.363281 -4.489014 1.848389 -3.59668 -3.283447 0 -3.277588 -4.178467 0 -2.363281 -4.489014 -1.848389 0.1694336 -6.79248 -1.243652 0.1694336 -6.79248 1.243652 2.170654 -7.382568 0 -0.5161133 -0.07836914 1.547607 -1.979492 0.1081543 1.245361 -1.608398 -0.71875 1.386719 -2.283691 0.215332 0.4626465 -2.025146 -0.6662598 0 -0.7590332 0.2790527 0 -2.283691 0.215332 -0.4626465 -1.979492 0.1081543 -1.245361 -1.608398 -0.71875 -1.386719 -0.5161133 -0.07836914 -1.547607 -1.705322 -0.1186523 -1.917969 -1.22876 -0.3183594 -2.493408 -0.1035156 -1.041504 -2.364746 -0.4765625 -2.358887 -2.760498 3.630615 -0.8540039 0.6782227 3.305176 -1.667236 0.612793 4.853516 -1.526123 1.17627 4.957764 -2.453857 0.5939941 5.402588 -1.592773 0 4.957764 -2.453857 -0.5939941 4.853516 -1.526123 -1.17627 3.305176 -1.667236 -0.612793 3.630615 -0.8540039 -0.6782227 -2.520264 -1.847412 0 -0.4765625 -2.358887 2.760498 -0.1035156 -1.041504 2.364746 -1.22876 -0.3183594 2.493408 -1.705322 -0.1186523 1.917969 3.305176 -1.667236 -0.612793 2.677979 -1.955811 -1.995605 3.630615 -0.8540039 -0.6782227 2.977539 -1.086426 -1.883057 3.263184 -0.2373047 -1.172607 2.48877 -0.06811523 -1.97583 3.04541 0.6733398 -0.5893555 1.968506 1.002197 -0.4018555 1.968506 1.002197 0.4018555 3.04541 0.6733398 0.5893555 2.48877 -0.06811523 1.97583 3.263184 -0.2373047 1.172607 2.977539 -1.086426 1.883057 3.630615 -0.8540039 0.6782227 2.677979 -1.955811 1.995605 3.305176 -1.667236 0.612793 2.943115 -1.104492 2.042236 2.775391 -1.564453 2.19043 3.223633 -1.025391 1.700195 2.794922 -1.999512 2.028809 3.959473 -0.8132324 0.7832031 3.23877 -1.612305 1.333252 3.833252 -1.061523 0 1.439941 -0.03759766 -2.333252 -0.5161133 -0.07836914 -1.547607 1.968506 1.002197 -0.4018555 -0.7590332 0.2790527 0 1.968506 1.002197 0.4018555 -0.5161133 -0.07836914 1.547607 1.439941 -0.03759766 2.333252 2.642822 -6.038086 -1.942139 1.703857 -6.884277 -1.682129 1.134277 -4.8479 -3.22998 0.6911621 -5.73877 -2.760986 -1.778076 -3.598145 -3.018311 1.749268 -3.38916 2.350098 2.74292 -4.495605 1.879883 3.980225 -4.051758 2.226563 3.313232 -5.097656 0 5.104248 -4.601807 0 3.980225 -4.051758 -2.226563 1.816895 -1.204346 2.604248 1.439941 -0.03759766 2.333252 3.630615 -0.8540039 -0.6782227 3.630615 -0.8540039 0.6782227 4.856934 -0.6940918 -0.5881348 4.856934 -0.6940918 0.5881348 5.402588 -1.592773 0 4.853516 -1.526123 1.17627 -0.06152344 -2.967041 -3.390137 -0.4765625 -2.358887 -2.760498 -0.5554199 -2.246094 -3.963379 -0.1035156 -1.041504 -2.364746 -0.03076172 -0.8852539 -3.504883 0.5744629 -0.8210449 -2.708252 3.980225 -4.051758 2.226563 5.104248 -4.601807 0 2.989258 -4.209229 0 3.980225 -4.051758 -2.226563 2.530762 -3.956299 -1.689209 1.749268 -3.38916 -2.350098 3.223633 -1.025391 -1.700195 3.242188 -0.5947266 -1.496826 3.959473 -0.8132324 -0.7832031 3.476563 -0.5161133 -0.918457 3.607422 -0.3181152 -0.463623 3.23877 -1.612305 -1.333252 2.794922 -1.999512 -2.028809 1.816895 -1.204346 2.604248 0.5744629 -0.8210449 2.708252 -0.1035156 -1.041504 2.364746 2.74292 -4.495605 1.879883 1.749268 -3.38916 2.350098 1.070313 -3.831787 3.359619 0.550293 -2.8396 2.690918 -0.06152344 -2.967041 3.390137 -0.06152344 -2.967041 -3.390137 0.550293 -2.8396 -2.690918 1.070313 -3.831787 -3.359619 1.749268 -3.38916 -2.350098 2.74292 -4.495605 -1.879883 1.816895 -1.204346 -2.604248 0.550293 -2.8396 -2.690918 -0.06152344 -2.967041 -3.390137 0.5744629 -0.8210449 -2.708252 -0.5554199 -2.246094 -3.963379 -0.03076172 -0.8852539 -3.504883 1.749268 -3.38916 2.350098 2.60791 -3.325439 1.946777 1.627441 -2.06543 2.415527 2.677979 -1.955811 1.995605 1.816895 -1.204346 2.604248 0.5744629 -0.8210449 2.708252 0.550293 -2.8396 2.690918 1.070313 -3.831787 3.359619 -0.06152344 -2.967041 3.390137 -2.086182 -2.444092 2.067871 -3.066895 -2.180176 0 -2.086182 -2.444092 -2.067871 2.677979 -1.955811 -1.995605 2.60791 -3.325439 -1.946777 1.627441 -2.06543 -2.415527 1.749268 -3.38916 -2.350098 0.550293 -2.8396 -2.690918 3.250732 -2.208496 0 2.642822 -6.038086 -1.942139 2.74292 -4.495605 -1.879883 3.262939 -6.790283 0 3.313232 -5.097656 0 2.642822 -6.038086 -1.942139 1.070313 -3.831787 -3.359619 1.134277 -4.8479 -3.22998 1.439941 -0.03759766 -2.333252 1.816895 -1.204346 -2.604248 -0.03076172 -0.8852539 3.504883 -0.5554199 -2.246094 3.963379 -0.06152344 -2.967041 3.390137 -0.4765625 -2.358887 2.760498 1.070313 -3.831787 3.359619 2.642822 -6.038086 1.942139 1.134277 -4.8479 3.22998 3.242188 -0.5947266 1.496826 3.476563 -0.5161133 0.918457 3.607422 -0.3181152 0.463623 3.785645 -0.4313965 0 2.943115 -1.104492 -2.042236 2.775391 -1.564453 -2.19043 1.749268 -3.38916 2.350098 2.530762 -3.956299 1.689209 -2.520264 -1.847412 0 -2.086182 -2.444092 2.067871 -0.4765625 -2.358887 2.760498 0.550293 -2.8396 2.690918 0.5744629 -0.8210449 2.708252 -0.06152344 -2.967041 3.390137 -0.5554199 -2.246094 3.963379 1.749268 -3.38916 -2.350098 2.74292 -4.495605 -1.879883 2.642822 -6.038086 1.942139 2.74292 -4.495605 1.879883 4.853516 -1.526123 -1.17627 -0.06152344 -2.967041 -3.390137 1.070313 -3.831787 -3.359619 1.816895 -1.204346 -2.604248 0.5744629 -0.8210449 -2.708252 2.60791 -3.325439 1.946777 1.749268 -3.38916 2.350098 2.530762 -3.956299 1.689209 -2.086182 -2.444092 2.067871 -3.066895 -2.180176 0 2.60791 -3.325439 -1.946777 2.530762 -3.956299 -1.689209 1.749268 -3.38916 -2.350098 -2.520264 -1.847412 0 -0.4765625 -2.358887 -2.760498 -2.086182 -2.444092 -2.067871 -2.086182 -2.444092 -2.067871 -0.06152344 -2.967041 -3.390137 -2.086182 -2.444092 -2.067871 -0.03076172 -0.8852539 3.504883</float_array>
+					<technique_common>
+						<accessor source="#mario_head-mesh-positions-array" count="217" stride="3">
+							<param name="X" type="float" />
+							<param name="Y" type="float" />
+							<param name="Z" type="float" />
+						</accessor>
+					</technique_common>
+				</source>
+				<source id="mario_head-mesh-normals">
+					<float_array id="mario_head-mesh-normals-array" count="651">0.2207031 -0.5332031 0.8164063 0.7519531 -0.234375 0.6171875 0.796875 -0.6035156 0 0.7519531 -0.1582031 0.640625 0.9824219 -0.1855469 0 0.7265625 -0.3339844 0.5996094 0.8105469 0.328125 -0.484375 0.6796875 0.703125 -0.2070313 0.7304688 0.3417969 -0.5917969 0.7246094 0.4863281 0.4882813 0.8105469 0.328125 0.484375 0.671875 0.6835938 0.2890625 0.2207031 -0.5332031 -0.8164063 0.7519531 -0.234375 -0.6171875 0.7519531 -0.1582031 -0.640625 0.7265625 -0.3339844 -0.5996094 0.8710938 -0.4902344 0 0.6640625 -0.3046875 0.6835938 0.203125 -0.78125 0.5898438 0.1660156 -0.3535156 0.9199219 -0.2304688 -0.6132813 0.7558594 -0.484375 -0.1074219 0.8671875 -0.6796875 -0.6484375 0.34375 -1 0.01757813 0.02929688 -0.8261719 -0.5644531 0.001953125 -0.671875 -0.6210938 -0.4023438 -0.4335938 -0.8613281 -0.2617188 -0.375 -0.8730469 0.3125 0.07617188 -0.9960938 0 0.05273438 0.9316406 0.359375 -0.3925781 0.6640625 0.6367188 -0.8535156 -0.09960938 0.5117188 -0.953125 0.2910156 -0.09179688 -0.984375 0.1777344 0 -0.0859375 0.9960938 0 -0.953125 0.2910156 0.09179688 -0.3925781 0.6640625 -0.6367188 -0.8535156 -0.09960938 -0.5117188 0.05273438 0.9316406 -0.359375 -0.6660156 0.7441406 0.05859375 -0.3457031 0.1855469 -0.9199219 -0.2167969 0.1445313 -0.9648438 -0.6601563 0.1601563 -0.734375 0.7246094 0.4863281 0.4882813 0.2207031 -0.5332031 0.8164063 0.3242188 0.06054688 0.9433594 0.2988281 -0.796875 0.5253906 0.9980469 0.05273438 0 0.2988281 -0.796875 -0.5253906 0.3242188 0.06054688 -0.9433594 0.2207031 -0.5332031 -0.8164063 0.7304688 0.3417969 -0.5917969 -0.984375 0.1777344 0 -0.6601563 0.1601563 0.734375 -0.2167969 0.1445313 0.9648438 -0.3457031 0.1855469 0.9199219 -0.6660156 0.7441406 -0.05859375 0.2207031 -0.5332031 -0.8164063 0.7519531 -0.234375 -0.6171875 0.7304688 0.3417969 -0.5917969 0.7324219 0.05273438 -0.6796875 0.8105469 0.328125 -0.484375 0.4648438 0.53125 -0.7089844 0.6796875 0.703125 -0.2070313 -0.01367188 0.953125 -0.3007813 0.03320313 0.9648438 0.2578125 0.671875 0.6835938 0.2890625 0.4648438 0.53125 0.7089844 0.8105469 0.328125 0.484375 0.7324219 0.05273438 0.6796875 0.7246094 0.4863281 0.4882813 0.7519531 -0.234375 0.6171875 0.2207031 -0.5332031 0.8164063 0.7949219 -0.1054688 0.5957031 0.7949219 -0.1054688 0.5957031 0.7519531 -0.01367188 0.6582031 0.8300781 -0.3144531 0.4609375 0.9335938 0.1308594 0.3359375 0.7792969 -0.6152344 0.1269531 0.796875 -0.6035156 0 0.04296875 0.6484375 -0.7597656 -0.3359375 0.7578125 -0.5585938 -0.01367188 0.953125 -0.3007813 -0.28125 0.9589844 0 0.03320313 0.9648438 0.2578125 -0.3359375 0.7578125 0.5585938 0.04296875 0.6484375 0.7597656 0.6640625 -0.3046875 -0.6835938 0.203125 -0.78125 -0.5898438 0.1660156 -0.3535156 -0.9199219 -0.2304688 -0.6132813 -0.7558594 -0.484375 -0.1074219 -0.8671875 0.4433594 0.2285156 0.8671875 0.7050781 -0.2265625 0.671875 0.1386719 -0.8085938 0.5703125 0.6132813 -0.7890625 0 0.2675781 -0.9628906 0 0.1386719 -0.8085938 -0.5703125 0.3242188 0.06054688 0.9433594 0.04296875 0.6484375 0.7597656 0.7304688 0.3417969 -0.5917969 0.7246094 0.4863281 0.4882813 0.3789063 0.8710938 -0.3144531 0.5136719 0.7636719 0.390625 0.9980469 0.05273438 0 0.3242188 0.06054688 0.9433594 -0.8261719 -0.5644531 0.001953125 -0.984375 -0.1738281 0.04882813 -1 0.01757813 0.02929688 -0.7910156 0.5898438 -0.1660156 -0.6660156 0.7441406 0.05859375 0.2519531 0.2929688 -0.921875 0.1757813 0.953125 -0.2480469 0.1816406 0.9824219 0 0.1816406 0.9824219 0 0.1757813 0.953125 0.2480469 0.1757813 0.953125 0.2480469 0.2285156 0.8554688 0.4648438 0.7734375 -0.05859375 -0.6308594 0.6699219 0.5410156 -0.5078125 0.9335938 0.1308594 -0.3359375 0.5585938 0.7285156 -0.3964844 0.671875 0.6757813 -0.3046875 0.7792969 -0.6152344 -0.1269531 0.8300781 -0.3144531 -0.4609375 0.3242188 0.06054688 0.9433594 0.2519531 0.2929688 0.921875 -0.7910156 0.5898438 0.1660156 0.7050781 -0.2265625 0.671875 0.4433594 0.2285156 0.8671875 0.4433594 0.2285156 0.8671875 0.46875 0.6484375 0.5996094 -0.09960938 0.4414063 0.890625 -0.09960938 0.4414063 -0.890625 0.5097656 0.6484375 -0.5644531 0.4453125 0.2050781 -0.8710938 0.4453125 0.2050781 -0.8710938 0.7050781 -0.2265625 -0.671875 0.3242188 0.06054688 -0.9433594 0.4414063 -0.01757813 -0.8964844 0.7734375 -0.05859375 -0.6308594 0.2519531 0.2929688 -0.921875 0.7734375 -0.05859375 -0.6308594 0.7734375 -0.05859375 -0.6308594 0.375 -0.140625 0.9160156 0.7519531 -0.1582031 0.640625 0.2910156 -0.09960938 0.9511719 0.7519531 -0.234375 0.6171875 0.3242188 0.06054688 0.9433594 0.2519531 0.2929688 0.921875 0.4414063 -0.01757813 0.8964844 0.4433594 0.2285156 0.8671875 -0.09960938 0.4414063 0.890625 -0.546875 0.6171875 0.5644531 -0.7363281 0.6757813 0 -0.546875 0.6171875 -0.5644531 0.7519531 -0.234375 -0.6171875 0.7519531 -0.1582031 -0.640625 0.2910156 -0.09960938 -0.9511719 0.375 -0.140625 -0.9160156 0.4414063 -0.01757813 -0.8964844 0.796875 -0.6035156 0 0.6640625 -0.3046875 -0.6835938 0.7050781 -0.2265625 -0.671875 0.8710938 -0.4902344 0 0.6132813 -0.7890625 0 0.6640625 -0.3046875 -0.6835938 0.4453125 0.2050781 -0.8710938 0.1660156 -0.3535156 -0.9199219 0.04296875 0.6484375 -0.7597656 0.3242188 0.06054688 -0.9433594 -0.6660156 0.7441406 -0.05859375 -1 0.01757813 -0.02929688 -0.8261719 -0.5644531 0.001953125 -0.984375 -0.1738281 -0.04882813 0.4433594 0.2285156 0.8671875 0.6640625 -0.3046875 0.6835938 0.1660156 -0.3535156 0.9199219 0.6699219 0.5410156 0.5078125 0.5136719 0.7636719 0.390625 0.671875 0.6835938 0.2890625 0.8242188 0.5683594 0 0.7734375 -0.05859375 -0.6308594 0.7988281 -0.1289063 -0.5878906 0.2285156 0.8554688 -0.4648438 0.1757813 0.953125 -0.2480469 -0.3398438 0.8828125 0.3261719 -0.546875 0.6171875 0.5644531 -0.2832031 0.7773438 0.5625 0.4414063 -0.01757813 0.8964844 0.2519531 0.2929688 0.921875 0.7519531 -0.01367188 0.6582031 0.7519531 -0.01367188 0.6582031 0.4453125 0.2050781 -0.8710938 0.7050781 -0.2265625 -0.671875 0.6640625 -0.3046875 0.6835938 0.7050781 -0.2265625 0.671875 0.3242188 0.06054688 -0.9433594 -0.09960938 0.4414063 -0.890625 0.4453125 0.2050781 -0.8710938 0.3242188 0.06054688 -0.9433594 0.2519531 0.2929688 -0.921875 0.7519531 -0.1582031 0.640625 0.375 -0.140625 0.9160156 0.7265625 -0.3339844 0.5996094 -0.546875 0.6171875 0.5644531 -0.7363281 0.6757813 0 0.7519531 -0.1582031 -0.640625 0.7265625 -0.3339844 -0.5996094 0.375 -0.140625 -0.9160156 -0.3398438 0.8828125 -0.3261719 -0.2832031 0.7773438 -0.5625 -0.546875 0.6171875 -0.5644531 -0.546875 0.6171875 -0.5644531 -0.09960938 0.4414063 -0.890625 -0.546875 0.6171875 -0.5644531 0.7949219 -0.1054688 0.5957031</float_array>
+					<technique_common>
+						<accessor source="#mario_head-mesh-normals-array" count="217" stride="3">
+							<param name="X" type="float" />
+							<param name="Y" type="float" />
+							<param name="Z" type="float" />
+						</accessor>
+					</technique_common>
+				</source>
+				<source id="mario_head-mesh-map-0">
+					<float_array id="mario_head-mesh-map-0-array" count="434">1.3125 0.4980469 2.007813 0.4375 1 0.390625 1.984375 0.1894531 1 0.02929688 1.859375 0.07421875 0.0234375 0.7265625 0.5078125 0.9941406 0.3515625 0.5117188 1.648438 0.5117188 1.976563 0.7265625 1.492188 0.9941406 0.6875 0.4882813 -0.0078125 0.4375 0.015625 0.1894531 0.140625 0.07421875 0.1894531 0.3261719 0.08789063 0.3486328 0.1054688 0.3710938 0.03515625 0.3710938 0.07226563 0.4101563 0.03710938 0.5322266 0.0625 0.5322266 0.1855469 0.5751953 0.1816406 0.5859375 0.3105469 0.5332031 0.2480469 0.4316406 0.140625 0.4316406 0.1914063 0.3886719 0.1914063 0.9619141 0.15625 0.9785156 0.1738281 0.90625 0.06445313 0.9873047 0.01171875 0.9111328 0.01171875 0.9931641 0.06445313 0.9873047 0.15625 0.9785156 0.1738281 0.90625 0.1914063 0.9619141 0.234375 0.9589844 0.3027344 0.9414063 0.2871094 0.8779297 0.3066406 0.7626953 0.6308594 0.4921875 0.6523438 0.5019531 0.59375 0.4453125 0.6582031 0.4404297 0.7246094 0.4238281 0.7890625 0.4404297 0.8535156 0.4453125 0.796875 0.5019531 0.8183594 0.4921875 0.01171875 0.8076172 0.3066406 0.7626953 0.2871094 0.8779297 0.3027344 0.9414063 0.234375 0.9589844 0.5234375 0.5527344 0.6640625 0.5400391 0.4628906 0.5800781 0.6484375 0.5927734 0.5488281 0.6376953 0.5957031 0.6796875 0.46875 0.7109375 0.4414063 0.7373047 0.4414063 0.7373047 0.46875 0.7109375 0.5957031 0.6796875 0.5488281 0.6376953 0.6484375 0.5927734 0.4628906 0.5800781 0.6640625 0.5400391 0.5234375 0.5527344 0.4355469 0.8789063 0.4023438 0.9365234 0.5117188 0.8691406 0.4375 0.9912109 0.7167969 0.8427734 0.5195313 0.9042969 0.8925781 0.8740234 0.9433594 0.1298828 0.9414063 0.1230469 0.9238281 0.1162109 0.9375 0.1123047 0.9238281 0.1162109 0.9414063 0.1230469 0.9433594 0.1298828 0.2929688 0.3486328 0.2792969 0.3710938 0.3476563 0.3710938 0.3066406 0.4111328 0.3398438 0.5322266 0.3496094 0.5644531 0.2460938 0.5751953 0.234375 0.7011719 0.046875 0.6152344 0.046875 0.7421875 0.234375 0.7011719 0.7480469 0.5966797 0.7109375 0.6689453 0.7265625 0.7246094 0.6445313 0.7236328 0.7148438 0.6728516 0.6582031 0.6728516 0.6855469 0.6572266 0.6289063 0.6728516 0.9882813 0.1396484 0.9785156 0.1337891 0.984375 0.1425781 0.9609375 0.1308594 0.9511719 0.1347656 0.953125 0.1318359 0.234375 0.7011719 0.046875 0.7421875 0.046875 0.6025391 0.234375 0.7011719 0.2265625 0.5673828 0.3496094 0.5644531 0.5117188 0.8691406 0.5566406 0.8154297 0.7167969 0.8427734 0.6875 0.8056641 0.7890625 0.78125 0.5195313 0.9042969 0.4375 0.9912109 0.9589844 0.1318359 0.953125 0.1318359 0.9609375 0.1308594 0.4394531 0.1015625 0.4511719 0.09082031 0.4589844 0.0859375 0.4609375 0.078125 0.4785156 0.07128906 0.4492188 0.09375 0.4609375 0.078125 0.4433594 0.09765625 0.4511719 0.09082031 0.4394531 0.1015625 0.9589844 0.1318359 0.609375 0 0.7949219 0.03125 0.546875 0.06640625 0.8222656 0.109375 0.7148438 0.140625 0.9667969 0.2099609 0.8925781 0.1318359 0.7773438 0.2490234 0.671875 0.1572266 0.6230469 0.2568359 0.6503906 0.3798828 0.9824219 0.3476563 0.03515625 0.3710938 0.009765625 0.53125 0.09570313 0.5566406 0.1835938 0.5791016 0.2734375 0.5566406 0.671875 0.1572266 0.8925781 0.1318359 0.7773438 0.2490234 0.9667969 0.2099609 0.9824219 0.3476563 0.7246094 0.5048828 0.4863281 0.1445313 0.4628906 0.3564453 0.02148438 0.05078125 0.02148438 0.2783203 0.4394531 0.1005859 0.4316406 0.1054688 0.4492188 0.09375 0.7109375 0.6689453 0.7480469 0.5966797 0.9511719 0.1347656 0.984375 0.1425781 0.9882813 0.1396484 0.9785156 0.1337891 0.4316406 0.09765625 0.4394531 0.1005859 0.4238281 0.0625 0.5566406 0.8154297 0.6875 0.8056641 0.7890625 0.78125 0.8925781 0.7949219 0.4355469 0.8789063 0.4023438 0.9365234 0.3496094 0.5644531 0.2265625 0.5673828 0.3808594 0.04589844 0.4433594 0.04882813 0.4570313 0.06640625 0.609375 0 0.546875 0.06640625 0.7949219 0.03125 0.8222656 0.109375 0.3496094 0.5644531 0.2460938 0.5751953 0.4863281 0.1445313 0.4628906 0.3564453 0.7421875 0.6728516 0.3613281 0.5322266 0.3476563 0.3710938 0.6230469 0.2568359 0.6503906 0.3798828 0.4042969 0.3886719 0.4882813 0.3818359 0.5039063 0.4863281 0.4648438 0.04394531 0.4628906 0.04101563 0.4042969 0.3886719 0.5039063 0.4863281 0.4882813 0.3818359 0.3808594 0.04589844 0.4570313 0.06640625 0.4765625 0.03125 0.4765625 0.06054688 0.4785156 0.07128906 0.4609375 0.03808594 0.7148438 0.140625</float_array>
+					<technique_common>
+						<accessor source="#mario_head-mesh-map-0-array" count="217" stride="2">
+							<param name="S" type="float" />
+							<param name="T" type="float" />
+						</accessor>
+					</technique_common>
+				</source>
+				<source id="mario_head-mesh-colors">
+					<float_array id="mario_head-mesh-colors-array" count="651">1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1</float_array>
+					<technique_common>
+						<accessor source="#mario_head-mesh-colors-array" count="217" stride="3">
+							<param name="R" type="float" />
+							<param name="G" type="float" />
+							<param name="B" type="float" />
+						</accessor>
+					</technique_common>
+				</source>
+				<vertices id="mario_head-mesh-vertices">
+					<input semantic="POSITION" source="#mario_head-mesh-positions" />
+				</vertices>
+				<polylist material="mat_eye-material" count="4">
+					<input semantic="VERTEX" source="#mario_head-mesh-vertices" offset="0" />
+					<input semantic="NORMAL" source="#mario_head-mesh-normals" offset="1" />
+					<input semantic="TEXCOORD" source="#mario_head-mesh-map-0" offset="2" set="0" />
+					<input semantic="COLOR" source="#mario_head-mesh-colors" offset="3" />
+					<vcount>3 3 3 3</vcount>
+					<p>0 0 0 0 1 1 1 0 2 2 2 0 3 3 3 0 2 2 2 0 1 1 1 0 2 2 2 0 3 3 3 0 4 4 4 0 5 5 5 0 4 4 4 0 3 3 3 0</p>
+				</polylist>
+				<polylist material="mat_eye-material" count="2">
+					<input semantic="VERTEX" source="#mario_head-mesh-vertices" offset="0" />
+					<input semantic="NORMAL" source="#mario_head-mesh-normals" offset="1" />
+					<input semantic="TEXCOORD" source="#mario_head-mesh-map-0" offset="2" set="0" />
+					<input semantic="COLOR" source="#mario_head-mesh-colors" offset="3" />
+					<vcount>3 3</vcount>
+					<p>6 6 6 0 7 7 7 0 8 8 8 0 9 9 9 0 8 8 8 0 7 7 7 0</p>
+				</polylist>
+				<polylist material="mat_eye-material" count="2">
+					<input semantic="VERTEX" source="#mario_head-mesh-vertices" offset="0" />
+					<input semantic="NORMAL" source="#mario_head-mesh-normals" offset="1" />
+					<input semantic="TEXCOORD" source="#mario_head-mesh-map-0" offset="2" set="0" />
+					<input semantic="COLOR" source="#mario_head-mesh-colors" offset="3" />
+					<vcount>3 3</vcount>
+					<p>10 10 10 0 9 9 9 0 11 11 11 0 7 7 7 0 11 11 11 0 9 9 9 0</p>
+				</polylist>
+				<polylist material="mat_eye-material" count="2">
+					<input semantic="VERTEX" source="#mario_head-mesh-vertices" offset="0" />
+					<input semantic="NORMAL" source="#mario_head-mesh-normals" offset="1" />
+					<input semantic="TEXCOORD" source="#mario_head-mesh-map-0" offset="2" set="0" />
+					<input semantic="COLOR" source="#mario_head-mesh-colors" offset="3" />
+					<vcount>3 3</vcount>
+					<p>12 12 12 0 2 2 2 0 13 13 13 0 14 14 14 0 13 13 13 0 2 2 2 0</p>
+				</polylist>
+				<polylist material="mat_eye-material" count="2">
+					<input semantic="VERTEX" source="#mario_head-mesh-vertices" offset="0" />
+					<input semantic="NORMAL" source="#mario_head-mesh-normals" offset="1" />
+					<input semantic="TEXCOORD" source="#mario_head-mesh-map-0" offset="2" set="0" />
+					<input semantic="COLOR" source="#mario_head-mesh-colors" offset="3" />
+					<vcount>3 3</vcount>
+					<p>2 2 2 0 4 4 4 0 14 14 14 0 15 15 15 0 14 14 14 0 4 4 4 0</p>
+				</polylist>
+				<polylist material="mat_head-material" count="14">
+					<input semantic="VERTEX" source="#mario_head-mesh-vertices" offset="0" />
+					<input semantic="NORMAL" source="#mario_head-mesh-normals" offset="1" />
+					<input semantic="TEXCOORD" source="#mario_head-mesh-map-0" offset="2" set="0" />
+					<input semantic="COLOR" source="#mario_head-mesh-colors" offset="3" />
+					<vcount>3 3 3 3 3 3 3 3 3 3 3 3 3 3</vcount>
+					<p>16 16 16 0 17 17 17 0 18 18 18 0 19 19 19 0 18 18 18 0 17 17 17 0 18 18 18 0 19 19 19 0 20 20 20 0 21 21 21 0 20 20 20 0 19 19 19 0 20 20 20 0 21 21 21 0 22 22 22 0 23 23 23 0 22 22 22 0 21 21 21 0 22 22 22 0 23 23 23 0 24 24 24 0 25 25 25 0 24 24 24 0 23 23 23 0 24 24 24 0 25 25 25 0 22 22 22 0 26 26 26 0 22 22 22 0 25 25 25 0 22 22 22 0 26 26 26 0 27 27 27 0 28 28 28 0 27 27 27 0 26 26 26 0 27 27 27 0 28 28 28 0 18 18 18 0 16 16 16 0 18 18 18 0 28 28 28 0</p>
+				</polylist>
+				<polylist material="mat_head-material" count="13">
+					<input semantic="VERTEX" source="#mario_head-mesh-vertices" offset="0" />
+					<input semantic="NORMAL" source="#mario_head-mesh-normals" offset="1" />
+					<input semantic="TEXCOORD" source="#mario_head-mesh-map-0" offset="2" set="0" />
+					<input semantic="COLOR" source="#mario_head-mesh-colors" offset="3" />
+					<vcount>3 3 3 3 3 3 3 3 3 3 3 3 3</vcount>
+					<p>29 29 29 0 30 30 30 0 31 31 31 0 32 32 32 0 31 31 31 0 30 30 30 0 31 31 31 0 32 32 32 0 33 33 33 0 34 34 34 0 33 33 33 0 32 32 32 0 33 33 33 0 34 34 34 0 35 35 32 0 36 36 30 0 35 35 32 0 34 34 34 0 35 35 32 0 36 36 30 0 37 37 31 0 38 38 29 0 37 37 31 0 36 36 30 0 37 37 31 0 38 38 29 0 39 39 39 0 40 40 40 0 39 39 39 0 38 38 29 0 39 39 39 0 40 40 40 0 37 37 31 0 41 41 41 0 37 37 31 0 40 40 40 0 37 37 31 0 41 41 41 0 42 42 42 0</p>
+				</polylist>
+				<polylist material="mat_head-material" count="7">
+					<input semantic="VERTEX" source="#mario_head-mesh-vertices" offset="0" />
+					<input semantic="NORMAL" source="#mario_head-mesh-normals" offset="1" />
+					<input semantic="TEXCOORD" source="#mario_head-mesh-map-0" offset="2" set="0" />
+					<input semantic="COLOR" source="#mario_head-mesh-colors" offset="3" />
+					<vcount>3 3 3 3 3 3 3</vcount>
+					<p>9 9 43 0 0 0 44 0 45 45 45 0 46 46 46 0 45 45 45 0 0 0 44 0 45 45 45 0 46 46 46 0 47 47 47 0 48 48 48 0 47 47 47 0 46 46 46 0 47 47 47 0 48 48 48 0 49 49 49 0 12 12 50 0 49 49 49 0 48 48 48 0 49 49 49 0 12 12 50 0 8 8 51 0</p>
+				</polylist>
+				<polylist material="mat_head-material" count="7">
+					<input semantic="VERTEX" source="#mario_head-mesh-vertices" offset="0" />
+					<input semantic="NORMAL" source="#mario_head-mesh-normals" offset="1" />
+					<input semantic="TEXCOORD" source="#mario_head-mesh-map-0" offset="2" set="0" />
+					<input semantic="COLOR" source="#mario_head-mesh-colors" offset="3" />
+					<vcount>3 3 3 3 3 3 3</vcount>
+					<p>52 33 52 0 53 53 42 0 31 31 31 0 54 54 41 0 31 31 31 0 53 53 42 0 31 31 31 0 54 54 41 0 55 55 40 0 29 29 29 0 55 55 40 0 54 54 41 0 55 55 40 0 29 29 29 0 56 56 39 0 31 31 31 0 56 56 39 0 29 29 29 0 56 56 39 0 31 31 31 0 55 55 40 0</p>
+				</polylist>
+				<polylist material="mat_head-material" count="7">
+					<input semantic="VERTEX" source="#mario_head-mesh-vertices" offset="0" />
+					<input semantic="NORMAL" source="#mario_head-mesh-normals" offset="1" />
+					<input semantic="TEXCOORD" source="#mario_head-mesh-map-0" offset="2" set="0" />
+					<input semantic="COLOR" source="#mario_head-mesh-colors" offset="3" />
+					<vcount>3 3 3 3 3 3 3</vcount>
+					<p>12 12 57 0 13 13 58 0 8 8 59 0 60 60 60 0 8 8 59 0 13 13 58 0 8 8 59 0 60 60 60 0 6 6 61 0 62 62 62 0 6 6 61 0 60 60 60 0 6 6 61 0 62 62 62 0 7 7 63 0 64 64 64 0 7 7 63 0 62 62 62 0 7 7 63 0 64 64 64 0 65 65 64 0</p>
+				</polylist>
+				<polylist material="mat_head-material" count="7">
+					<input semantic="VERTEX" source="#mario_head-mesh-vertices" offset="0" />
+					<input semantic="NORMAL" source="#mario_head-mesh-normals" offset="1" />
+					<input semantic="TEXCOORD" source="#mario_head-mesh-map-0" offset="2" set="0" />
+					<input semantic="COLOR" source="#mario_head-mesh-colors" offset="3" />
+					<vcount>3 3 3 3 3 3 3</vcount>
+					<p>7 7 63 0 65 65 64 0 11 11 63 0 67 67 62 0 11 11 63 0 65 65 64 0 11 11 63 0 67 67 62 0 10 10 61 0 69 69 60 0 10 10 61 0 67 67 62 0 10 10 61 0 69 69 60 0 9 9 59 0 1 1 58 0 9 9 59 0 69 69 60 0 9 9 59 0 1 1 58 0 0 0 57 0</p>
+				</polylist>
+				<polylist material="mat_head-material" count="5">
+					<input semantic="VERTEX" source="#mario_head-mesh-vertices" offset="0" />
+					<input semantic="NORMAL" source="#mario_head-mesh-normals" offset="1" />
+					<input semantic="TEXCOORD" source="#mario_head-mesh-map-0" offset="2" set="0" />
+					<input semantic="COLOR" source="#mario_head-mesh-colors" offset="3" />
+					<vcount>3 3 3 3 3</vcount>
+					<p>73 73 73 0 74 73 74 0 75 75 75 0 76 76 76 0 75 75 75 0 74 73 74 0 75 75 75 0 76 76 76 0 77 77 77 0 78 78 78 0 77 77 77 0 76 76 76 0 77 77 77 0 78 78 78 0 79 2 79 0</p>
+				</polylist>
+				<polylist material="mat_head-material" count="5">
+					<input semantic="VERTEX" source="#mario_head-mesh-vertices" offset="0" />
+					<input semantic="NORMAL" source="#mario_head-mesh-normals" offset="1" />
+					<input semantic="TEXCOORD" source="#mario_head-mesh-map-0" offset="2" set="0" />
+					<input semantic="COLOR" source="#mario_head-mesh-colors" offset="3" />
+					<vcount>3 3 3 3 3</vcount>
+					<p>80 80 80 0 38 81 81 0 64 64 82 0 34 83 83 0 64 64 82 0 38 81 81 0 64 64 82 0 34 83 83 0 65 65 82 0 29 85 81 0 65 65 82 0 34 83 83 0 65 65 82 0 29 85 81 0 86 86 80 0</p>
+				</polylist>
+				<polylist material="mat_head-material" count="5">
+					<input semantic="VERTEX" source="#mario_head-mesh-vertices" offset="0" />
+					<input semantic="NORMAL" source="#mario_head-mesh-normals" offset="1" />
+					<input semantic="TEXCOORD" source="#mario_head-mesh-map-0" offset="2" set="0" />
+					<input semantic="COLOR" source="#mario_head-mesh-colors" offset="3" />
+					<vcount>3 3 3 3 3</vcount>
+					<p>87 87 87 0 88 88 88 0 89 89 89 0 90 90 90 0 89 89 89 0 88 88 88 0 89 89 89 0 90 90 90 0 91 91 91 0 25 25 25 0 91 91 91 0 90 90 90 0 91 91 91 0 25 25 25 0 23 23 23 0</p>
+				</polylist>
+				<polylist material="mat_head-material" count="4">
+					<input semantic="VERTEX" source="#mario_head-mesh-vertices" offset="0" />
+					<input semantic="NORMAL" source="#mario_head-mesh-normals" offset="1" />
+					<input semantic="TEXCOORD" source="#mario_head-mesh-map-0" offset="2" set="0" />
+					<input semantic="COLOR" source="#mario_head-mesh-colors" offset="3" />
+					<vcount>3 3 3 3</vcount>
+					<p>92 92 92 0 93 93 93 0 94 94 94 0 95 95 95 0 94 94 94 0 93 93 93 0 94 94 94 0 95 95 95 0 96 96 96 0 97 97 94 0 96 96 96 0 95 95 95 0</p>
+				</polylist>
+				<polylist material="mat_head-material" count="4">
+					<input semantic="VERTEX" source="#mario_head-mesh-vertices" offset="0" />
+					<input semantic="NORMAL" source="#mario_head-mesh-normals" offset="1" />
+					<input semantic="TEXCOORD" source="#mario_head-mesh-map-0" offset="2" set="0" />
+					<input semantic="COLOR" source="#mario_head-mesh-colors" offset="3" />
+					<vcount>3 3 3 3</vcount>
+					<p>25 25 25 0 90 90 90 0 26 26 26 0 88 88 88 0 26 26 26 0 90 90 90 0 26 26 26 0 88 88 88 0 28 28 28 0 16 16 16 0 28 28 28 0 88 88 88 0</p>
+				</polylist>
+				<polylist material="mat_head-material" count="4">
+					<input semantic="VERTEX" source="#mario_head-mesh-vertices" offset="0" />
+					<input semantic="NORMAL" source="#mario_head-mesh-normals" offset="1" />
+					<input semantic="TEXCOORD" source="#mario_head-mesh-map-0" offset="2" set="0" />
+					<input semantic="COLOR" source="#mario_head-mesh-colors" offset="3" />
+					<vcount>3 3 3 3</vcount>
+					<p>1 1 58 0 69 69 60 0 98 45 98 0 67 67 62 0 98 45 98 0 69 69 60 0 98 45 98 0 67 67 62 0 86 86 99 0 65 65 64 0 86 86 99 0 67 67 62 0</p>
+				</polylist>
+				<polylist material="mat_head-material" count="4">
+					<input semantic="VERTEX" source="#mario_head-mesh-vertices" offset="0" />
+					<input semantic="NORMAL" source="#mario_head-mesh-normals" offset="1" />
+					<input semantic="TEXCOORD" source="#mario_head-mesh-map-0" offset="2" set="0" />
+					<input semantic="COLOR" source="#mario_head-mesh-colors" offset="3" />
+					<vcount>3 3 3 3</vcount>
+					<p>8 8 100 0 9 9 101 0 102 102 102 0 103 103 103 0 102 102 102 0 9 9 101 0 102 102 102 0 103 103 103 0 47 47 104 0 45 45 105 0 47 47 104 0 103 103 103 0</p>
+				</polylist>
+				<polylist material="mat_head-material" count="4">
+					<input semantic="VERTEX" source="#mario_head-mesh-vertices" offset="0" />
+					<input semantic="NORMAL" source="#mario_head-mesh-normals" offset="1" />
+					<input semantic="TEXCOORD" source="#mario_head-mesh-map-0" offset="2" set="0" />
+					<input semantic="COLOR" source="#mario_head-mesh-colors" offset="3" />
+					<vcount>3 3 3 3</vcount>
+					<p>106 24 106 0 42 107 107 0 108 23 108 0 41 109 109 0 108 23 108 0 42 107 107 0 108 23 108 0 41 109 109 0 110 39 110 0 111 111 111 0 110 39 110 0 41 109 109 0</p>
+				</polylist>
+				<polylist material="mat_head-material" count="4">
+					<input semantic="VERTEX" source="#mario_head-mesh-vertices" offset="0" />
+					<input semantic="NORMAL" source="#mario_head-mesh-normals" offset="1" />
+					<input semantic="TEXCOORD" source="#mario_head-mesh-map-0" offset="2" set="0" />
+					<input semantic="COLOR" source="#mario_head-mesh-colors" offset="3" />
+					<vcount>3 3 3 3</vcount>
+					<p>94 112 94 0 96 113 96 0 4 113 114 0 97 115 94 0 4 113 114 0 96 113 96 0 4 113 114 0 97 115 94 0 15 115 116 0 117 117 92 0 15 115 116 0 97 115 94 0</p>
+				</polylist>
+				<polylist material="mat_head-material" count="3">
+					<input semantic="VERTEX" source="#mario_head-mesh-vertices" offset="0" />
+					<input semantic="NORMAL" source="#mario_head-mesh-normals" offset="1" />
+					<input semantic="TEXCOORD" source="#mario_head-mesh-map-0" offset="2" set="0" />
+					<input semantic="COLOR" source="#mario_head-mesh-colors" offset="3" />
+					<vcount>3 3 3</vcount>
+					<p>118 118 75 0 119 119 119 0 120 120 77 0 121 121 121 0 120 120 77 0 119 119 119 0 120 120 77 0 121 121 121 0 122 122 122 0</p>
+				</polylist>
+				<polylist material="mat_head-material" count="3">
+					<input semantic="VERTEX" source="#mario_head-mesh-vertices" offset="0" />
+					<input semantic="NORMAL" source="#mario_head-mesh-normals" offset="1" />
+					<input semantic="TEXCOORD" source="#mario_head-mesh-map-0" offset="2" set="0" />
+					<input semantic="COLOR" source="#mario_head-mesh-colors" offset="3" />
+					<vcount>3 3 3</vcount>
+					<p>79 2 79 0 123 123 78 0 120 120 77 0 124 124 76 0 120 120 77 0 123 123 78 0 120 120 77 0 124 124 76 0 118 118 75 0</p>
+				</polylist>
+				<polylist material="mat_head-material" count="3">
+					<input semantic="VERTEX" source="#mario_head-mesh-vertices" offset="0" />
+					<input semantic="NORMAL" source="#mario_head-mesh-normals" offset="1" />
+					<input semantic="TEXCOORD" source="#mario_head-mesh-map-0" offset="2" set="0" />
+					<input semantic="COLOR" source="#mario_head-mesh-colors" offset="3" />
+					<vcount>3 3 3</vcount>
+					<p>98 45 125 0 86 86 80 0 126 126 111 0 29 85 81 0 126 126 111 0 86 86 80 0 126 126 111 0 29 85 81 0 54 127 109 0</p>
+				</polylist>
+				<polylist material="mat_head-material" count="3">
+					<input semantic="VERTEX" source="#mario_head-mesh-vertices" offset="0" />
+					<input semantic="NORMAL" source="#mario_head-mesh-normals" offset="1" />
+					<input semantic="TEXCOORD" source="#mario_head-mesh-map-0" offset="2" set="0" />
+					<input semantic="COLOR" source="#mario_head-mesh-colors" offset="3" />
+					<vcount>3 3 3</vcount>
+					<p>93 93 128 0 92 92 129 0 130 92 130 0 131 131 131 0 130 92 130 0 92 92 129 0 130 92 130 0 131 131 131 0 132 132 132 0</p>
+				</polylist>
+				<polylist material="mat_head-material" count="3">
+					<input semantic="VERTEX" source="#mario_head-mesh-vertices" offset="0" />
+					<input semantic="NORMAL" source="#mario_head-mesh-normals" offset="1" />
+					<input semantic="TEXCOORD" source="#mario_head-mesh-map-0" offset="2" set="0" />
+					<input semantic="COLOR" source="#mario_head-mesh-colors" offset="3" />
+					<vcount>3 3 3</vcount>
+					<p>106 133 133 0 134 134 131 0 135 135 135 0 117 135 129 0 135 135 135 0 134 134 131 0 135 135 135 0 117 135 129 0 137 137 128 0</p>
+				</polylist>
+				<polylist material="mat_head-material" count="3">
+					<input semantic="VERTEX" source="#mario_head-mesh-vertices" offset="0" />
+					<input semantic="NORMAL" source="#mario_head-mesh-normals" offset="1" />
+					<input semantic="TEXCOORD" source="#mario_head-mesh-map-0" offset="2" set="0" />
+					<input semantic="COLOR" source="#mario_head-mesh-colors" offset="3" />
+					<vcount>3 3 3</vcount>
+					<p>41 109 109 0 38 81 81 0 111 111 111 0 80 80 80 0 111 111 111 0 38 81 81 0 111 111 111 0 80 80 80 0 138 49 125 0</p>
+				</polylist>
+				<polylist material="mat_head-material" count="3">
+					<input semantic="VERTEX" source="#mario_head-mesh-vertices" offset="0" />
+					<input semantic="NORMAL" source="#mario_head-mesh-normals" offset="1" />
+					<input semantic="TEXCOORD" source="#mario_head-mesh-map-0" offset="2" set="0" />
+					<input semantic="COLOR" source="#mario_head-mesh-colors" offset="3" />
+					<vcount>3 3 3</vcount>
+					<p>31 31 31 0 33 33 33 0 52 33 52 0 37 37 31 0 52 33 52 0 33 33 33 0 52 33 52 0 37 37 31 0 42 42 42 0</p>
+				</polylist>
+				<polylist material="mat_head-material" count="3">
+					<input semantic="VERTEX" source="#mario_head-mesh-vertices" offset="0" />
+					<input semantic="NORMAL" source="#mario_head-mesh-normals" offset="1" />
+					<input semantic="TEXCOORD" source="#mario_head-mesh-map-0" offset="2" set="0" />
+					<input semantic="COLOR" source="#mario_head-mesh-colors" offset="3" />
+					<vcount>3 3 3</vcount>
+					<p>134 139 139 0 106 118 140 0 111 111 141 0 108 118 142 0 111 111 141 0 106 118 140 0 111 111 141 0 108 118 142 0 110 118 143 0</p>
+				</polylist>
+				<polylist material="mat_head-material" count="3">
+					<input semantic="VERTEX" source="#mario_head-mesh-vertices" offset="0" />
+					<input semantic="NORMAL" source="#mario_head-mesh-normals" offset="1" />
+					<input semantic="TEXCOORD" source="#mario_head-mesh-map-0" offset="2" set="0" />
+					<input semantic="COLOR" source="#mario_head-mesh-colors" offset="3" />
+					<vcount>3 3 3</vcount>
+					<p>92 144 144 0 3 3 145 0 146 146 146 0 1 1 147 0 146 146 146 0 3 3 145 0 146 146 146 0 1 1 147 0 98 45 148 0</p>
+				</polylist>
+				<polylist material="mat_head-material" count="3">
+					<input semantic="VERTEX" source="#mario_head-mesh-vertices" offset="0" />
+					<input semantic="NORMAL" source="#mario_head-mesh-normals" offset="1" />
+					<input semantic="TEXCOORD" source="#mario_head-mesh-map-0" offset="2" set="0" />
+					<input semantic="COLOR" source="#mario_head-mesh-colors" offset="3" />
+					<vcount>3 3 3</vcount>
+					<p>98 45 148 0 126 126 149 0 146 146 146 0 131 150 150 0 146 146 146 0 126 126 149 0 146 146 146 0 131 150 150 0 92 144 144 0</p>
+				</polylist>
+				<polylist material="mat_head-material" count="3">
+					<input semantic="VERTEX" source="#mario_head-mesh-vertices" offset="0" />
+					<input semantic="NORMAL" source="#mario_head-mesh-normals" offset="1" />
+					<input semantic="TEXCOORD" source="#mario_head-mesh-map-0" offset="2" set="0" />
+					<input semantic="COLOR" source="#mario_head-mesh-colors" offset="3" />
+					<vcount>3 3 3</vcount>
+					<p>19 19 19 0 130 92 19 0 21 21 21 0 132 132 152 0 21 21 21 0 130 92 19 0 21 21 21 0 132 132 152 0 153 153 153 0</p>
+				</polylist>
+				<polylist material="mat_head-material" count="3">
+					<input semantic="VERTEX" source="#mario_head-mesh-vertices" offset="0" />
+					<input semantic="NORMAL" source="#mario_head-mesh-normals" offset="1" />
+					<input semantic="TEXCOORD" source="#mario_head-mesh-map-0" offset="2" set="0" />
+					<input semantic="COLOR" source="#mario_head-mesh-colors" offset="3" />
+					<vcount>3 3 3</vcount>
+					<p>21 21 21 0 153 153 153 0 23 23 23 0 154 154 154 0 23 23 23 0 153 153 153 0 23 23 23 0 154 154 154 0 155 155 155 0</p>
+				</polylist>
+				<polylist material="mat_head-material" count="3">
+					<input semantic="VERTEX" source="#mario_head-mesh-vertices" offset="0" />
+					<input semantic="NORMAL" source="#mario_head-mesh-normals" offset="1" />
+					<input semantic="TEXCOORD" source="#mario_head-mesh-map-0" offset="2" set="0" />
+					<input semantic="COLOR" source="#mario_head-mesh-colors" offset="3" />
+					<vcount>3 3 3</vcount>
+					<p>13 13 147 0 14 14 145 0 158 158 146 0 117 159 144 0 158 158 146 0 14 14 145 0 158 158 146 0 117 159 144 0 134 139 150 0</p>
+				</polylist>
+				<polylist material="mat_head-material" count="3">
+					<input semantic="VERTEX" source="#mario_head-mesh-vertices" offset="0" />
+					<input semantic="NORMAL" source="#mario_head-mesh-normals" offset="1" />
+					<input semantic="TEXCOORD" source="#mario_head-mesh-map-0" offset="2" set="0" />
+					<input semantic="COLOR" source="#mario_head-mesh-colors" offset="3" />
+					<vcount>3 3 3</vcount>
+					<p>12 12 50 0 48 48 48 0 2 2 161 0 46 46 46 0 2 2 161 0 48 48 48 0 2 2 161 0 46 46 46 0 0 0 44 0</p>
+				</polylist>
+				<polylist material="mat_head-material" count="2">
+					<input semantic="VERTEX" source="#mario_head-mesh-vertices" offset="0" />
+					<input semantic="NORMAL" source="#mario_head-mesh-normals" offset="1" />
+					<input semantic="TEXCOORD" source="#mario_head-mesh-map-0" offset="2" set="0" />
+					<input semantic="COLOR" source="#mario_head-mesh-colors" offset="3" />
+					<vcount>3 3</vcount>
+					<p>87 87 162 0 137 137 163 0 16 16 164 0 95 95 165 0 16 16 164 0 137 137 163 0</p>
+				</polylist>
+				<polylist material="mat_head-material" count="2">
+					<input semantic="VERTEX" source="#mario_head-mesh-vertices" offset="0" />
+					<input semantic="NORMAL" source="#mario_head-mesh-normals" offset="1" />
+					<input semantic="TEXCOORD" source="#mario_head-mesh-map-0" offset="2" set="0" />
+					<input semantic="COLOR" source="#mario_head-mesh-colors" offset="3" />
+					<vcount>3 3</vcount>
+					<p>137 137 128 0 87 87 166 0 135 135 167 0 89 89 133 0 135 135 167 0 87 87 166 0</p>
+				</polylist>
+				<polylist material="mat_head-material" count="2">
+					<input semantic="VERTEX" source="#mario_head-mesh-vertices" offset="0" />
+					<input semantic="NORMAL" source="#mario_head-mesh-normals" offset="1" />
+					<input semantic="TEXCOORD" source="#mario_head-mesh-map-0" offset="2" set="0" />
+					<input semantic="COLOR" source="#mario_head-mesh-colors" offset="3" />
+					<vcount>3 3</vcount>
+					<p>64 64 64 0 62 62 62 0 80 80 99 0 138 49 98 0 80 80 99 0 62 62 62 0</p>
+				</polylist>
+				<polylist material="mat_head-material" count="2">
+					<input semantic="VERTEX" source="#mario_head-mesh-vertices" offset="0" />
+					<input semantic="NORMAL" source="#mario_head-mesh-normals" offset="1" />
+					<input semantic="TEXCOORD" source="#mario_head-mesh-map-0" offset="2" set="0" />
+					<input semantic="COLOR" source="#mario_head-mesh-colors" offset="3" />
+					<vcount>3 3</vcount>
+					<p>126 126 111 0 54 127 109 0 171 56 110 0 172 172 108 0 171 56 110 0 54 127 109 0</p>
+				</polylist>
+				<polylist material="mat_head-material" count="2">
+					<input semantic="VERTEX" source="#mario_head-mesh-vertices" offset="0" />
+					<input semantic="NORMAL" source="#mario_head-mesh-normals" offset="1" />
+					<input semantic="TEXCOORD" source="#mario_head-mesh-map-0" offset="2" set="0" />
+					<input semantic="COLOR" source="#mario_head-mesh-colors" offset="3" />
+					<vcount>3 3</vcount>
+					<p>62 62 62 0 60 60 60 0 138 49 98 0 13 13 58 0 138 49 98 0 60 60 60 0</p>
+				</polylist>
+				<polylist material="mat_head-material" count="2">
+					<input semantic="VERTEX" source="#mario_head-mesh-vertices" offset="0" />
+					<input semantic="NORMAL" source="#mario_head-mesh-normals" offset="1" />
+					<input semantic="TEXCOORD" source="#mario_head-mesh-map-0" offset="2" set="0" />
+					<input semantic="COLOR" source="#mario_head-mesh-colors" offset="3" />
+					<vcount>3 3</vcount>
+					<p>132 24 106 0 172 172 108 0 53 174 107 0 54 127 109 0 53 174 107 0 172 172 108 0</p>
+				</polylist>
+				<polylist material="mat_head-material" count="2">
+					<input semantic="VERTEX" source="#mario_head-mesh-vertices" offset="0" />
+					<input semantic="NORMAL" source="#mario_head-mesh-normals" offset="1" />
+					<input semantic="TEXCOORD" source="#mario_head-mesh-map-0" offset="2" set="0" />
+					<input semantic="COLOR" source="#mario_head-mesh-colors" offset="3" />
+					<vcount>3 3</vcount>
+					<p>93 93 128 0 130 92 175 0 17 17 166 0 19 19 177 0 17 17 166 0 130 92 175 0</p>
+				</polylist>
+				<polylist material="mat_head-material" count="2">
+					<input semantic="VERTEX" source="#mario_head-mesh-vertices" offset="0" />
+					<input semantic="NORMAL" source="#mario_head-mesh-normals" offset="1" />
+					<input semantic="TEXCOORD" source="#mario_head-mesh-map-0" offset="2" set="0" />
+					<input semantic="COLOR" source="#mario_head-mesh-colors" offset="3" />
+					<vcount>3 3</vcount>
+					<p>75 75 75 0 77 77 77 0 178 178 119 0 179 103 121 0 178 178 119 0 77 77 77 0</p>
+				</polylist>
+				<polylist material="mat_head-material" count="2">
+					<input semantic="VERTEX" source="#mario_head-mesh-vertices" offset="0" />
+					<input semantic="NORMAL" source="#mario_head-mesh-normals" offset="1" />
+					<input semantic="TEXCOORD" source="#mario_head-mesh-map-0" offset="2" set="0" />
+					<input semantic="COLOR" source="#mario_head-mesh-colors" offset="3" />
+					<vcount>3 3</vcount>
+					<p>179 103 121 0 77 77 77 0 180 11 122 0 181 181 181 0 180 11 122 0 77 77 77 0</p>
+				</polylist>
+				<polylist material="mat_head-material" count="2">
+					<input semantic="VERTEX" source="#mario_head-mesh-vertices" offset="0" />
+					<input semantic="NORMAL" source="#mario_head-mesh-normals" offset="1" />
+					<input semantic="TEXCOORD" source="#mario_head-mesh-map-0" offset="2" set="0" />
+					<input semantic="COLOR" source="#mario_head-mesh-colors" offset="3" />
+					<vcount>3 3</vcount>
+					<p>182 118 73 0 118 118 75 0 183 183 74 0 124 124 76 0 183 183 74 0 118 118 75 0</p>
+				</polylist>
+				<polylist material="mat_head-material" count="2">
+					<input semantic="VERTEX" source="#mario_head-mesh-vertices" offset="0" />
+					<input semantic="NORMAL" source="#mario_head-mesh-normals" offset="1" />
+					<input semantic="TEXCOORD" source="#mario_head-mesh-map-0" offset="2" set="0" />
+					<input semantic="COLOR" source="#mario_head-mesh-colors" offset="3" />
+					<vcount>3 3</vcount>
+					<p>92 184 92 0 94 112 94 0 5 112 116 0 4 113 114 0 5 112 116 0 94 112 94 0</p>
+				</polylist>
+				<polylist material="mat_head-material" count="2">
+					<input semantic="VERTEX" source="#mario_head-mesh-vertices" offset="0" />
+					<input semantic="NORMAL" source="#mario_head-mesh-normals" offset="1" />
+					<input semantic="TEXCOORD" source="#mario_head-mesh-map-0" offset="2" set="0" />
+					<input semantic="COLOR" source="#mario_head-mesh-colors" offset="3" />
+					<vcount>3 3</vcount>
+					<p>52 186 186 0 153 153 187 0 53 188 188 0 132 132 132 0 53 188 188 0 153 153 187 0</p>
+				</polylist>
+				<polylist material="mat_head-material" count="2">
+					<input semantic="VERTEX" source="#mario_head-mesh-vertices" offset="0" />
+					<input semantic="NORMAL" source="#mario_head-mesh-normals" offset="1" />
+					<input semantic="TEXCOORD" source="#mario_head-mesh-map-0" offset="2" set="0" />
+					<input semantic="COLOR" source="#mario_head-mesh-colors" offset="3" />
+					<vcount>3 3</vcount>
+					<p>131 150 139 0 126 126 141 0 132 75 140 0 172 75 142 0 132 75 140 0 126 126 141 0</p>
+				</polylist>
+				<polylist material="mat_head-material" count="2">
+					<input semantic="VERTEX" source="#mario_head-mesh-vertices" offset="0" />
+					<input semantic="NORMAL" source="#mario_head-mesh-normals" offset="1" />
+					<input semantic="TEXCOORD" source="#mario_head-mesh-map-0" offset="2" set="0" />
+					<input semantic="COLOR" source="#mario_head-mesh-colors" offset="3" />
+					<vcount>3 3</vcount>
+					<p>117 135 92 0 97 97 94 0 137 137 93 0 95 95 95 0 137 137 93 0 97 97 94 0</p>
+				</polylist>
+				<polylist material="mat_head-material" count="2">
+					<input semantic="VERTEX" source="#mario_head-mesh-vertices" offset="0" />
+					<input semantic="NORMAL" source="#mario_head-mesh-normals" offset="1" />
+					<input semantic="TEXCOORD" source="#mario_head-mesh-map-0" offset="2" set="0" />
+					<input semantic="COLOR" source="#mario_head-mesh-colors" offset="3" />
+					<vcount>3 3</vcount>
+					<p>17 17 162 0 16 16 164 0 93 93 163 0 95 95 165 0 93 93 163 0 16 16 164 0</p>
+				</polylist>
+				<polylist material="mat_head-material" count="2">
+					<input semantic="VERTEX" source="#mario_head-mesh-vertices" offset="0" />
+					<input semantic="NORMAL" source="#mario_head-mesh-normals" offset="1" />
+					<input semantic="TEXCOORD" source="#mario_head-mesh-map-0" offset="2" set="0" />
+					<input semantic="COLOR" source="#mario_head-mesh-colors" offset="3" />
+					<vcount>3 3</vcount>
+					<p>79 2 79 0 120 120 77 0 77 77 77 0 181 181 181 0 77 77 77 0 120 120 77 0</p>
+				</polylist>
+				<polylist material="mat_head-material" count="2">
+					<input semantic="VERTEX" source="#mario_head-mesh-vertices" offset="0" />
+					<input semantic="NORMAL" source="#mario_head-mesh-normals" offset="1" />
+					<input semantic="TEXCOORD" source="#mario_head-mesh-map-0" offset="2" set="0" />
+					<input semantic="COLOR" source="#mario_head-mesh-colors" offset="3" />
+					<vcount>3 3</vcount>
+					<p>8 8 100 0 102 102 102 0 49 49 197 0 47 47 104 0 49 49 197 0 102 102 102 0</p>
+				</polylist>
+				<polylist material="mat_head-material" count="2">
+					<input semantic="VERTEX" source="#mario_head-mesh-vertices" offset="0" />
+					<input semantic="NORMAL" source="#mario_head-mesh-normals" offset="1" />
+					<input semantic="TEXCOORD" source="#mario_head-mesh-map-0" offset="2" set="0" />
+					<input semantic="COLOR" source="#mario_head-mesh-colors" offset="3" />
+					<vcount>3 3</vcount>
+					<p>23 23 23 0 155 155 155 0 91 91 91 0 106 133 198 0 91 91 91 0 155 155 155 0</p>
+				</polylist>
+				<polylist material="mat_head-material" count="2">
+					<input semantic="VERTEX" source="#mario_head-mesh-vertices" offset="0" />
+					<input semantic="NORMAL" source="#mario_head-mesh-normals" offset="1" />
+					<input semantic="TEXCOORD" source="#mario_head-mesh-map-0" offset="2" set="0" />
+					<input semantic="COLOR" source="#mario_head-mesh-colors" offset="3" />
+					<vcount>3 3</vcount>
+					<p>18 18 18 0 20 20 20 0 27 27 27 0 22 22 22 0 27 27 27 0 20 20 20 0</p>
+				</polylist>
+				<polylist material="mat_head-material" count="2">
+					<input semantic="VERTEX" source="#mario_head-mesh-vertices" offset="0" />
+					<input semantic="NORMAL" source="#mario_head-mesh-normals" offset="1" />
+					<input semantic="TEXCOORD" source="#mario_head-mesh-map-0" offset="2" set="0" />
+					<input semantic="COLOR" source="#mario_head-mesh-colors" offset="3" />
+					<vcount>3 3</vcount>
+					<p>89 89 89 0 91 91 91 0 135 135 89 0 106 133 198 0 135 135 89 0 91 91 91 0</p>
+				</polylist>
+				<polylist material="mat_head-material" count="2">
+					<input semantic="VERTEX" source="#mario_head-mesh-vertices" offset="0" />
+					<input semantic="NORMAL" source="#mario_head-mesh-normals" offset="1" />
+					<input semantic="TEXCOORD" source="#mario_head-mesh-map-0" offset="2" set="0" />
+					<input semantic="COLOR" source="#mario_head-mesh-colors" offset="3" />
+					<vcount>3 3</vcount>
+					<p>13 13 147 0 158 158 146 0 138 49 148 0 111 111 149 0 138 49 148 0 158 158 146 0</p>
+				</polylist>
+				<polylist material="mat_head-material" count="2">
+					<input semantic="VERTEX" source="#mario_head-mesh-vertices" offset="0" />
+					<input semantic="NORMAL" source="#mario_head-mesh-normals" offset="1" />
+					<input semantic="TEXCOORD" source="#mario_head-mesh-map-0" offset="2" set="0" />
+					<input semantic="COLOR" source="#mario_head-mesh-colors" offset="3" />
+					<vcount>3 3</vcount>
+					<p>32 32 32 0 30 30 30 0 34 34 34 0 29 29 29 0 34 34 34 0 30 30 30 0</p>
+				</polylist>
+				<polylist material="mat_head-material" count="14">
+					<input semantic="VERTEX" source="#mario_head-mesh-vertices" offset="0" />
+					<input semantic="NORMAL" source="#mario_head-mesh-normals" offset="1" />
+					<input semantic="TEXCOORD" source="#mario_head-mesh-map-0" offset="2" set="0" />
+					<input semantic="COLOR" source="#mario_head-mesh-colors" offset="3" />
+					<vcount>3 3 3 3 3 3 3 3 3 3 3 3 3 3</vcount>
+					<p>3 3 202 0 92 144 203 0 5 5 204 0 9 9 101 0 45 45 105 0 103 103 103 0 16 16 16 0 88 88 88 0 87 87 87 0 120 120 77 0 122 122 122 0 181 181 181 0 153 153 205 0 52 186 186 0 154 154 206 0 33 33 33 0 35 35 32 0 37 37 31 0 38 38 29 0 36 36 30 0 34 34 34 0 38 38 29 0 41 41 41 0 40 40 40 0 14 14 202 0 15 15 204 0 117 159 203 0 111 111 149 0 158 158 146 0 134 139 150 0 52 210 186 0 42 211 188 0 155 155 212 0 155 155 213 0 42 211 188 0 106 133 132 0 154 154 206 0 52 210 186 0 155 155 215 0 172 75 142 0 126 126 141 0 171 73 143 0</p>
+				</polylist>
+			</mesh>
+		</geometry>
+	</library_geometries>
+	<library_controllers>
+		<controller id="mario_head-skin" name="skinCluster_mario_head">
+			<skin source="#mario_head-mesh">
+				<bind_shape_matrix>1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1</bind_shape_matrix>
+				<source id="mario_head-skin-joints">
+					<IDREF_array id="mario_head-skin-joints-array" count="1">mario_head</IDREF_array>
+					<technique_common>
+						<accessor source="#mario_head-skin-joints-array" count="1" stride="1">
+							<param name="JOINT" type="Name" />
+						</accessor>
+					</technique_common>
+				</source>
+				<!--The inverse bind pose for a joint is given by the inverse bind pose of the parent joint (where present) multiplied by the inverse of the current joint's transformation matrix.-->
+				<source id="mario_head-skin-bind_poses">
+					<float_array id="mario_head-skin-bind_poses-array" count="16">1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1</float_array>
+					<technique_common>
+						<accessor source="#mario_head-skin-bind_poses-array" count="1" stride="16">
+							<param name="TRANSFORM" type="float4x4" />
+						</accessor>
+					</technique_common>
+				</source>
+				<source id="mario_head-skin-weights">
+					<!--The BMD format does not have any concept of 'weights', instead each vertex is assigned to one bone-->
+					<float_array id="mario_head-skin-weights-array" count="1">1</float_array>
+					<technique_common>
+						<accessor source="#mario_head-skin-weights-array" count="1" stride="1">
+							<param name="WEIGHT" type="float" />
+						</accessor>
+					</technique_common>
+				</source>
+				<joints>
+					<input semantic="JOINT" source="#mario_head-skin-joints" />
+					<input semantic="INV_BIND_MATRIX" source="#mario_head-skin-bind_poses" />
+				</joints>
+				<!--Each vertex will be assigned to only one bone with a weight of 1-->
+				<vertex_weights count="217">
+					<input semantic="JOINT" source="#mario_head-skin-joints" offset="0" />
+					<input semantic="WEIGHT" source="#mario_head-skin-weights" offset="1" />
+					<vcount>1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1</vcount>
+					<!--This list contains two values for each vertex, the first is the bone ID and the second is the index of the vertex weight '1' (0)-->
+					<v>0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0</v>
+				</vertex_weights>
+			</skin>
+		</controller>
+	</library_controllers>
+	<library_visual_scenes>
+		<visual_scene id="Scene" name="Scene">
+			<!--This lists each of the 'bones' in the BMD model, listing each bone's individual Scale, Rotation, Translation transformation in the reverse of the order in which they should be multiplied to form an SRT  matrix. This will then be multiplied recursively by the parents' transformations to get the final transformation for this joint.-->
+			<node id="mario_head" name="mario_head" sid="mario_head" type="JOINT">
+				<translate sid="translate">0 0 0</translate>
+				<rotate sid="rotationZ">0 0 1 0</rotate>
+				<rotate sid="rotationY">0 1 0 0</rotate>
+				<rotate sid="rotationX">1 0 0 0</rotate>
+				<scale sid="scale">1 1 1</scale>
+			</node>
+			<node id="mario_head-node" name="mario_head-node" type="NODE">
+				<instance_controller url="#mario_head-skin">
+					<skeleton>#mario_head</skeleton>
+					<bind_material>
+						<technique_common>
+							<instance_material symbol="mat_eye-material" target="#mat_eye-material">
+								<bind_vertex_input semantic="UVMap" input_semantic="TEXCOORD" input_set="0" />
+							</instance_material>
+							<instance_material symbol="mat_head-material" target="#mat_head-material">
+								<bind_vertex_input semantic="UVMap" input_semantic="TEXCOORD" input_set="0" />
+							</instance_material>
+						</technique_common>
+					</bind_material>
+				</instance_controller>
+			</node>
+		</visual_scene>
+	</library_visual_scenes>
+	<scene>
+		<instance_visual_scene url="#Scene" />
+	</scene>
+</COLLADA>

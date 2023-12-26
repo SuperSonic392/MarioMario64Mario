@@ -1,0 +1,198 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--SM64DS Editor v2.3 BETA 2015-10-31-->
+<COLLADA version="1.4.1" xmlns="http://www.collada.org/2005/11/COLLADASchema">
+	<asset>
+		<contributor>
+			<author>Fiachra</author>
+			<authoring_tool>SM64DS Editor v2.3 BETA 2015-10-31</authoring_tool>
+		</contributor>
+		<created>2017-09-23T23:18:00</created>
+		<modified>2017-09-23T23:18:00</modified>
+		<unit name="meter" meter="1" />
+		<up_axis>Y_UP</up_axis>
+	</asset>
+	<library_images>
+		<image id="coin_yellow01-img" name="coin_yellow01-img">
+			<init_from>coin_yellow01.png</init_from>
+		</image>
+	</library_images>
+	<library_effects>
+		<effect id="coin-effect">
+			<profile_COMMON>
+				<newparam sid="coin_yellow01-img-surface">
+					<surface type="2D">
+						<init_from>coin_yellow01-img</init_from>
+					</surface>
+				</newparam>
+				<newparam sid="coin_yellow01-img-sampler">
+					<sampler2D>
+						<source>coin_yellow01-img-surface</source>
+					</sampler2D>
+				</newparam>
+				<technique sid="common">
+					<phong>
+						<emission>
+							<color sid="emission">0 0 0 1.0</color>
+						</emission>
+						<ambient>
+							<color sid="ambient">0.5176471 0.5176471 0.5176471 1.0</color>
+						</ambient>
+						<diffuse>
+							<texture texture="coin_yellow01-img-sampler" texcoord="UVMap" />
+						</diffuse>
+						<specular>
+							<color sid="specular">0 0 0 1.0</color>
+						</specular>
+						<transparency>
+							<float sid="transparency">1</float>
+						</transparency>
+					</phong>
+				</technique>
+				<extra>
+					<technique profile="SM64DSe">
+						<lights>1 0 0 0</lights>
+						<environment_mapping>0</environment_mapping>
+						<double_sided>0</double_sided>
+						<tex_tiling>flip flip</tex_tiling>
+						<tex_scale>2 1</tex_scale>
+						<tex_rotate>0</tex_rotate>
+						<tex_translate>0 0</tex_translate>
+					</technique>
+				</extra>
+			</profile_COMMON>
+		</effect>
+	</library_effects>
+	<library_materials>
+		<material id="coin-material" name="coin">
+			<instance_effect url="#coin-effect" />
+		</material>
+	</library_materials>
+	<library_geometries>
+		<geometry id="coin_poly32-mesh" name="coin_poly32-mesh">
+			<mesh>
+				<source id="coin_poly32-mesh-positions">
+					<float_array id="coin_poly32-mesh-positions-array" count="102">4.202637 10.20264 -0.8081055 4.202637 10.20264 0.8081055 5.943359 6 0.8081055 5.943359 6 -0.8081055 4.202637 1.797363 0.8081055 4.202637 1.797363 -0.8081055 0 0.05664063 0.8081055 0 0.05664063 -0.8081055 -4.202637 1.797363 0.8081055 -4.202637 1.797363 -0.8081055 -5.943359 6 0.8081055 -5.943359 6 -0.8081055 -4.202637 10.20264 0.8081055 -4.202637 10.20264 -0.8081055 0 11.94336 0.8081055 0 11.94336 -0.8081055 0 11.94336 -0.8081055 4.202637 10.20264 -0.8081055 0 6 -0.8081055 5.943359 6 -0.8081055 4.202637 1.797363 -0.8081055 4.202637 10.20264 0.8081055 0 11.94336 0.8081055 0 6 0.8081055 -4.202637 10.20264 0.8081055 -5.943359 6 0.8081055 -4.202637 1.797363 0.8081055 0 0.05664063 0.8081055 4.202637 1.797363 0.8081055 -4.202637 10.20264 -0.8081055 -5.943359 6 -0.8081055 -4.202637 1.797363 -0.8081055 0 0.05664063 -0.8081055 5.943359 6 0.8081055</float_array>
+					<technique_common>
+						<accessor source="#coin_poly32-mesh-positions-array" count="34" stride="3">
+							<param name="X" type="float" />
+							<param name="Y" type="float" />
+							<param name="Z" type="float" />
+						</accessor>
+					</technique_common>
+				</source>
+				<source id="coin_poly32-mesh-normals">
+					<float_array id="coin_poly32-mesh-normals-array" count="102">45.25 45.25 0 45.25 45.25 0 63.875 0 0 63.875 0 0 45.25 -45.25 0 45.25 -45.25 0 0 -64 0 0 -64 0 -45.25 -45.25 0 -45.25 -45.25 0 -64 0 0 -64 0 0 -45.25 45.25 0 -45.25 45.25 0 0 63.875 0 0 63.875 0 0 0 -64 0 0 -64 0 0 -64 0 0 -64 0 0 -64 0 0 63.875 0 0 63.875 0 0 63.875 0 0 63.875 0 0 63.875 0 0 63.875 0 0 63.875 0 0 63.875 0 0 -64 0 0 -64 0 0 -64 0 0 -64 0 0 63.875</float_array>
+					<technique_common>
+						<accessor source="#coin_poly32-mesh-normals-array" count="34" stride="3">
+							<param name="X" type="float" />
+							<param name="Y" type="float" />
+							<param name="Z" type="float" />
+						</accessor>
+					</technique_common>
+				</source>
+				<source id="coin_poly32-mesh-map-0">
+					<float_array id="coin_poly32-mesh-map-0-array" count="68">1.765625 0.1269531 1.765625 0.1269531 2.085938 0.5126953 2.085938 0.5126953 1.765625 0.8984375 1.765625 0.8984375 0.9921875 1.057617 0.9921875 1.057617 0.2265625 0.8984375 0.2265625 0.8984375 -0.09375 0.5126953 -0.09375 0.5126953 0.2265625 0.1269531 0.2265625 0.1269531 0.9921875 -0.03222656 0.9921875 -0.03222656 0.9921875 -0.03222656 1.765625 0.1269531 0.9921875 0.5126953 2.085938 0.5126953 1.765625 0.8984375 1.765625 0.1269531 0.9921875 -0.03222656 0.9921875 0.5126953 0.2265625 0.1269531 -0.09375 0.5126953 0.2265625 0.8984375 0.9921875 1.057617 1.765625 0.8984375 0.2265625 0.1269531 -0.09375 0.5126953 0.2265625 0.8984375 0.9921875 1.057617 2.085938 0.5126953</float_array>
+					<technique_common>
+						<accessor source="#coin_poly32-mesh-map-0-array" count="34" stride="2">
+							<param name="S" type="float" />
+							<param name="T" type="float" />
+						</accessor>
+					</technique_common>
+				</source>
+				<source id="coin_poly32-mesh-colors">
+					<float_array id="coin_poly32-mesh-colors-array" count="102">1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1</float_array>
+					<technique_common>
+						<accessor source="#coin_poly32-mesh-colors-array" count="34" stride="3">
+							<param name="R" type="float" />
+							<param name="G" type="float" />
+							<param name="B" type="float" />
+						</accessor>
+					</technique_common>
+				</source>
+				<vertices id="coin_poly32-mesh-vertices">
+					<input semantic="POSITION" source="#coin_poly32-mesh-positions" />
+				</vertices>
+				<polylist material="coin-material" count="24">
+					<input semantic="VERTEX" source="#coin_poly32-mesh-vertices" offset="0" />
+					<input semantic="NORMAL" source="#coin_poly32-mesh-normals" offset="1" />
+					<input semantic="TEXCOORD" source="#coin_poly32-mesh-map-0" offset="2" set="0" />
+					<input semantic="COLOR" source="#coin_poly32-mesh-colors" offset="3" />
+					<vcount>4 4 4 4 4 4 4 4 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3</vcount>
+					<p>0 0 0 0 1 0 0 0 2 2 2 0 3 2 2 0 3 2 2 0 2 2 2 0 4 4 4 0 5 4 4 0 5 4 4 0 4 4 4 0 6 6 6 0 7 6 6 0 7 6 6 0 6 6 6 0 8 8 8 0 9 8 8 0 9 8 8 0 8 8 8 0 10 10 10 0 11 10 10 0 11 10 10 0 10 10 10 0 12 12 12 0 13 12 12 0 13 12 12 0 12 12 12 0 14 14 14 0 15 14 14 0 15 14 14 0 14 14 14 0 1 0 0 0 0 0 0 0 15 16 14 0 0 16 0 0 18 16 18 0 3 16 2 0 18 16 18 0 0 16 0 0 18 16 18 0 3 16 2 0 5 16 4 0 1 21 0 0 14 21 14 0 23 21 18 0 12 21 12 0 23 21 18 0 14 21 14 0 23 21 18 0 12 21 12 0 10 21 10 0 10 21 10 0 8 21 8 0 23 21 18 0 6 21 6 0 23 21 18 0 8 21 8 0 23 21 18 0 6 21 6 0 4 21 4 0 15 16 14 0 18 16 18 0 13 16 12 0 11 16 10 0 13 16 12 0 18 16 18 0 11 16 10 0 18 16 18 0 9 16 8 0 7 16 6 0 9 16 8 0 18 16 18 0 4 21 4 0 2 21 2 0 23 21 18 0 1 21 0 0 23 21 18 0 2 21 2 0 5 16 4 0 7 16 6 0 18 16 18 0</p>
+				</polylist>
+			</mesh>
+		</geometry>
+	</library_geometries>
+	<library_controllers>
+		<controller id="coin_poly32-skin" name="skinCluster_coin_poly32">
+			<skin source="#coin_poly32-mesh">
+				<bind_shape_matrix>1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1</bind_shape_matrix>
+				<source id="coin_poly32-skin-joints">
+					<IDREF_array id="coin_poly32-skin-joints-array" count="1">coin_poly32</IDREF_array>
+					<technique_common>
+						<accessor source="#coin_poly32-skin-joints-array" count="1" stride="1">
+							<param name="JOINT" type="Name" />
+						</accessor>
+					</technique_common>
+				</source>
+				<!--The inverse bind pose for a joint is given by the inverse bind pose of the parent joint (where present) multiplied by the inverse of the current joint's transformation matrix.-->
+				<source id="coin_poly32-skin-bind_poses">
+					<float_array id="coin_poly32-skin-bind_poses-array" count="16">1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1</float_array>
+					<technique_common>
+						<accessor source="#coin_poly32-skin-bind_poses-array" count="1" stride="16">
+							<param name="TRANSFORM" type="float4x4" />
+						</accessor>
+					</technique_common>
+				</source>
+				<source id="coin_poly32-skin-weights">
+					<!--The BMD format does not have any concept of 'weights', instead each vertex is assigned to one bone-->
+					<float_array id="coin_poly32-skin-weights-array" count="1">1</float_array>
+					<technique_common>
+						<accessor source="#coin_poly32-skin-weights-array" count="1" stride="1">
+							<param name="WEIGHT" type="float" />
+						</accessor>
+					</technique_common>
+				</source>
+				<joints>
+					<input semantic="JOINT" source="#coin_poly32-skin-joints" />
+					<input semantic="INV_BIND_MATRIX" source="#coin_poly32-skin-bind_poses" />
+				</joints>
+				<!--Each vertex will be assigned to only one bone with a weight of 1-->
+				<vertex_weights count="34">
+					<input semantic="JOINT" source="#coin_poly32-skin-joints" offset="0" />
+					<input semantic="WEIGHT" source="#coin_poly32-skin-weights" offset="1" />
+					<vcount>1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1</vcount>
+					<!--This list contains two values for each vertex, the first is the bone ID and the second is the index of the vertex weight '1' (0)-->
+					<v>0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0</v>
+				</vertex_weights>
+			</skin>
+		</controller>
+	</library_controllers>
+	<library_visual_scenes>
+		<visual_scene id="Scene" name="Scene">
+			<!--This lists each of the 'bones' in the BMD model, listing each bone's individual Scale, Rotation, Translation transformation in the reverse of the order in which they should be multiplied to form an SRT  matrix. This will then be multiplied recursively by the parents' transformations to get the final transformation for this joint.-->
+			<node id="coin_poly32" name="coin_poly32" sid="coin_poly32" type="JOINT">
+				<translate sid="translate">0 0 0</translate>
+				<rotate sid="rotationZ">0 0 1 0</rotate>
+				<rotate sid="rotationY">0 1 0 0</rotate>
+				<rotate sid="rotationX">1 0 0 0</rotate>
+				<scale sid="scale">1 1 1</scale>
+			</node>
+			<node id="coin_poly32-node" name="coin_poly32-node" type="NODE">
+				<instance_controller url="#coin_poly32-skin">
+					<skeleton>#coin_poly32</skeleton>
+					<bind_material>
+						<technique_common>
+							<instance_material symbol="coin-material" target="#coin-material">
+								<bind_vertex_input semantic="UVMap" input_semantic="TEXCOORD" input_set="0" />
+							</instance_material>
+						</technique_common>
+					</bind_material>
+				</instance_controller>
+			</node>
+		</visual_scene>
+	</library_visual_scenes>
+	<scene>
+		<instance_visual_scene url="#Scene" />
+	</scene>
+</COLLADA>

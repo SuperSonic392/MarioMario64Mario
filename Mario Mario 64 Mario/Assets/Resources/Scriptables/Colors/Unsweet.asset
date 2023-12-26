@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e4605ac12f84a2849a9fe5751534d34f, type: 3}
+  m_Name: Unsweet
+  m_EditorClassIdentifier: 
+  shirt: {r: 0.09803922, g: 0.09803922, b: 0.09803922, a: 0}
+  pants: {r: 0.56078434, g: 0.22745098, b: 0.3882353, a: 0}
+  enabled: 1

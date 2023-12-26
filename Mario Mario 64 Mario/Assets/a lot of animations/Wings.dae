@@ -1,0 +1,717 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--SM64DS Editor v2.3.5 2017-07-05-->
+<COLLADA version="1.4.1" xmlns="http://www.collada.org/2005/11/COLLADASchema">
+	<asset>
+		<contributor>
+			<author>Fiachra</author>
+			<authoring_tool>SM64DS Editor v2.3.5 2017-07-05</authoring_tool>
+		</contributor>
+		<created>2023-07-16T05:02:27</created>
+		<modified>2023-07-16T05:02:27</modified>
+		<unit name="meter" meter="1" />
+		<up_axis>Y_UP</up_axis>
+	</asset>
+	<library_animations>
+		<animation id="wing_shape_translate">
+			<source id="wing_shape_translate-input">
+				<float_array id="wing_shape_translate-input-array" count="14">0 0.03333334 0.06666667 0.1 0.1333333 0.1666667 0.2 0.2333333 0.2666667 0.3 0.3333333 0.3666667 0.4 0.4333334</float_array>
+				<technique_common>
+					<accessor count="14" offset="0" source="#wing_shape_translate-input-array" stride="1">
+						<param name="TIME" type="float" />
+					</accessor>
+				</technique_common>
+			</source>
+			<source id="wing_shape_translate-output">
+				<float_array id="wing_shape_translate-output-array" count="42">0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0</float_array>
+				<technique_common>
+					<accessor count="14" offset="0" source="#wing_shape_translate-output-array" stride="3">
+						<param name="X" type="float" />
+						<param name="Y" type="float" />
+						<param name="Z" type="float" />
+					</accessor>
+				</technique_common>
+			</source>
+			<source id="wing_shape_translate-interpolations">
+				<Name_array id="wing_shape_translate-interpolations-array" count="14">LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR</Name_array>
+				<technique_common>
+					<accessor count="14" offset="0" source="#wing_shape_translate-interpolations-array" stride="1">
+						<param name="INTERPOLATION" type="Name" />
+					</accessor>
+				</technique_common>
+			</source>
+			<sampler id="wing_shape_translate-sampler">
+				<input semantic="INPUT" source="#wing_shape_translate-input" />
+				<input semantic="OUTPUT" source="#wing_shape_translate-output" />
+				<input semantic="INTERPOLATION" source="#wing_shape_translate-interpolations" />
+			</sampler>
+			<channel source="#wing_shape_translate-sampler" target="wing_shape/translate" />
+		</animation>
+		<animation id="wing_shape_rotationZ">
+			<source id="wing_shape_rotationZ-input">
+				<float_array id="wing_shape_rotationZ-input-array" count="14">0 0.03333334 0.06666667 0.1 0.1333333 0.1666667 0.2 0.2333333 0.2666667 0.3 0.3333333 0.3666667 0.4 0.4333334</float_array>
+				<technique_common>
+					<accessor count="14" offset="0" source="#wing_shape_rotationZ-input-array" stride="1">
+						<param name="TIME" type="float" />
+					</accessor>
+				</technique_common>
+			</source>
+			<source id="wing_shape_rotationZ-output">
+				<float_array id="wing_shape_rotationZ-output-array" count="14">0 0 0 0 0 0 0 0 0 0 0 0 0 0</float_array>
+				<technique_common>
+					<accessor count="14" offset="0" source="#wing_shape_rotationZ-output-array" stride="1">
+						<param name="ANGLE" type="float" />
+					</accessor>
+				</technique_common>
+			</source>
+			<source id="wing_shape_rotationZ-interpolations">
+				<Name_array id="wing_shape_rotationZ-interpolations-array" count="14">LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR</Name_array>
+				<technique_common>
+					<accessor count="14" offset="0" source="#wing_shape_rotationZ-interpolations-array" stride="1">
+						<param name="INTERPOLATION" type="Name" />
+					</accessor>
+				</technique_common>
+			</source>
+			<sampler id="wing_shape_rotationZ-sampler">
+				<input semantic="INPUT" source="#wing_shape_rotationZ-input" />
+				<input semantic="OUTPUT" source="#wing_shape_rotationZ-output" />
+				<input semantic="INTERPOLATION" source="#wing_shape_rotationZ-interpolations" />
+			</sampler>
+			<channel source="#wing_shape_rotationZ-sampler" target="wing_shape/rotationZ.ANGLE" />
+		</animation>
+		<animation id="wing_shape_rotationY">
+			<source id="wing_shape_rotationY-input">
+				<float_array id="wing_shape_rotationY-input-array" count="14">0 0.03333334 0.06666667 0.1 0.1333333 0.1666667 0.2 0.2333333 0.2666667 0.3 0.3333333 0.3666667 0.4 0.4333334</float_array>
+				<technique_common>
+					<accessor count="14" offset="0" source="#wing_shape_rotationY-input-array" stride="1">
+						<param name="TIME" type="float" />
+					</accessor>
+				</technique_common>
+			</source>
+			<source id="wing_shape_rotationY-output">
+				<float_array id="wing_shape_rotationY-output-array" count="14">0 0 0 0 0 0 0 0 0 0 0 0 0 0</float_array>
+				<technique_common>
+					<accessor count="14" offset="0" source="#wing_shape_rotationY-output-array" stride="1">
+						<param name="ANGLE" type="float" />
+					</accessor>
+				</technique_common>
+			</source>
+			<source id="wing_shape_rotationY-interpolations">
+				<Name_array id="wing_shape_rotationY-interpolations-array" count="14">LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR</Name_array>
+				<technique_common>
+					<accessor count="14" offset="0" source="#wing_shape_rotationY-interpolations-array" stride="1">
+						<param name="INTERPOLATION" type="Name" />
+					</accessor>
+				</technique_common>
+			</source>
+			<sampler id="wing_shape_rotationY-sampler">
+				<input semantic="INPUT" source="#wing_shape_rotationY-input" />
+				<input semantic="OUTPUT" source="#wing_shape_rotationY-output" />
+				<input semantic="INTERPOLATION" source="#wing_shape_rotationY-interpolations" />
+			</sampler>
+			<channel source="#wing_shape_rotationY-sampler" target="wing_shape/rotationY.ANGLE" />
+		</animation>
+		<animation id="wing_shape_rotationX">
+			<source id="wing_shape_rotationX-input">
+				<float_array id="wing_shape_rotationX-input-array" count="14">0 0.03333334 0.06666667 0.1 0.1333333 0.1666667 0.2 0.2333333 0.2666667 0.3 0.3333333 0.3666667 0.4 0.4333334</float_array>
+				<technique_common>
+					<accessor count="14" offset="0" source="#wing_shape_rotationX-input-array" stride="1">
+						<param name="TIME" type="float" />
+					</accessor>
+				</technique_common>
+			</source>
+			<source id="wing_shape_rotationX-output">
+				<float_array id="wing_shape_rotationX-output-array" count="14">0 0 0 0 0 0 0 0 0 0 0 0 0 0</float_array>
+				<technique_common>
+					<accessor count="14" offset="0" source="#wing_shape_rotationX-output-array" stride="1">
+						<param name="ANGLE" type="float" />
+					</accessor>
+				</technique_common>
+			</source>
+			<source id="wing_shape_rotationX-interpolations">
+				<Name_array id="wing_shape_rotationX-interpolations-array" count="14">LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR</Name_array>
+				<technique_common>
+					<accessor count="14" offset="0" source="#wing_shape_rotationX-interpolations-array" stride="1">
+						<param name="INTERPOLATION" type="Name" />
+					</accessor>
+				</technique_common>
+			</source>
+			<sampler id="wing_shape_rotationX-sampler">
+				<input semantic="INPUT" source="#wing_shape_rotationX-input" />
+				<input semantic="OUTPUT" source="#wing_shape_rotationX-output" />
+				<input semantic="INTERPOLATION" source="#wing_shape_rotationX-interpolations" />
+			</sampler>
+			<channel source="#wing_shape_rotationX-sampler" target="wing_shape/rotationX.ANGLE" />
+		</animation>
+		<animation id="wing_shape_scale">
+			<source id="wing_shape_scale-input">
+				<float_array id="wing_shape_scale-input-array" count="14">0 0.03333334 0.06666667 0.1 0.1333333 0.1666667 0.2 0.2333333 0.2666667 0.3 0.3333333 0.3666667 0.4 0.4333334</float_array>
+				<technique_common>
+					<accessor count="14" offset="0" source="#wing_shape_scale-input-array" stride="1">
+						<param name="TIME" type="float" />
+					</accessor>
+				</technique_common>
+			</source>
+			<source id="wing_shape_scale-output">
+				<float_array id="wing_shape_scale-output-array" count="42">1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1</float_array>
+				<technique_common>
+					<accessor count="14" offset="0" source="#wing_shape_scale-output-array" stride="3">
+						<param name="X" type="float" />
+						<param name="Y" type="float" />
+						<param name="Z" type="float" />
+					</accessor>
+				</technique_common>
+			</source>
+			<source id="wing_shape_scale-interpolations">
+				<Name_array id="wing_shape_scale-interpolations-array" count="14">LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR</Name_array>
+				<technique_common>
+					<accessor count="14" offset="0" source="#wing_shape_scale-interpolations-array" stride="1">
+						<param name="INTERPOLATION" type="Name" />
+					</accessor>
+				</technique_common>
+			</source>
+			<sampler id="wing_shape_scale-sampler">
+				<input semantic="INPUT" source="#wing_shape_scale-input" />
+				<input semantic="OUTPUT" source="#wing_shape_scale-output" />
+				<input semantic="INTERPOLATION" source="#wing_shape_scale-interpolations" />
+			</sampler>
+			<channel source="#wing_shape_scale-sampler" target="wing_shape/scale" />
+		</animation>
+		<animation id="wing_l1_translate">
+			<source id="wing_l1_translate-input">
+				<float_array id="wing_l1_translate-input-array" count="14">0 0.03333334 0.06666667 0.1 0.1333333 0.1666667 0.2 0.2333333 0.2666667 0.3 0.3333333 0.3666667 0.4 0.4333334</float_array>
+				<technique_common>
+					<accessor count="14" offset="0" source="#wing_l1_translate-input-array" stride="1">
+						<param name="TIME" type="float" />
+					</accessor>
+				</technique_common>
+			</source>
+			<source id="wing_l1_translate-output">
+				<float_array id="wing_l1_translate-output-array" count="42">-1.437988 -3.513672 1.182373 -1.437988 -3.513672 1.182373 -1.437988 -3.513672 1.182373 -1.437988 -3.513672 1.182373 -1.437988 -3.513672 1.182373 -1.437988 -3.513672 1.182373 -1.437988 -3.513672 1.182373 -1.437988 -3.513672 1.182373 -1.437988 -3.513672 1.182373 -1.437988 -3.513672 1.182373 -1.437988 -3.513672 1.182373 -1.437988 -3.513672 1.182373 -1.437988 -3.513672 1.182373 -1.437988 -3.513672 1.182373</float_array>
+				<technique_common>
+					<accessor count="14" offset="0" source="#wing_l1_translate-output-array" stride="3">
+						<param name="X" type="float" />
+						<param name="Y" type="float" />
+						<param name="Z" type="float" />
+					</accessor>
+				</technique_common>
+			</source>
+			<source id="wing_l1_translate-interpolations">
+				<Name_array id="wing_l1_translate-interpolations-array" count="14">LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR</Name_array>
+				<technique_common>
+					<accessor count="14" offset="0" source="#wing_l1_translate-interpolations-array" stride="1">
+						<param name="INTERPOLATION" type="Name" />
+					</accessor>
+				</technique_common>
+			</source>
+			<sampler id="wing_l1_translate-sampler">
+				<input semantic="INPUT" source="#wing_l1_translate-input" />
+				<input semantic="OUTPUT" source="#wing_l1_translate-output" />
+				<input semantic="INTERPOLATION" source="#wing_l1_translate-interpolations" />
+			</sampler>
+			<channel source="#wing_l1_translate-sampler" target="wing_l1/translate" />
+		</animation>
+		<animation id="wing_l1_rotationZ">
+			<source id="wing_l1_rotationZ-input">
+				<float_array id="wing_l1_rotationZ-input-array" count="14">0 0.03333334 0.06666667 0.1 0.1333333 0.1666667 0.2 0.2333333 0.2666667 0.3 0.3333333 0.3666667 0.4 0.4333334</float_array>
+				<technique_common>
+					<accessor count="14" offset="0" source="#wing_l1_rotationZ-input-array" stride="1">
+						<param name="TIME" type="float" />
+					</accessor>
+				</technique_common>
+			</source>
+			<source id="wing_l1_rotationZ-output">
+				<float_array id="wing_l1_rotationZ-output-array" count="14">-135.4395 -139.834 -148.5351 -164.0918 173.7598 154.8633 147.832 156.0059 176.8359 -161.8066 -148.2715 -141.1523 -137.5488 -135.8789</float_array>
+				<technique_common>
+					<accessor count="14" offset="0" source="#wing_l1_rotationZ-output-array" stride="1">
+						<param name="ANGLE" type="float" />
+					</accessor>
+				</technique_common>
+			</source>
+			<source id="wing_l1_rotationZ-interpolations">
+				<Name_array id="wing_l1_rotationZ-interpolations-array" count="14">LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR</Name_array>
+				<technique_common>
+					<accessor count="14" offset="0" source="#wing_l1_rotationZ-interpolations-array" stride="1">
+						<param name="INTERPOLATION" type="Name" />
+					</accessor>
+				</technique_common>
+			</source>
+			<sampler id="wing_l1_rotationZ-sampler">
+				<input semantic="INPUT" source="#wing_l1_rotationZ-input" />
+				<input semantic="OUTPUT" source="#wing_l1_rotationZ-output" />
+				<input semantic="INTERPOLATION" source="#wing_l1_rotationZ-interpolations" />
+			</sampler>
+			<channel source="#wing_l1_rotationZ-sampler" target="wing_l1/rotationZ.ANGLE" />
+		</animation>
+		<animation id="wing_l1_rotationY">
+			<source id="wing_l1_rotationY-input">
+				<float_array id="wing_l1_rotationY-input-array" count="14">0 0.03333334 0.06666667 0.1 0.1333333 0.1666667 0.2 0.2333333 0.2666667 0.3 0.3333333 0.3666667 0.4 0.4333334</float_array>
+				<technique_common>
+					<accessor count="14" offset="0" source="#wing_l1_rotationY-input-array" stride="1">
+						<param name="TIME" type="float" />
+					</accessor>
+				</technique_common>
+			</source>
+			<source id="wing_l1_rotationY-output">
+				<float_array id="wing_l1_rotationY-output-array" count="14">-49.13086 -55.98633 -63.45703 -69.60937 -72.86133 -73.03711 -72.59766 -72.94922 -72.0703 -67.76367 -60.82031 -53.61328 -48.25195 -46.23047</float_array>
+				<technique_common>
+					<accessor count="14" offset="0" source="#wing_l1_rotationY-output-array" stride="1">
+						<param name="ANGLE" type="float" />
+					</accessor>
+				</technique_common>
+			</source>
+			<source id="wing_l1_rotationY-interpolations">
+				<Name_array id="wing_l1_rotationY-interpolations-array" count="14">LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR</Name_array>
+				<technique_common>
+					<accessor count="14" offset="0" source="#wing_l1_rotationY-interpolations-array" stride="1">
+						<param name="INTERPOLATION" type="Name" />
+					</accessor>
+				</technique_common>
+			</source>
+			<sampler id="wing_l1_rotationY-sampler">
+				<input semantic="INPUT" source="#wing_l1_rotationY-input" />
+				<input semantic="OUTPUT" source="#wing_l1_rotationY-output" />
+				<input semantic="INTERPOLATION" source="#wing_l1_rotationY-interpolations" />
+			</sampler>
+			<channel source="#wing_l1_rotationY-sampler" target="wing_l1/rotationY.ANGLE" />
+		</animation>
+		<animation id="wing_l1_rotationX">
+			<source id="wing_l1_rotationX-input">
+				<float_array id="wing_l1_rotationX-input-array" count="14">0 0.03333334 0.06666667 0.1 0.1333333 0.1666667 0.2 0.2333333 0.2666667 0.3 0.3333333 0.3666667 0.4 0.4333334</float_array>
+				<technique_common>
+					<accessor count="14" offset="0" source="#wing_l1_rotationX-input-array" stride="1">
+						<param name="TIME" type="float" />
+					</accessor>
+				</technique_common>
+			</source>
+			<source id="wing_l1_rotationX-output">
+				<float_array id="wing_l1_rotationX-output-array" count="14">9.316405 19.6875 34.71679 56.25 83.14453 105.2051 113.3789 103.7109 79.01367 51.85546 31.46484 17.75391 9.228516 6.064453</float_array>
+				<technique_common>
+					<accessor count="14" offset="0" source="#wing_l1_rotationX-output-array" stride="1">
+						<param name="ANGLE" type="float" />
+					</accessor>
+				</technique_common>
+			</source>
+			<source id="wing_l1_rotationX-interpolations">
+				<Name_array id="wing_l1_rotationX-interpolations-array" count="14">LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR</Name_array>
+				<technique_common>
+					<accessor count="14" offset="0" source="#wing_l1_rotationX-interpolations-array" stride="1">
+						<param name="INTERPOLATION" type="Name" />
+					</accessor>
+				</technique_common>
+			</source>
+			<sampler id="wing_l1_rotationX-sampler">
+				<input semantic="INPUT" source="#wing_l1_rotationX-input" />
+				<input semantic="OUTPUT" source="#wing_l1_rotationX-output" />
+				<input semantic="INTERPOLATION" source="#wing_l1_rotationX-interpolations" />
+			</sampler>
+			<channel source="#wing_l1_rotationX-sampler" target="wing_l1/rotationX.ANGLE" />
+		</animation>
+		<animation id="wing_l1_scale">
+			<source id="wing_l1_scale-input">
+				<float_array id="wing_l1_scale-input-array" count="14">0 0.03333334 0.06666667 0.1 0.1333333 0.1666667 0.2 0.2333333 0.2666667 0.3 0.3333333 0.3666667 0.4 0.4333334</float_array>
+				<technique_common>
+					<accessor count="14" offset="0" source="#wing_l1_scale-input-array" stride="1">
+						<param name="TIME" type="float" />
+					</accessor>
+				</technique_common>
+			</source>
+			<source id="wing_l1_scale-output">
+				<float_array id="wing_l1_scale-output-array" count="42">1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1</float_array>
+				<technique_common>
+					<accessor count="14" offset="0" source="#wing_l1_scale-output-array" stride="3">
+						<param name="X" type="float" />
+						<param name="Y" type="float" />
+						<param name="Z" type="float" />
+					</accessor>
+				</technique_common>
+			</source>
+			<source id="wing_l1_scale-interpolations">
+				<Name_array id="wing_l1_scale-interpolations-array" count="14">LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR</Name_array>
+				<technique_common>
+					<accessor count="14" offset="0" source="#wing_l1_scale-interpolations-array" stride="1">
+						<param name="INTERPOLATION" type="Name" />
+					</accessor>
+				</technique_common>
+			</source>
+			<sampler id="wing_l1_scale-sampler">
+				<input semantic="INPUT" source="#wing_l1_scale-input" />
+				<input semantic="OUTPUT" source="#wing_l1_scale-output" />
+				<input semantic="INTERPOLATION" source="#wing_l1_scale-interpolations" />
+			</sampler>
+			<channel source="#wing_l1_scale-sampler" target="wing_l1/scale" />
+		</animation>
+		<animation id="wing_r1_translate">
+			<source id="wing_r1_translate-input">
+				<float_array id="wing_r1_translate-input-array" count="14">0 0.03333334 0.06666667 0.1 0.1333333 0.1666667 0.2 0.2333333 0.2666667 0.3 0.3333333 0.3666667 0.4 0.4333334</float_array>
+				<technique_common>
+					<accessor count="14" offset="0" source="#wing_r1_translate-input-array" stride="1">
+						<param name="TIME" type="float" />
+					</accessor>
+				</technique_common>
+			</source>
+			<source id="wing_r1_translate-output">
+				<float_array id="wing_r1_translate-output-array" count="42">-1.437988 -3.513672 -1.182373 -1.437988 -3.513672 -1.182373 -1.437988 -3.513672 -1.182373 -1.437988 -3.513672 -1.182373 -1.437988 -3.513672 -1.182373 -1.437988 -3.513672 -1.182373 -1.437988 -3.513672 -1.182373 -1.437988 -3.513672 -1.182373 -1.437988 -3.513672 -1.182373 -1.437988 -3.513672 -1.182373 -1.437988 -3.513672 -1.182373 -1.437988 -3.513672 -1.182373 -1.437988 -3.513672 -1.182373 -1.437988 -3.513672 -1.182373</float_array>
+				<technique_common>
+					<accessor count="14" offset="0" source="#wing_r1_translate-output-array" stride="3">
+						<param name="X" type="float" />
+						<param name="Y" type="float" />
+						<param name="Z" type="float" />
+					</accessor>
+				</technique_common>
+			</source>
+			<source id="wing_r1_translate-interpolations">
+				<Name_array id="wing_r1_translate-interpolations-array" count="14">LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR</Name_array>
+				<technique_common>
+					<accessor count="14" offset="0" source="#wing_r1_translate-interpolations-array" stride="1">
+						<param name="INTERPOLATION" type="Name" />
+					</accessor>
+				</technique_common>
+			</source>
+			<sampler id="wing_r1_translate-sampler">
+				<input semantic="INPUT" source="#wing_r1_translate-input" />
+				<input semantic="OUTPUT" source="#wing_r1_translate-output" />
+				<input semantic="INTERPOLATION" source="#wing_r1_translate-interpolations" />
+			</sampler>
+			<channel source="#wing_r1_translate-sampler" target="wing_r1/translate" />
+		</animation>
+		<animation id="wing_r1_rotationZ">
+			<source id="wing_r1_rotationZ-input">
+				<float_array id="wing_r1_rotationZ-input-array" count="14">0 0.03333334 0.06666667 0.1 0.1333333 0.1666667 0.2 0.2333333 0.2666667 0.3 0.3333333 0.3666667 0.4 0.4333334</float_array>
+				<technique_common>
+					<accessor count="14" offset="0" source="#wing_r1_rotationZ-input-array" stride="1">
+						<param name="TIME" type="float" />
+					</accessor>
+				</technique_common>
+			</source>
+			<source id="wing_r1_rotationZ-output">
+				<float_array id="wing_r1_rotationZ-output-array" count="14">-136.7578 -143.2617 -153.8086 -169.541 170.5078 153.1934 146.3379 155.2148 175.4297 -165.0586 -151.6992 -143.4375 -138.6035 -136.3184</float_array>
+				<technique_common>
+					<accessor count="14" offset="0" source="#wing_r1_rotationZ-output-array" stride="1">
+						<param name="ANGLE" type="float" />
+					</accessor>
+				</technique_common>
+			</source>
+			<source id="wing_r1_rotationZ-interpolations">
+				<Name_array id="wing_r1_rotationZ-interpolations-array" count="14">LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR</Name_array>
+				<technique_common>
+					<accessor count="14" offset="0" source="#wing_r1_rotationZ-interpolations-array" stride="1">
+						<param name="INTERPOLATION" type="Name" />
+					</accessor>
+				</technique_common>
+			</source>
+			<sampler id="wing_r1_rotationZ-sampler">
+				<input semantic="INPUT" source="#wing_r1_rotationZ-input" />
+				<input semantic="OUTPUT" source="#wing_r1_rotationZ-output" />
+				<input semantic="INTERPOLATION" source="#wing_r1_rotationZ-interpolations" />
+			</sampler>
+			<channel source="#wing_r1_rotationZ-sampler" target="wing_r1/rotationZ.ANGLE" />
+		</animation>
+		<animation id="wing_r1_rotationY">
+			<source id="wing_r1_rotationY-input">
+				<float_array id="wing_r1_rotationY-input-array" count="14">0 0.03333334 0.06666667 0.1 0.1333333 0.1666667 0.2 0.2333333 0.2666667 0.3 0.3333333 0.3666667 0.4 0.4333334</float_array>
+				<technique_common>
+					<accessor count="14" offset="0" source="#wing_r1_rotationY-input-array" stride="1">
+						<param name="TIME" type="float" />
+					</accessor>
+				</technique_common>
+			</source>
+			<source id="wing_r1_rotationY-output">
+				<float_array id="wing_r1_rotationY-output-array" count="14">53.96484 59.67773 65.83008 70.92773 73.91602 74.79492 74.79492 74.53124 72.50977 67.67578 60.99609 54.49218 50.00977 49.30664</float_array>
+				<technique_common>
+					<accessor count="14" offset="0" source="#wing_r1_rotationY-output-array" stride="1">
+						<param name="ANGLE" type="float" />
+					</accessor>
+				</technique_common>
+			</source>
+			<source id="wing_r1_rotationY-interpolations">
+				<Name_array id="wing_r1_rotationY-interpolations-array" count="14">LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR</Name_array>
+				<technique_common>
+					<accessor count="14" offset="0" source="#wing_r1_rotationY-interpolations-array" stride="1">
+						<param name="INTERPOLATION" type="Name" />
+					</accessor>
+				</technique_common>
+			</source>
+			<sampler id="wing_r1_rotationY-sampler">
+				<input semantic="INPUT" source="#wing_r1_rotationY-input" />
+				<input semantic="OUTPUT" source="#wing_r1_rotationY-output" />
+				<input semantic="INTERPOLATION" source="#wing_r1_rotationY-interpolations" />
+			</sampler>
+			<channel source="#wing_r1_rotationY-sampler" target="wing_r1/rotationY.ANGLE" />
+		</animation>
+		<animation id="wing_r1_rotationX">
+			<source id="wing_r1_rotationX-input">
+				<float_array id="wing_r1_rotationX-input-array" count="14">0 0.03333334 0.06666667 0.1 0.1333333 0.1666667 0.2 0.2333333 0.2666667 0.3 0.3333333 0.3666667 0.4 0.4333334</float_array>
+				<technique_common>
+					<accessor count="14" offset="0" source="#wing_r1_rotationX-input-array" stride="1">
+						<param name="TIME" type="float" />
+					</accessor>
+				</technique_common>
+			</source>
+			<source id="wing_r1_rotationX-output">
+				<float_array id="wing_r1_rotationX-output-array" count="14">-10.2832 -21.97266 -38.14453 -59.32617 -83.75977 -104.1504 -112.1484 -101.6894 -77.34375 -52.03125 -32.34375 -18.19336 -9.316405 -6.152344</float_array>
+				<technique_common>
+					<accessor count="14" offset="0" source="#wing_r1_rotationX-output-array" stride="1">
+						<param name="ANGLE" type="float" />
+					</accessor>
+				</technique_common>
+			</source>
+			<source id="wing_r1_rotationX-interpolations">
+				<Name_array id="wing_r1_rotationX-interpolations-array" count="14">LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR</Name_array>
+				<technique_common>
+					<accessor count="14" offset="0" source="#wing_r1_rotationX-interpolations-array" stride="1">
+						<param name="INTERPOLATION" type="Name" />
+					</accessor>
+				</technique_common>
+			</source>
+			<sampler id="wing_r1_rotationX-sampler">
+				<input semantic="INPUT" source="#wing_r1_rotationX-input" />
+				<input semantic="OUTPUT" source="#wing_r1_rotationX-output" />
+				<input semantic="INTERPOLATION" source="#wing_r1_rotationX-interpolations" />
+			</sampler>
+			<channel source="#wing_r1_rotationX-sampler" target="wing_r1/rotationX.ANGLE" />
+		</animation>
+		<animation id="wing_r1_scale">
+			<source id="wing_r1_scale-input">
+				<float_array id="wing_r1_scale-input-array" count="14">0 0.03333334 0.06666667 0.1 0.1333333 0.1666667 0.2 0.2333333 0.2666667 0.3 0.3333333 0.3666667 0.4 0.4333334</float_array>
+				<technique_common>
+					<accessor count="14" offset="0" source="#wing_r1_scale-input-array" stride="1">
+						<param name="TIME" type="float" />
+					</accessor>
+				</technique_common>
+			</source>
+			<source id="wing_r1_scale-output">
+				<float_array id="wing_r1_scale-output-array" count="42">1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1</float_array>
+				<technique_common>
+					<accessor count="14" offset="0" source="#wing_r1_scale-output-array" stride="3">
+						<param name="X" type="float" />
+						<param name="Y" type="float" />
+						<param name="Z" type="float" />
+					</accessor>
+				</technique_common>
+			</source>
+			<source id="wing_r1_scale-interpolations">
+				<Name_array id="wing_r1_scale-interpolations-array" count="14">LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR</Name_array>
+				<technique_common>
+					<accessor count="14" offset="0" source="#wing_r1_scale-interpolations-array" stride="1">
+						<param name="INTERPOLATION" type="Name" />
+					</accessor>
+				</technique_common>
+			</source>
+			<sampler id="wing_r1_scale-sampler">
+				<input semantic="INPUT" source="#wing_r1_scale-input" />
+				<input semantic="OUTPUT" source="#wing_r1_scale-output" />
+				<input semantic="INTERPOLATION" source="#wing_r1_scale-interpolations" />
+			</sampler>
+			<channel source="#wing_r1_scale-sampler" target="wing_r1/scale" />
+		</animation>
+	</library_animations>
+	<library_images>
+		<image id="wing_cmp4-img" name="wing_cmp4-img">
+			<init_from>wing_cmp4.png</init_from>
+		</image>
+	</library_images>
+	<library_effects>
+		<effect id="mat_wing-effect">
+			<profile_COMMON>
+				<newparam sid="wing_cmp4-img-surface">
+					<surface type="2D">
+						<init_from>wing_cmp4-img</init_from>
+					</surface>
+				</newparam>
+				<newparam sid="wing_cmp4-img-sampler">
+					<sampler2D>
+						<source>wing_cmp4-img-surface</source>
+					</sampler2D>
+				</newparam>
+				<technique sid="common">
+					<phong>
+						<emission>
+							<color sid="emission">0 0 0 1.0</color>
+						</emission>
+						<ambient>
+							<color sid="ambient">0.5176471 0.5176471 0.5176471 1.0</color>
+						</ambient>
+						<diffuse>
+							<texture texture="wing_cmp4-img-sampler" texcoord="UVMap" />
+						</diffuse>
+						<specular>
+							<color sid="specular">0 0 0 1.0</color>
+						</specular>
+						<transparency>
+							<float sid="transparency">1</float>
+						</transparency>
+					</phong>
+				</technique>
+				<extra>
+					<technique profile="GOOGLEEARTH">
+						<double_sided>1</double_sided>
+					</technique>
+				</extra>
+				<extra>
+					<technique profile="SM64DSe">
+						<lights>1 0 0 0</lights>
+						<environment_mapping>0</environment_mapping>
+						<double_sided>1</double_sided>
+						<tex_tiling>clamp clamp</tex_tiling>
+						<tex_scale>1 1</tex_scale>
+						<tex_rotate>0</tex_rotate>
+						<tex_translate>0 0</tex_translate>
+						<fog_enable>0</fog_enable>
+					</technique>
+				</extra>
+			</profile_COMMON>
+			<extra>
+				<technique profile="MAX3D">
+					<double_sided>1</double_sided>
+				</technique>
+			</extra>
+		</effect>
+	</library_effects>
+	<library_materials>
+		<material id="mat_wing-material" name="mat_wing">
+			<instance_effect url="#mat_wing-effect" />
+		</material>
+	</library_materials>
+	<library_geometries>
+		<geometry id="wing_shape-mesh" name="wing_shape-mesh">
+			<mesh>
+				<source id="wing_shape-mesh-positions">
+					<float_array id="wing_shape-mesh-positions-array" count="24">-0.9763778 -3.412635 0.8696972 -0.5616187 -7.835701 3.549086 -4.643877 -6.465789 6.442653 -5.058636 -2.042723 3.763264 -0.9767969 -3.413205 -0.8691069 -5.053583 -2.038581 -3.768092 -4.638784 -6.460989 -6.448346 -0.5618861 -7.835447 -3.549502</float_array>
+					<technique_common>
+						<accessor source="#wing_shape-mesh-positions-array" count="8" stride="3">
+							<param name="X" type="float" />
+							<param name="Y" type="float" />
+							<param name="Z" type="float" />
+						</accessor>
+					</technique_common>
+				</source>
+				<source id="wing_shape-mesh-normals">
+					<float_array id="wing_shape-mesh-normals-array" count="24">0 -0.2675781 -0.9628906 0 -0.2675781 -0.9628906 0 -0.2675781 -0.9628906 0 -0.2675781 -0.9628906 -0.08007813 -0.2675781 0.9609375 -0.08007813 -0.2675781 0.9609375 -0.08007813 -0.2675781 0.9609375 -0.08007813 -0.2675781 0.9609375</float_array>
+					<technique_common>
+						<accessor source="#wing_shape-mesh-normals-array" count="8" stride="3">
+							<param name="X" type="float" />
+							<param name="Y" type="float" />
+							<param name="Z" type="float" />
+						</accessor>
+					</technique_common>
+				</source>
+				<source id="wing_shape-mesh-map-0">
+					<float_array id="wing_shape-mesh-map-0-array" count="16">0.01171875 0.9746094 0.009765625 0.015625 0.9824219 0.01757813 0.9824219 0.9726563 0.01171875 0.9746094 0.9824219 0.9726563 0.9824219 0.01757813 0.009765625 0.015625</float_array>
+					<technique_common>
+						<accessor source="#wing_shape-mesh-map-0-array" count="8" stride="2">
+							<param name="S" type="float" />
+							<param name="T" type="float" />
+						</accessor>
+					</technique_common>
+				</source>
+				<source id="wing_shape-mesh-colors">
+					<float_array id="wing_shape-mesh-colors-array" count="24">1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1</float_array>
+					<technique_common>
+						<accessor source="#wing_shape-mesh-colors-array" count="8" stride="3">
+							<param name="R" type="float" />
+							<param name="G" type="float" />
+							<param name="B" type="float" />
+						</accessor>
+					</technique_common>
+				</source>
+				<vertices id="wing_shape-mesh-vertices">
+					<input semantic="POSITION" source="#wing_shape-mesh-positions" />
+				</vertices>
+				<polylist material="mat_wing-material" count="2">
+					<input semantic="VERTEX" source="#wing_shape-mesh-vertices" offset="0" />
+					<input semantic="NORMAL" source="#wing_shape-mesh-normals" offset="1" />
+					<input semantic="TEXCOORD" source="#wing_shape-mesh-map-0" offset="2" set="0" />
+					<input semantic="COLOR" source="#wing_shape-mesh-colors" offset="3" />
+					<vcount>4 4</vcount>
+					<p>0 0 0 0 1 0 1 0 2 0 2 0 3 0 3 0 4 4 0 0 5 4 3 0 6 4 2 0 7 4 1 0</p>
+				</polylist>
+			</mesh>
+		</geometry>
+	</library_geometries>
+	<library_controllers>
+		<controller id="wing_shape-skin" name="skinCluster_wing_shape">
+			<skin source="#wing_shape-mesh">
+				<bind_shape_matrix>1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1</bind_shape_matrix>
+				<source id="wing_shape-skin-joints">
+					<IDREF_array id="wing_shape-skin-joints-array" count="3">wing_shape wing_l1 wing_r1</IDREF_array>
+					<technique_common>
+						<accessor source="#wing_shape-skin-joints-array" count="3" stride="1">
+							<param name="JOINT" type="Name" />
+						</accessor>
+					</technique_common>
+				</source>
+				<!--The inverse bind pose for a joint is given by the inverse bind pose of the parent joint (where present) multiplied by the inverse of the current joint's transformation matrix.-->
+				<source id="wing_shape-skin-bind_poses">
+					<float_array id="wing_shape-skin-bind_poses-array" count="48">1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 -0.4662188 -0.4591214 0.756206 -3.177737 0.7796323 -0.6172138 0.1059277 -1.172831 0.4181071 0.6389481 0.6457025 2.082826 0 0 0 1 -0.4285422 -0.403022 -0.8086562 -2.988459 0.7792378 -0.6178673 -0.1050164 -1.174617 -0.4573184 -0.6751395 0.5788322 -2.345441 0 0 0 1</float_array>
+					<technique_common>
+						<accessor source="#wing_shape-skin-bind_poses-array" count="3" stride="16">
+							<param name="TRANSFORM" type="float4x4" />
+						</accessor>
+					</technique_common>
+				</source>
+				<source id="wing_shape-skin-weights">
+					<!--The BMD format does not have any concept of 'weights', instead each vertex is assigned to one bone-->
+					<float_array id="wing_shape-skin-weights-array" count="1">1</float_array>
+					<technique_common>
+						<accessor source="#wing_shape-skin-weights-array" count="1" stride="1">
+							<param name="WEIGHT" type="float" />
+						</accessor>
+					</technique_common>
+				</source>
+				<joints>
+					<input semantic="JOINT" source="#wing_shape-skin-joints" />
+					<input semantic="INV_BIND_MATRIX" source="#wing_shape-skin-bind_poses" />
+				</joints>
+				<!--Each vertex will be assigned to only one bone with a weight of 1-->
+				<vertex_weights count="8">
+					<input semantic="JOINT" source="#wing_shape-skin-joints" offset="0" />
+					<input semantic="WEIGHT" source="#wing_shape-skin-weights" offset="1" />
+					<vcount>1 1 1 1 1 1 1 1</vcount>
+					<!--This list contains two values for each vertex, the first is the bone ID and the second is the index of the vertex weight '1' (0)-->
+					<v>1 0 1 0 1 0 1 0 2 0 2 0 2 0 2 0</v>
+				</vertex_weights>
+			</skin>
+		</controller>
+	</library_controllers>
+	<library_visual_scenes>
+		<visual_scene id="Scene" name="Scene">
+			<!--This lists each of the 'bones' in the BMD model, listing each bone's individual Scale, Rotation, Translation transformation in the reverse of the order in which they should be multiplied to form an SRT  matrix. This will then be multiplied recursively by the parents' transformations to get the final transformation for this joint.-->
+			<node id="wing_shape" name="wing_shape" sid="wing_shape" type="JOINT">
+				<translate sid="translate">0 0 0</translate>
+				<rotate sid="rotationZ">0 0 1 0</rotate>
+				<rotate sid="rotationY">0 1 0 0</rotate>
+				<rotate sid="rotationX">1 0 0 0</rotate>
+				<scale sid="scale">1 1 1</scale>
+				<node id="wing_l1" name="wing_l1" sid="wing_l1" type="JOINT">
+					<translate sid="translate">-1.437988 -3.513672 1.182373</translate>
+					<rotate sid="rotationZ">0 0 1 -135.4395</rotate>
+					<rotate sid="rotationY">0 1 0 -49.13086</rotate>
+					<rotate sid="rotationX">1 0 0 9.316405</rotate>
+					<scale sid="scale">1 1 1</scale>
+				</node>
+				<node id="wing_r1" name="wing_r1" sid="wing_r1" type="JOINT">
+					<translate sid="translate">-1.437988 -3.513672 -1.182373</translate>
+					<rotate sid="rotationZ">0 0 1 -136.7578</rotate>
+					<rotate sid="rotationY">0 1 0 53.96484</rotate>
+					<rotate sid="rotationX">1 0 0 -10.2832</rotate>
+					<scale sid="scale">1 1 1</scale>
+				</node>
+			</node>
+			<node id="wing_shape-node" name="wing_shape-node" type="NODE">
+				<instance_controller url="#wing_shape-skin">
+					<skeleton>#wing_shape</skeleton>
+					<bind_material>
+						<technique_common>
+							<instance_material symbol="mat_wing-material" target="#mat_wing-material">
+								<bind_vertex_input semantic="UVMap" input_semantic="TEXCOORD" input_set="0" />
+							</instance_material>
+						</technique_common>
+					</bind_material>
+				</instance_controller>
+			</node>
+		</visual_scene>
+	</library_visual_scenes>
+	<scene>
+		<instance_visual_scene url="#Scene" />
+	</scene>
+</COLLADA>
